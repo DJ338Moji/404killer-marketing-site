@@ -1,0 +1,132 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 2767 >>
+stream
+BT
+0.06 0.59 0.40 rg
+/F2 20 Tf
+50 740 Td
+(Mojipass\(R\) Shopify Merchant Onboarding Guide) Tj
+0 -18 Td
+/F1 11 Tf
+0.4 0.4 0.4 rg
+(Zero-CAC Cross-Promotional Commerce Network & Checkout Synergy) Tj
+ET
+q
+0.06 0.59 0.40 rg
+50 710 512 2 re f
+Q
+BT
+0.1 0.1 0.1 rg
+50 685 Td
+/F2 13 Tf
+0.05 0.3 0.2 rg
+(1. Executive Summary & Economics) Tj
+0 -16 Td
+/F1 9.5 Tf
+0.2 0.2 0.2 rg
+(Rising paid social ad costs and privacy changes have compressed e-commerce gross margins.) Tj
+0 -13 Td
+(Mojipass provides an alternative: zero-ad-spend customer acquisition via peer-to-peer brand synergy.) Tj
+0 -13 Td
+(Merchants co-promote complementary, non-competing partner offers on post-purchase thank-you pages.) Tj
+0 -13 Td
+(You only pay when a customer redeems and completes a purchase. No subscription or upfront fees.) Tj
+0 -13 Td
+0 -10 Td
+/F2 13 Tf
+0.05 0.3 0.2 rg
+(2. Fast-Track Shopify App Installation) Tj
+0 -16 Td
+/F1 9.5 Tf
+0.2 0.2 0.2 rg
+(1. Locate 'Mojipass' in the Shopify App Store and click 'Install App'.) Tj
+0 -13 Td
+(2. Grant read/write permissions for orders, products, and checkout script extensions.) Tj
+0 -13 Td
+(3. OAuth authentication completes automatically in under 60 seconds with no code required.) Tj
+0 -13 Td
+(4. Your catalog automatically syncs to your private Mojipass Merchant Portal.) Tj
+0 -13 Td
+0 -10 Td
+/F2 13 Tf
+0.05 0.3 0.2 rg
+(3. AI Synergy Engine & Brand Pairing) Tj
+0 -16 Td
+/F1 9.5 Tf
+0.2 0.2 0.2 rg
+(Our proprietary matching engine evaluates your customer demographics and product categories.) Tj
+0 -13 Td
+(Your store is paired exclusively with non-competing, affinity-matched Shopify brands.) Tj
+0 -13 Td
+(Example: A barrier-repair skincare brand is paired with clean organic body wash, never a competitor.) Tj
+0 -13 Td
+(You maintain 100% control to review, accept, or pause brand pairings at any time.) Tj
+0 -13 Td
+0 -10 Td
+/F2 13 Tf
+0.05 0.3 0.2 rg
+(4. Post-Purchase Placements & Attribution) Tj
+0 -16 Td
+/F1 9.5 Tf
+0.2 0.2 0.2 rg
+(Partner offers appear dynamically on your order confirmation page without slowing checkout.) Tj
+0 -13 Td
+(Triple-redundant attribution tracks orders via discount codes, landing site tokens, and note attributes.) Tj
+0 -13 Td
+(Track conversions, impressions, and reciprocal earned commissions live in your dashboard.) Tj
+0 -13 Td
+0 -10 Td
+/F2 13 Tf
+0.05 0.3 0.2 rg
+(5. Support & Integration Assistance) Tj
+0 -16 Td
+/F1 9.5 Tf
+0.2 0.2 0.2 rg
+(Technical and developer support is available 24/7 at support@mojipass.com.) Tj
+0 -13 Td
+(Merchant documentation and API playground guides are accessible at https://www.mojipass.com.) Tj
+0 -13 Td
+0 -10 Td
+ET
+q
+0.8 0.8 0.8 rg
+50 50 512 1 re f
+Q
+BT
+/F1 8 Tf
+0.5 0.5 0.5 rg
+50 38 Td
+(Mojipass(R) Ecosystem - Official Documentation - support@mojipass.com - www.mojipass.com) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 000000 n 
+0000000058 000000 n 
+0000000115 000000 n 
+0000000251 000000 n 
+0000003070 000000 n 
+0000003140 000000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3215
+%%EOF

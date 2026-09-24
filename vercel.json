@@ -1,0 +1,32 @@
+{
+    "redirects": [
+        {
+            "source": "/(.*)",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "brands.mojipass.com"
+                }
+            ],
+            "destination": "https://brand.mojipass.com/$1",
+            "permanent": true
+        },
+        {
+            "source": "/(.*)",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "partners.mojipass.com"
+                }
+            ],
+            "destination": "https://partner.mojipass.com/$1",
+            "permanent": true
+        }
+    ],
+    "rewrites": [
+        {
+            "source": "/((?!assets/|.*\\..*).*)",
+            "destination": "/index.html"
+        }
+    ]
+}

@@ -1,0 +1,91 @@
+name: RenuIQ & Mojipass Site Health & Operations Monitor
+
+on:
+  schedule:
+    # Daily morning comprehensive suite at 09:00 UTC (03:00 AM MDT)
+    - cron: '0 9 * * *'
+    # Daily evening link & page operational verification at 18:00 UTC (12:00 PM MDT)
+    - cron: '0 18 * * *'
+    # Weekly executive digest every Monday at 08:00 UTC (02:00 AM MDT)
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Operation routine to execute'
+        required: true
+        default: 'audit-links'
+        type: choice
+        options:
+          - 'audit-links'
+          - 'all'
+          - 'weekly-digest'
+
+jobs:
+  site-health-check:
+    name: Execute Operational Site Verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Run Operational Routine
+        env:
+          SHOPIFY_STORE_DOMAIN: ${{ secrets.SHOPIFY_STORE_DOMAIN || 'renuiq.myshopify.com' }}
+          SHOPIFY_CLIENT_ID: ${{ secrets.SHOPIFY_CLIENT_ID }}
+          SHOPIFY_CLIENT_SECRET: ${{ secrets.SHOPIFY_CLIENT_SECRET }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          REPORT_RECIPIENT_EMAIL: ${{ secrets.REPORT_RECIPIENT_EMAIL || 'djohnson@mojipass.com' }}
+          REPORT_FROM_EMAIL: ${{ secrets.REPORT_FROM_EMAIL || 'reports@mojipass.com' }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT || '587' }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        run: |
+          echo "======================================================="
+          echo "🚀 Starting Automated RenuIQ & Mojipass Health Check"
+          echo "⏰ Current Time: $(date -u)"
+          echo "======================================================="
+
+          # Determine routine mode
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            MODE="${{ github.event.inputs.mode }}"
+            if [ "$MODE" = "audit-links" ]; then
+              node automation/daily_runner.js --audit-links --heal-404
+            elif [ "$MODE" = "weekly-digest" ]; then
+              node automation/daily_runner.js --weekly-digest
+            else
+              node automation/daily_runner.js --all
+            fi
+          elif [ "${{ github.event.schedule }}" = "0 8 * * 1" ]; then
+            echo "Running scheduled Monday Weekly Operations Digest..."
+            node automation/daily_runner.js --weekly-digest
+          elif [ "${{ github.event.schedule }}" = "0 18 * * *" ]; then
+            echo "Running scheduled Evening Link & Page Operational Audit..."
+            node automation/daily_runner.js --audit-links --heal-404
+          else
+            echo "Running scheduled Morning Comprehensive Operations Suite..."
+            node automation/daily_runner.js --all
+          fi
+
+      - name: Archive Operations & Digest Logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: operational-health-reports-${{ github.run_id }}
+          path: |
+            automation/logs/*.md
+            automation/logs/*.html
+            automation/logs/*.json
+          if-no-files-found: ignore
+          retention-days: 30
