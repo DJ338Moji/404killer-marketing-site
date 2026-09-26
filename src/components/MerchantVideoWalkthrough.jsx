@@ -9,65 +9,66 @@ import {
   Maximize2,
   Minimize2,
   CheckCircle,
-  Store,
   TrendingUp,
   Sparkles,
-  ShoppingBag,
   ExternalLink,
   ShieldCheck,
-  ChevronRight,
-  Layers,
-  Zap
+  Zap,
+  AlertTriangle,
+  ArrowRight,
+  DollarSign,
+  Activity,
+  Layers
 } from 'lucide-react';
 
 const CHAPTERS = [
   {
     id: 1,
-    title: 'Why Mojipass?',
-    subtitle: 'Zero Ad-Spend Customer Acquisition',
+    title: 'The Silent Ad Spend Burn',
+    subtitle: 'How 404s Bleed Paid ROAS & Conversions',
     startTime: 0,
-    endTime: 25,
-    duration: 25,
-    badge: 'The Value Proposition',
-    color: 'from-emerald-500 to-teal-600',
-    accentColor: '#10b981',
-    script: "G'day Shopify merchants! Are rising Meta ad costs and iOS privacy updates eating your margins? Traditional paid ads force you to pay before making a single dime. Mojipass completely flips this model. Instead of paying Meta for cold clicks, Mojipass connects you with complementary, non-competing Shopify brands for zero-CAC co-marketing. You cross-promote on checkout and post-purchase thank-you pages, only paying when a verified customer completes a purchase. It's pure profit synergy."
+    endTime: 22,
+    duration: 22,
+    badge: 'The Problem',
+    color: 'from-red-500 to-rose-600',
+    accentColor: '#f43f5e',
+    script: "Shopify merchants lose thousands of dollars every month when paid Meta, Google, and TikTok ads land on sold-out products, deleted collections, or 404 dead ends. When high-intent shoppers hit a broken page, ninety-four percent bounce instantly. Your paid ad budget is burned, and the customer is lost to a competitor."
   },
   {
     id: 2,
-    title: '1-Click App Install',
-    subtitle: 'Shopify Admin Integration',
-    startTime: 25,
-    endTime: 50,
-    duration: 25,
-    badge: 'Frictionless Setup',
-    color: 'from-blue-500 to-indigo-600',
-    accentColor: '#3b82f6',
-    script: "Getting started takes less than 60 seconds. Simply find Mojipass in the Shopify App Store and click 'Install'. Our native OAuth automatically authenticates your store. There are zero complex liquid theme edits, no scripts that slow down your storefront, and no developer required. Your products and collections sync automatically in the background."
+    title: 'Autonomous 50ms Auto-Healer',
+    subtitle: 'Instant 301 Smart Category Matching',
+    startTime: 22,
+    endTime: 46,
+    duration: 24,
+    badge: 'Real-Time Interception',
+    color: 'from-emerald-500 to-teal-600',
+    accentColor: '#10b981',
+    script: "404 Killer App runs silently in the background. The exact millisecond an incoming visitor or ad click encounters a broken URL, our autonomous sentinel intercepts the request in under fifty milliseconds. Instead of an ugly 404 error, they are seamlessly 301-redirected to the matching collection or closest in-stock replacement SKU."
   },
   {
     id: 3,
-    title: 'AI Synergy Matching',
-    subtitle: 'Catalog Sync & Non-Competing Pairings',
-    startTime: 50,
-    endTime: 75,
-    duration: 25,
-    badge: 'Automated Co-Op',
-    color: 'from-purple-500 to-pink-600',
-    accentColor: '#a855f7',
-    script: "Once synced, our AI Discovery Engine audits your product categories and automatically matches your store with ideal partner brands. If you sell clean barrier-repair skincare, Mojipass pairs you with complementary organic body care or clean SPF brands—never direct competitors. You set your preferred referral incentive, and your automated co-marketing campaign goes live instantly."
+    title: 'Paid Ad & Out-of-Stock Guard',
+    subtitle: 'UTM Protection & Zero Campaign Downtime',
+    startTime: 46,
+    endTime: 70,
+    duration: 24,
+    badge: 'Ad ROAS Defense',
+    color: 'from-blue-500 to-cyan-600',
+    accentColor: '#06b6d4',
+    script: "Never pause a winning ad campaign again. When a viral product sells out, our Out-Of-Stock Sentinel detects the zero-inventory state and automatically reroutes ad traffic to your top in-stock alternative. Your Meta and TikTok UTM attribution remains unbroken, and your ad spend continues generating revenue."
   },
   {
     id: 4,
-    title: 'Orders & Commissions',
-    subtitle: 'Live Attribution & Real-Time Growth',
-    startTime: 75,
-    endTime: 105,
-    duration: 30,
-    badge: 'Predictable Revenue',
-    color: 'from-amber-500 to-orange-600',
-    accentColor: '#f59e0b',
-    script: "Now the magic happens. When high-intent shoppers complete orders with partner stores, your curated synergy offer appears directly on their order confirmation page. When they redeem your offer, the sale is tracked in real-time on your Mojipass dashboard. You acquire new high-LTV customers on autopilot, while earning reciprocal commissions whenever your own customers explore partner offers. Welcome to the zero-friction commerce network!"
+    title: 'Live ROI Dashboard & AI Schema',
+    subtitle: 'Rescued Revenue & Google AI Indexing',
+    startTime: 70,
+    endTime: 95,
+    duration: 25,
+    badge: 'Measurable Value',
+    color: 'from-purple-500 to-emerald-500',
+    accentColor: '#a855f7',
+    script: "Track every rescued dollar, salvaged ad click, and flattened redirect loop right inside your Shopify admin dashboard. Plus, with one-click Answer Engine Optimization schema, your store is indexed directly by Google AI Overviews, Perplexity, and ChatGPT. That is 404 Killer App: complete revenue protection."
   }
 ];
 
@@ -81,7 +82,7 @@ export default function MerchantVideoWalkthrough({ onClose }) {
   const [showCaptions, setShowCaptions] = useState(true);
   const containerRef = useRef(null);
 
-  const totalDuration = 105; // 1:45
+  const totalDuration = 95; // 1:35 total tour
   const currentChapter = CHAPTERS[activeChapterIndex] || CHAPTERS[0];
 
   // Timer simulation loop
@@ -112,7 +113,7 @@ export default function MerchantVideoWalkthrough({ onClose }) {
     }
   }, [currentTime, activeChapterIndex]);
 
-  // Web Speech API Voiceover option
+  // Improved Speech Synthesis Voiceover with natural voice priority
   useEffect(() => {
     if (!isPlaying || isMuted) {
       if ('speechSynthesis' in window) window.speechSynthesis.cancel();
@@ -122,15 +123,34 @@ export default function MerchantVideoWalkthrough({ onClose }) {
     if ('speechSynthesis' in window) {
       window.speechSynthesis.cancel();
       const utterance = new SpeechSynthesisUtterance(currentChapter.script);
-      utterance.rate = 1.05 * speed;
+      utterance.rate = 1.0 * speed;
       utterance.pitch = 1.0;
-      
-      // Try to select an Australian or high-quality English voice if available
-      const voices = window.speechSynthesis.getVoices();
-      const preferredVoice = voices.find(v => v.lang === 'en-AU' || v.name.includes('Australia') || v.name.includes('Natural') || v.lang === 'en-US');
-      if (preferredVoice) utterance.voice = preferredVoice;
 
-      window.speechSynthesis.speak(utterance);
+      // Select highest-quality human/natural voice available on user's OS
+      const loadVoices = () => {
+        const voices = window.speechSynthesis.getVoices();
+        if (voices && voices.length > 0) {
+          const preferredVoice = voices.find(v => 
+            v.name.includes('Natural') || 
+            v.name.includes('Google US English') ||
+            v.name.includes('Samantha') || 
+            v.name.includes('Ava') || 
+            v.name.includes('Daniel') || 
+            v.name.includes('Premium') ||
+            (v.lang === 'en-US' && !v.name.includes('Bad'))
+          );
+          if (preferredVoice) utterance.voice = preferredVoice;
+          window.speechSynthesis.speak(utterance);
+        } else {
+          window.speechSynthesis.speak(utterance);
+        }
+      };
+
+      if (window.speechSynthesis.getVoices().length > 0) {
+        loadVoices();
+      } else {
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+      }
     }
 
     return () => {
@@ -157,7 +177,7 @@ export default function MerchantVideoWalkthrough({ onClose }) {
         isFullscreen ? 'fixed inset-0 z-50 max-w-none rounded-none' : ''
       }`}
     >
-      {/* Top Browser Bar / Window Frame */}
+      {/* Top Window Bar */}
       <div className="bg-[#0b1329] px-6 py-3 border-b border-white/10 flex items-center justify-between select-none">
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
@@ -165,12 +185,12 @@ export default function MerchantVideoWalkthrough({ onClose }) {
           <div className="w-3 h-3 rounded-full bg-emerald-500/80"></div>
           <span className="ml-3 text-xs font-mono text-slate-400 flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Shopify Merchant Explainer · Mojipass Core System
+            404 Killer App · Revenue Shield Interactive Tour
           </span>
         </div>
         <div className="flex items-center gap-3">
           <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
-            Official Tutorial
+            Interactive Product Tour
           </span>
           {onClose && (
             <button
@@ -183,16 +203,16 @@ export default function MerchantVideoWalkthrough({ onClose }) {
         </div>
       </div>
 
-      {/* Main Video Viewport (16:9 simulated screen) */}
-      <div className="relative aspect-video w-full bg-gradient-to-br from-[#020617] via-[#091428] to-[#040915] overflow-hidden flex flex-col justify-between p-6 sm:p-10">
-        {/* Animated Background Ambience */}
+      {/* Main Video Viewport */}
+      <div className="relative aspect-video w-full bg-gradient-to-br from-[#020617] via-[#091428] to-[#040915] overflow-hidden flex flex-col justify-between p-6 sm:p-8">
+        {/* Background Ambience */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-32 -left-32 w-96 h-96 bg-emerald-500/10 blur-[100px] rounded-full"></div>
-          <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-500/10 blur-[100px] rounded-full"></div>
+          <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-cyan-500/10 blur-[100px] rounded-full"></div>
           <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:20px_20px] opacity-40"></div>
         </div>
 
-        {/* Video Scene Content Switcher */}
+        {/* Scene Content */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeChapterIndex}
@@ -208,10 +228,10 @@ export default function MerchantVideoWalkthrough({ onClose }) {
                 <span className="inline-block text-xs font-black uppercase tracking-widest text-emerald-400 mb-1">
                   Chapter {currentChapter.id} of 4: {currentChapter.badge}
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                <h3 className="text-xl sm:text-3xl font-black text-white tracking-tight">
                   {currentChapter.title}
                 </h3>
-                <p className="text-slate-400 text-sm font-medium mt-0.5">
+                <p className="text-slate-400 text-xs sm:text-sm font-medium mt-0.5">
                   {currentChapter.subtitle}
                 </p>
               </div>
@@ -220,121 +240,124 @@ export default function MerchantVideoWalkthrough({ onClose }) {
               <div className="hidden sm:flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-2xl backdrop-blur-md">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                 <span className="text-xs font-bold text-white uppercase tracking-wider">
-                  Live Interactive Demo
+                  Live Sentinel Demo
                 </span>
               </div>
             </div>
 
-            {/* Dynamic Interactive Stage per Chapter */}
-            <div className="my-auto py-4">
+            {/* Dynamic Stage per Chapter */}
+            <div className="my-auto py-3">
+              {/* Scene 1: The Paid Ad Burn */}
               {activeChapterIndex === 0 && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto">
-                  <div className="p-5 rounded-2xl bg-red-950/20 border border-red-500/20 backdrop-blur-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+                  <div className="p-4 sm:p-5 rounded-2xl bg-red-950/20 border border-red-500/30 backdrop-blur-sm">
                     <div className="text-xs font-bold uppercase tracking-wider text-red-400 mb-2 flex items-center gap-1.5">
-                      <span>⚠️</span> The Old Way (Paid Ads)
+                      <AlertTriangle className="w-4 h-4 text-red-400" />
+                      <span>Without 404 Killer App</span>
                     </div>
                     <ul className="text-xs space-y-2 text-slate-300">
-                      <li>❌ Pay upfront for impressions &amp; clicks</li>
-                      <li>❌ High customer acquisition costs (CAC)</li>
-                      <li>❌ iOS tracking blindness &amp; ad fatigue</li>
+                      <li>❌ Paid ad clicks land on deleted / sold-out SKUs</li>
+                      <li>❌ Shoppers hit generic 404 "Page Not Found"</li>
+                      <li>❌ 94% bounce rate — ad budget burned forever</li>
                     </ul>
                   </div>
 
-                  <div className="p-5 rounded-2xl bg-emerald-950/30 border border-emerald-500/30 backdrop-blur-sm shadow-[0_0_30px_-5px_rgba(16,185,129,0.2)]">
+                  <div className="p-4 sm:p-5 rounded-2xl bg-emerald-950/30 border border-emerald-500/30 backdrop-blur-sm shadow-[0_0_30px_-5px_rgba(16,185,129,0.2)]">
                     <div className="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2 flex items-center gap-1.5">
-                      <span>✨</span> The Mojipass Way (Co-Marketing)
+                      <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                      <span>With 404 Killer App</span>
                     </div>
                     <ul className="text-xs space-y-2 text-slate-200 font-medium">
-                      <li>✅ Pay $0 upfront — pay only on real sales</li>
-                      <li>✅ Co-market with complementary Shopify stores</li>
-                      <li>✅ High conversion from warm post-purchase buyers</li>
+                      <li>✅ Autonomous interception in &lt; 50 milliseconds</li>
+                      <li>✅ Instant 301 redirect to matching in-stock category</li>
+                      <li>✅ 100% of paid ad traffic and checkout intent saved</li>
                     </ul>
                   </div>
                 </div>
               )}
 
+              {/* Scene 2: 50ms Autonomous Auto-Healer */}
               {activeChapterIndex === 1 && (
-                <div className="max-w-2xl mx-auto bg-slate-900/80 border border-white/15 rounded-2xl p-6 shadow-2xl backdrop-blur-md">
-                  <div className="flex items-center gap-3 border-b border-white/10 pb-4 mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400">
-                      <ShoppingBag className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="text-white text-base font-bold">Shopify App Store · 1-Click Install</h4>
-                      <p className="text-slate-400 text-xs">Automated OAuth token handshake &amp; secure session</p>
-                    </div>
-                    <button className="ml-auto px-4 py-2 bg-emerald-500 text-white rounded-lg text-xs font-black uppercase tracking-wider shadow-lg shadow-emerald-500/20">
-                      Installed
-                    </button>
-                  </div>
-                  <div className="grid grid-cols-3 gap-3 text-center text-xs text-slate-300">
-                    <div className="p-2.5 rounded-xl bg-white/5 border border-white/5">
-                      <span className="font-bold text-emerald-400 block text-sm">0 Lines</span>
-                      Code Required
-                    </div>
-                    <div className="p-2.5 rounded-xl bg-white/5 border border-white/5">
-                      <span className="font-bold text-blue-400 block text-sm">100% Native</span>
-                      Shopify APIs
-                    </div>
-                    <div className="p-2.5 rounded-xl bg-white/5 border border-white/5">
-                      <span className="font-bold text-purple-400 block text-sm">&lt; 60s</span>
-                      Setup Time
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {activeChapterIndex === 2 && (
-                <div className="max-w-2xl mx-auto bg-slate-900/80 border border-purple-500/30 rounded-2xl p-6 shadow-2xl backdrop-blur-md">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-bold uppercase tracking-wider text-purple-400 flex items-center gap-1.5">
-                      <Sparkles className="w-4 h-4" /> AI Synergy Matching Algorithm
-                    </span>
+                <div className="max-w-2xl mx-auto bg-slate-900/90 border border-emerald-500/30 rounded-2xl p-5 shadow-2xl backdrop-blur-md">
+                  <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-3">
+                    <span className="text-xs font-mono text-slate-400">Incoming Traffic Intercept</span>
                     <span className="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full">
-                      Match Score: 96%
+                      Latency: 38ms
                     </span>
                   </div>
-                  <div className="flex items-center justify-between gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10 mb-3">
-                    <div className="text-xs text-left">
-                      <div className="font-bold text-white">Your Store: RenuIQ</div>
-                      <div className="text-slate-400 text-[11px]">Skin Barrier Restorative Care</div>
+
+                  <div className="space-y-2 text-xs">
+                    <div className="p-2.5 rounded-xl bg-red-950/30 border border-red-500/30 flex items-center justify-between">
+                      <div className="font-mono text-red-300 truncate mr-2">
+                        GET /products/vintage-oversized-crewneck-black
+                      </div>
+                      <span className="px-2 py-0.5 rounded bg-red-500/20 text-red-400 font-bold shrink-0">404 DEAD LINK</span>
                     </div>
-                    <div className="text-emerald-400 font-black text-sm">⚡ SYNERGY ⚡</div>
-                    <div className="text-xs text-right">
-                      <div className="font-bold text-white">Partner: Curated Clean Beauty</div>
-                      <div className="text-slate-400 text-[11px]">Non-competing SPF &amp; Body Care</div>
+
+                    <div className="flex justify-center my-1 text-emerald-400">
+                      <ArrowRight className="w-5 h-5 rotate-90 sm:rotate-0" />
+                    </div>
+
+                    <div className="p-2.5 rounded-xl bg-emerald-950/40 border border-emerald-500/40 flex items-center justify-between">
+                      <div className="font-mono text-emerald-300 truncate mr-2">
+                        HTTP 301 &rarr; /collections/unisex-crewnecks
+                      </div>
+                      <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold shrink-0">AUTO-HEALED</span>
                     </div>
                   </div>
-                  <p className="text-[11px] text-slate-400 text-center">
-                    Shoppers who buy skin barrier repair creams are 4.8x more likely to accept clean sunscreen synergy vouchers.
-                  </p>
                 </div>
               )}
 
-              {activeChapterIndex === 3 && (
-                <div className="max-w-2xl mx-auto grid grid-cols-3 gap-4">
+              {/* Scene 3: Paid Ad & OOS Sentinel */}
+              {activeChapterIndex === 2 && (
+                <div className="max-w-2xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
-                    <span className="text-xs text-slate-400 uppercase font-semibold">Attributed Sales</span>
-                    <div className="text-2xl font-black text-white mt-1">+$4,820</div>
-                    <span className="text-[10px] text-emerald-400 font-bold">↑ 18.4% AOV Lift</span>
+                    <span className="text-xs text-slate-400 uppercase font-semibold">Meta & TikTok UTMs</span>
+                    <div className="text-xl font-black text-cyan-400 mt-1 flex items-center justify-center gap-1">
+                      <Zap className="w-4 h-4 text-cyan-400" /> Active Guard
+                    </div>
+                    <span className="text-[10px] text-slate-400">Campaigns Unpaused</span>
                   </div>
+
                   <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-center">
-                    <span className="text-xs text-emerald-300 uppercase font-semibold">Customer CAC</span>
-                    <div className="text-2xl font-black text-emerald-400 mt-1">$0.00</div>
-                    <span className="text-[10px] text-slate-300">Pure Performance</span>
+                    <span className="text-xs text-emerald-300 uppercase font-semibold">Out-of-Stock SKU</span>
+                    <div className="text-xl font-black text-emerald-400 mt-1">Auto-Rerouted</div>
+                    <span className="text-[10px] text-slate-300">To Best In-Stock Match</span>
                   </div>
+
                   <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
-                    <span className="text-xs text-slate-400 uppercase font-semibold">Referral Earned</span>
-                    <div className="text-2xl font-black text-white mt-1">15.0%</div>
-                    <span className="text-[10px] text-blue-400 font-bold">Auto-Deposited</span>
+                    <span className="text-xs text-slate-400 uppercase font-semibold">Ad Spend Saved</span>
+                    <div className="text-xl font-black text-white mt-1">$1,850+</div>
+                    <span className="text-[10px] text-emerald-400 font-bold">100% ROAS Preserved</span>
+                  </div>
+                </div>
+              )}
+
+              {/* Scene 4: Live ROI & AI Schema */}
+              {activeChapterIndex === 3 && (
+                <div className="max-w-2xl mx-auto grid grid-cols-3 gap-3 sm:gap-4">
+                  <div className="p-3.5 sm:p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
+                    <span className="text-[11px] sm:text-xs text-slate-400 uppercase font-semibold">Rescued Revenue</span>
+                    <div className="text-lg sm:text-2xl font-black text-white mt-1">+$6,420</div>
+                    <span className="text-[10px] text-emerald-400 font-bold">↑ 24.3% Conversion Lift</span>
+                  </div>
+                  <div className="p-3.5 sm:p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-center">
+                    <span className="text-[11px] sm:text-xs text-emerald-300 uppercase font-semibold">404s Healed</span>
+                    <div className="text-lg sm:text-2xl font-black text-emerald-400 mt-1">1,284</div>
+                    <span className="text-[10px] text-slate-300">Automated 301s</span>
+                  </div>
+                  <div className="p-3.5 sm:p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
+                    <span className="text-[11px] sm:text-xs text-slate-400 uppercase font-semibold">AEO AI Schema</span>
+                    <div className="text-lg sm:text-2xl font-black text-cyan-400 mt-1">Active</div>
+                    <span className="text-[10px] text-blue-400 font-bold">Google AI & Perplexity</span>
                   </div>
                 </div>
               )}
             </div>
 
-            {/* Captions / Subtitles bar */}
+            {/* Captions Bar */}
             {showCaptions && (
-              <div className="bg-black/70 backdrop-blur-md rounded-2xl p-4 border border-white/10 text-center max-w-3xl mx-auto shadow-lg">
+              <div className="bg-black/75 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-white/10 text-center max-w-3xl mx-auto shadow-lg">
                 <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-medium">
                   "{currentChapter.script}"
                 </p>
@@ -343,9 +366,9 @@ export default function MerchantVideoWalkthrough({ onClose }) {
           </motion.div>
         </AnimatePresence>
 
-        {/* Video Player Bottom Control Bar */}
-        <div className="relative z-20 mt-4 pt-3 border-t border-white/10 flex flex-col gap-2.5">
-          {/* Progress Bar / Scrubber */}
+        {/* Video Player Bottom Controls */}
+        <div className="relative z-20 mt-3 pt-3 border-t border-white/10 flex flex-col gap-2">
+          {/* Progress Scrubber */}
           <div
             className="w-full h-2 bg-white/15 rounded-full overflow-hidden cursor-pointer relative group"
             onClick={(e) => {
@@ -355,14 +378,14 @@ export default function MerchantVideoWalkthrough({ onClose }) {
             }}
           >
             <div
-              className="h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-blue-500 rounded-full transition-all duration-300 relative"
+              className="h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-500 rounded-full transition-all duration-300 relative"
               style={{ width: `${(currentTime / totalDuration) * 100}%` }}
             >
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-white shadow-md scale-0 group-hover:scale-100 transition-transform"></div>
             </div>
           </div>
 
-          {/* Controls & Timecode */}
+          {/* Controls Bar */}
           <div className="flex items-center justify-between text-xs text-slate-300">
             <div className="flex items-center gap-3">
               <button
@@ -400,13 +423,13 @@ export default function MerchantVideoWalkthrough({ onClose }) {
                 <button
                   key={c.id}
                   onClick={() => handleSeek(c.startTime)}
-                  className={`px-2.5 py-1 rounded-lg text-[11px] font-bold transition-all ${
+                  className={`px-2 py-1 rounded-lg text-[10px] font-bold transition-all ${
                     activeChapterIndex === i
                       ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
                       : 'text-slate-400 hover:text-white hover:bg-white/5'
                   }`}
                 >
-                  {i + 1}. {c.title}
+                  {i + 1}. {c.title.split(' ')[0]} {c.title.split(' ')[1]}
                 </button>
               ))}
             </div>
@@ -446,26 +469,16 @@ export default function MerchantVideoWalkthrough({ onClose }) {
       {/* Video Call-to-Action Footer */}
       <div className="bg-[#0b1329] p-5 sm:p-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
-          <h4 className="text-white font-bold text-sm sm:text-base">Ready to co-market with zero upfront ad spend?</h4>
-          <p className="text-slate-400 text-xs">Join our network of curated Shopify stores and acquire warm customers today.</p>
+          <h4 className="text-white font-bold text-sm sm:text-base">Ready to stop losing sales and ad dollars to dead 404 links?</h4>
+          <p className="text-slate-400 text-xs">Install 404 Killer App on Shopify and protect your store revenue in under 60 seconds.</p>
         </div>
         <div className="flex items-center gap-3 w-full sm:w-auto">
           <a
-            href="https://apps.shopify.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto px-6 py-3 bg-emerald-500 text-white rounded-xl text-xs font-black uppercase tracking-widest hover:brightness-110 transition-all shadow-lg shadow-emerald-500/20 text-center flex items-center justify-center gap-2"
+            href="https://app.404killer.com"
+            className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 rounded-xl text-xs font-black uppercase tracking-widest hover:brightness-110 transition-all shadow-lg shadow-emerald-500/25 text-center flex items-center justify-center gap-2"
           >
-            <span>Install Shopify App</span>
+            <span>Start 7-Day Free Trial</span>
             <ExternalLink className="w-3.5 h-3.5" />
-          </a>
-          <a
-            href="/assets/guides/merchant_onboarding_guide.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto px-4 py-3 bg-white/5 border border-white/10 text-slate-300 hover:text-white rounded-xl text-xs font-bold uppercase tracking-wider text-center"
-          >
-            Playbook (PDF)
           </a>
         </div>
       </div>
