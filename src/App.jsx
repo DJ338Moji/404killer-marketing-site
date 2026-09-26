@@ -94,11 +94,7 @@ function Home() {
           {/* Price Anchor Callout */}
           <div className="inline-block bg-white/5 border border-white/10 rounded-2xl px-6 py-2.5 backdrop-blur-md">
             <span className="text-xs md:text-sm font-semibold text-theme-muted">
-              🚀 Founder Launch Special:{' '}
-              <span className="line-through opacity-60 text-rose-400">$19.95/mo</span>{' '}
-              <strong className="text-emerald-400 text-base font-black">$8.95/mo</strong> or{' '}
-              <strong className="text-cyan-400 text-base font-black">$60/yr</strong>{' '}
-              <span className="text-emerald-400/90 font-bold">(Locked For Life)</span>
+              🛡️ Starter Shield from <strong className="text-emerald-400 text-base font-black">$8.95/mo</strong> • Pro Revenue Sentinel at <strong className="text-cyan-400 text-base font-black">$14.95/mo</strong> • 7-Day Free Trial
             </span>
           </div>
 
@@ -148,22 +144,22 @@ function Home() {
         </div>
       </div>
 
-      {/* 3 Core Revenue Shield Pillars */}
+      {/* Core Revenue Shield Pillars */}
       <section id="features" className="py-24 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-black uppercase tracking-widest mb-3">
-              Core Revenue Protections
+              Autonomous Storefront Sentinel
             </div>
             <h2 className="text-3xl md:text-5xl font-black text-theme tracking-tight mb-4">
-              Three Automated Shields. Zero Leaked Revenue.
+              Six Automated Shields. Zero Leaked Revenue.
             </h2>
             <p className="text-theme-muted text-lg max-w-2xl mx-auto">
-              Shopify stores lose thousands every year to technical decay. Revenue Shield handles it automatically in the background.
+              Shopify stores lose thousands every month to broken URLs, out-of-stock ad bounces, and redirect loops. 404 Killer handles it all autonomously.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Shield 1: 404 Auto-Healer */}
             <div className="bg-[var(--card-bg)] border border-[var(--card-border)] p-8 rounded-3xl relative overflow-hidden backdrop-blur-sm hover:border-emerald-500/40 transition-all group">
               <div className="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 border border-emerald-500/20">
@@ -171,17 +167,17 @@ function Home() {
               </div>
               <h3 className="text-2xl font-bold mb-3 text-theme">Autonomous 404 Healer</h3>
               <p className="text-theme-muted mb-6 leading-relaxed text-sm">
-                Crawls your store daily. When a shopper lands on a deleted product, expired sale URL, or broken link, it instantly calculates the closest active category match and applies a 301 redirect.
+                Crawls your storefront 24/7. When a shopper hits a deleted product, expired promo link, or 404 URL, it instantly applies a sub-15ms 301 redirect to the closest category match.
               </p>
-              <ul className="space-y-2.5 text-xs text-theme-muted mb-6">
+              <ul className="space-y-2.5 text-xs text-theme-muted">
                 <li className="flex items-center gap-2 text-theme font-medium">
-                  <CheckCircleIcon className="w-4 h-4 text-emerald-400" /> Zero manual spreadsheets or CSV imports
+                  <CheckCircleIcon className="w-4 h-4 text-emerald-400" /> Zero manual CSV imports or spreadsheets
                 </li>
                 <li className="flex items-center gap-2 text-theme font-medium">
-                  <CheckCircleIcon className="w-4 h-4 text-emerald-400" /> Protects Google SEO search rankings
+                  <CheckCircleIcon className="w-4 h-4 text-emerald-400" /> Protects Google SEO keyword rankings
                 </li>
                 <li className="flex items-center gap-2 text-theme font-medium">
-                  <CheckCircleIcon className="w-4 h-4 text-emerald-400" /> Sub-15ms edge redirect speed
+                  <CheckCircleIcon className="w-4 h-4 text-emerald-400" /> Instant edge-level redirect resolution
                 </li>
               </ul>
             </div>
@@ -193,39 +189,114 @@ function Home() {
               </div>
               <h3 className="text-2xl font-bold mb-3 text-theme">Paid Ad Spend Sentinel</h3>
               <p className="text-theme-muted mb-6 leading-relaxed text-sm">
-                Monitors incoming traffic with campaign tags (Meta, TikTok, Google UTMs, influencer links). If a product sells out or handle changes, shoppers are redirected to active alternatives with tracking preserved.
+                Intercepts inbound ad traffic from Meta, TikTok, and Google Ads. If a promoted product URL changes or breaks, shoppers are routed to matching active products with full UTM attribution intact.
               </p>
-              <ul className="space-y-2.5 text-xs text-theme-muted mb-6">
+              <ul className="space-y-2.5 text-xs text-theme-muted">
                 <li className="flex items-center gap-2 text-theme font-medium">
-                  <CheckCircleIcon className="w-4 h-4 text-cyan-400" /> Never burn paid ad spend on 404 pages
+                  <CheckCircleIcon className="w-4 h-4 text-cyan-400" /> Never burn paid ad clicks on 404 errors
                 </li>
                 <li className="flex items-center gap-2 text-theme font-medium">
-                  <CheckCircleIcon className="w-4 h-4 text-cyan-400" /> Preserves UTM attribution tags
+                  <CheckCircleIcon className="w-4 h-4 text-cyan-400" /> Preserves full UTM campaign tracking
                 </li>
                 <li className="flex items-center gap-2 text-theme font-medium">
-                  <CheckCircleIcon className="w-4 h-4 text-cyan-400" /> Protects influencer campaign ROAS
+                  <CheckCircleIcon className="w-4 h-4 text-cyan-400" /> Safeguards ROAS and conversion rates
                 </li>
               </ul>
             </div>
 
-            {/* Shield 3: AEO & AI Search Schema */}
+            {/* Shield 3: Out-of-Stock Ad Salvage (PRO) */}
+            <div className="bg-[var(--card-bg)] border border-emerald-500/30 p-8 rounded-3xl relative overflow-hidden backdrop-blur-sm hover:border-emerald-500/60 transition-all group shadow-lg">
+              <div className="inline-block px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-black uppercase tracking-wider mb-4 border border-emerald-500/30">
+                Pro Sentinel
+              </div>
+              <div className="w-14 h-14 bg-rose-500/10 rounded-2xl flex items-center justify-center mb-6 border border-rose-500/20">
+                <BuildingStorefrontIcon className="w-7 h-7 text-rose-400" />
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-theme">Out-of-Stock Ad Guard</h3>
+              <p className="text-theme-muted mb-6 leading-relaxed text-sm">
+                When paid ad traffic lands on sold-out SKUs (<code className="text-emerald-400 text-xs">inventory &le; 0</code>), automatically displays high-converting in-stock recommendations and back-in-stock capture.
+              </p>
+              <ul className="space-y-2.5 text-xs text-theme-muted">
+                <li className="flex items-center gap-2 text-theme font-medium">
+                  <CheckCircleIcon className="w-4 h-4 text-rose-400" /> Rescues shoppers from dead-end sold out pages
+                </li>
+                <li className="flex items-center gap-2 text-theme font-medium">
+                  <CheckCircleIcon className="w-4 h-4 text-rose-400" /> Recommends similar in-stock catalog items
+                </li>
+                <li className="flex items-center gap-2 text-theme font-medium">
+                  <CheckCircleIcon className="w-4 h-4 text-rose-400" /> Recovers \$2.50–\$5.00 CPC cost per click
+                </li>
+              </ul>
+            </div>
+
+            {/* Shield 4: Redirect Chain & Loop Compressor (PRO) */}
+            <div className="bg-[var(--card-bg)] border border-[var(--card-border)] p-8 rounded-3xl relative overflow-hidden backdrop-blur-sm hover:border-cyan-500/40 transition-all group">
+              <div className="inline-block px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-400 text-[10px] font-black uppercase tracking-wider mb-4 border border-cyan-500/30">
+                Pro Sentinel
+              </div>
+              <div className="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/20">
+                <ArrowRightIcon className="w-7 h-7 text-blue-400" />
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-theme">Loop & Chain Compressor</h3>
+              <p className="text-theme-muted mb-6 leading-relaxed text-sm">
+                Detects multi-hop 301 chains (A &rarr; B &rarr; C) and resolves them into direct 1-step redirects. Automatically breaks circular redirect loops that crash mobile browsers.
+              </p>
+              <ul className="space-y-2.5 text-xs text-theme-muted">
+                <li className="flex items-center gap-2 text-theme font-medium">
+                  <CheckCircleIcon className="w-4 h-4 text-blue-400" /> Eliminates "Too Many Redirects" errors
+                </li>
+                <li className="flex items-center gap-2 text-theme font-medium">
+                  <CheckCircleIcon className="w-4 h-4 text-blue-400" /> Prevents Google SEO crawl-budget penalties
+                </li>
+                <li className="flex items-center gap-2 text-theme font-medium">
+                  <CheckCircleIcon className="w-4 h-4 text-blue-400" /> Compresses slow multi-hop lag down to zero
+                </li>
+              </ul>
+            </div>
+
+            {/* Shield 5: Zombie Script & Media Sentinel (PRO) */}
+            <div className="bg-[var(--card-bg)] border border-[var(--card-border)] p-8 rounded-3xl relative overflow-hidden backdrop-blur-sm hover:border-amber-500/40 transition-all group">
+              <div className="inline-block px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-400 text-[10px] font-black uppercase tracking-wider mb-4 border border-amber-500/30">
+                Pro Sentinel
+              </div>
+              <div className="w-14 h-14 bg-amber-500/10 rounded-2xl flex items-center justify-center mb-6 border border-amber-500/20">
+                <ChartBarIcon className="w-7 h-7 text-amber-400" />
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-theme">Zombie Script & Media Guard</h3>
+              <p className="text-theme-muted mb-6 leading-relaxed text-sm">
+                Audits your storefront theme for broken CDN media, 0-byte images, and orphaned JavaScript left behind by uninstalled apps that cause 500 errors and stall page loads.
+              </p>
+              <ul className="space-y-2.5 text-xs text-theme-muted">
+                <li className="flex items-center gap-2 text-theme font-medium">
+                  <CheckCircleIcon className="w-4 h-4 text-amber-400" /> Catches 404 broken product image thumbnails
+                </li>
+                <li className="flex items-center gap-2 text-theme font-medium">
+                  <CheckCircleIcon className="w-4 h-4 text-amber-400" /> Identifies ghost tracking scripts slowing DOM
+                </li>
+                <li className="flex items-center gap-2 text-theme font-medium">
+                  <CheckCircleIcon className="w-4 h-4 text-amber-400" /> Boosts Google Core Web Vitals speed score
+                </li>
+              </ul>
+            </div>
+
+            {/* Shield 6: AEO & AI Search Schema */}
             <div className="bg-[var(--card-bg)] border border-[var(--card-border)] p-8 rounded-3xl relative overflow-hidden backdrop-blur-sm hover:border-purple-500/40 transition-all group">
               <div className="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6 border border-purple-500/20">
                 <SparklesIcon className="w-7 h-7 text-purple-400" />
               </div>
               <h3 className="text-2xl font-bold mb-3 text-theme">1-Click AI Search Schema</h3>
               <p className="text-theme-muted mb-6 leading-relaxed text-sm">
-                Injects Google AI Overview, Perplexity, and ChatGPT structured JSON-LD (<code className="text-emerald-400 text-xs">Product</code>, <code className="text-emerald-400 text-xs">FAQPage</code>, <code className="text-emerald-400 text-xs">MedicalWebPage</code>) so conversational AI search engines cite your store.
+                Injects Google AI Overview, Perplexity, and ChatGPT structured JSON-LD schemas (<code className="text-emerald-400 text-xs">Product</code>, <code className="text-emerald-400 text-xs">FAQPage</code>, <code className="text-emerald-400 text-xs">BreadcrumbList</code>) so conversational AI engines cite your store.
               </p>
-              <ul className="space-y-2.5 text-xs text-theme-muted mb-6">
+              <ul className="space-y-2.5 text-xs text-theme-muted">
                 <li className="flex items-center gap-2 text-theme font-medium">
                   <CheckCircleIcon className="w-4 h-4 text-purple-400" /> Formatted for Google AI Overviews
                 </li>
                 <li className="flex items-center gap-2 text-theme font-medium">
-                  <CheckCircleIcon className="w-4 h-4 text-purple-400" /> Automatic seasonal FAQ generation
+                  <CheckCircleIcon className="w-4 h-4 text-purple-400" /> Automatic seasonal FAQ schema generation
                 </li>
                 <li className="flex items-center gap-2 text-theme font-medium">
-                  <CheckCircleIcon className="w-4 h-4 text-purple-400" /> Free rich-snippets indexing boost
+                  <CheckCircleIcon className="w-4 h-4 text-purple-400" /> Unlocks rich product snippet rankings
                 </li>
               </ul>
             </div>
@@ -273,73 +344,97 @@ function Home() {
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Pricing Section (2 Tiers) */}
       <section id="pricing" className="py-20 px-6 relative z-10">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-black uppercase tracking-widest mb-3">
+              Transparent Founder Pricing
+            </div>
             <h2 className="text-3xl md:text-5xl font-black text-theme tracking-tight mb-4">
-              Simple, Predictable Founder Pricing.
+              Two Powerful Tiers. Unlimited Return on Investment.
             </h2>
-            <p className="text-theme-muted text-lg max-w-xl mx-auto">
-              Priced at less than the cost of a single recovered order. Lock in early adopter pricing before rates increase.
+            <p className="text-theme-muted text-lg max-w-2xl mx-auto">
+              Rescuing just one single customer from a dead link or out-of-stock bounce pays for months of your subscription.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
-            {/* Monthly Plan */}
-            <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-3xl p-8 flex flex-col justify-between backdrop-blur-sm hover:border-emerald-500/30 transition-all">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+            {/* Tier 1: Starter Shield */}
+            <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-3xl p-8 md:p-10 flex flex-col justify-between backdrop-blur-sm hover:border-emerald-500/30 transition-all">
               <div>
-                <div className="text-xs uppercase font-bold text-theme-muted tracking-wider mb-2">Monthly Founder Tier</div>
-                <div className="flex items-baseline gap-2 mb-4">
-                  <span className="text-4xl md:text-5xl font-black text-theme">$8.95</span>
-                  <span className="text-theme-muted text-sm font-semibold">/ month</span>
-                  <span className="line-through text-sm text-theme-muted ml-2 opacity-60">$19.95</span>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="text-xs uppercase font-bold text-emerald-400 tracking-wider">Starter Shield</div>
+                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-white/10 text-theme">7-Day Free Trial</span>
                 </div>
+                <h3 className="text-2xl font-black text-theme mb-3">Essential 404 Auto-Healer</h3>
                 <p className="text-sm text-theme-muted mb-6">
-                  Perfect for fast-growing Shopify stores wanting zero-leak protection without annual commitments.
+                  Perfect for growing stores wanting automated broken URL healing and paid ad UTM protection without complexity.
                 </p>
-                <ul className="space-y-3 text-xs text-theme-muted mb-8">
-                  <li className="flex items-center gap-2 text-theme"><CheckBadgeIcon className="w-4 h-4 text-emerald-400" /> Daily automated 404 URL crawl & healing</li>
-                  <li className="flex items-center gap-2 text-theme"><CheckBadgeIcon className="w-4 h-4 text-emerald-400" /> Meta & TikTok ad spend link protector</li>
-                  <li className="flex items-center gap-2 text-theme"><CheckBadgeIcon className="w-4 h-4 text-emerald-400" /> Automated AEO & Google AI Overview schema</li>
-                  <li className="flex items-center gap-2 text-theme"><CheckBadgeIcon className="w-4 h-4 text-emerald-400" /> 7-day free trial, cancel in 1 click</li>
+
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-4 mb-6">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-black text-theme">$8.95</span>
+                    <span className="text-theme-muted text-sm font-semibold">/ month</span>
+                    <span className="text-theme-muted text-xs ml-auto">or <strong className="text-emerald-400">$60/year</strong> ($5/mo)</span>
+                  </div>
+                </div>
+
+                <ul className="space-y-3.5 text-xs text-theme-muted mb-8">
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> Autonomous 24/7 404 broken URL crawl & healing</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> Meta, Google & TikTok ad spend UTM link protector</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> Instant 301 redirects to closest active categories</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> 1-Click AEO & Google AI Overview structured data</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> Daily link health check digests</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> 7-Day Free Trial • 1-Click Install</li>
                 </ul>
               </div>
               <a
                 href="https://app.404killer.com"
-                className="w-full py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-theme font-bold text-center transition-all block"
+                className="w-full py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-theme font-bold text-center transition-all block text-sm"
               >
-                Start 7-Day Free Trial
+                Start Free Trial ($8.95/mo or $60/yr)
               </a>
             </div>
 
-            {/* Annual Pass */}
-            <div className="bg-gradient-to-b from-emerald-950/40 via-[var(--card-bg)] to-[var(--card-bg)] border-2 border-emerald-500/50 rounded-3xl p-8 flex flex-col justify-between backdrop-blur-md relative shadow-2xl">
-              <div className="absolute -top-3.5 right-6 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black text-[11px] px-3 py-1 rounded-full uppercase tracking-wider">
-                Best Value • Save 44%
+            {/* Tier 2: Pro Revenue Sentinel */}
+            <div className="bg-gradient-to-b from-emerald-950/40 via-[var(--card-bg)] to-[var(--card-bg)] border-2 border-emerald-500/60 rounded-3xl p-8 md:p-10 flex flex-col justify-between backdrop-blur-md relative shadow-2xl">
+              <div className="absolute -top-3.5 right-8 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black text-[11px] px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">
+                ⭐ Most Popular • Full Assurance
               </div>
               <div>
-                <div className="text-xs uppercase font-bold text-emerald-400 tracking-wider mb-2">Annual Founder Pass</div>
-                <div className="flex items-baseline gap-2 mb-4">
-                  <span className="text-4xl md:text-5xl font-black text-theme">$60.00</span>
-                  <span className="text-theme-muted text-sm font-semibold">/ year ($5.00/mo)</span>
-                  <span className="line-through text-sm text-theme-muted ml-2 opacity-60">$199.00</span>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="text-xs uppercase font-bold text-cyan-400 tracking-wider">Pro Revenue Sentinel</div>
+                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Save $54 on Annual</span>
                 </div>
+                <h3 className="text-2xl font-black text-theme mb-3">Enterprise Storefront Sentinel</h3>
                 <p className="text-sm text-theme-muted mb-6">
-                  Guaranteed 365 days of revenue protection with grandfathered pricing locked in for life.
+                  Complete site reliability, out-of-stock ad salvage, and redirect loop compression for scaling brands.
                 </p>
-                <ul className="space-y-3 text-xs text-theme-muted mb-8">
-                  <li className="flex items-center gap-2 text-theme"><CheckBadgeIcon className="w-4 h-4 text-emerald-400" /> Everything in Monthly, plus:</li>
-                  <li className="flex items-center gap-2 text-theme"><CheckBadgeIcon className="w-4 h-4 text-emerald-400" /> Priority Co-Marketing Partner Matching</li>
-                  <li className="flex items-center gap-2 text-theme"><CheckBadgeIcon className="w-4 h-4 text-emerald-400" /> Corrupted media & 0-byte asset scanner</li>
-                  <li className="flex items-center gap-2 text-theme"><CheckBadgeIcon className="w-4 h-4 text-emerald-400" /> Grandfathered $5/mo rate forever</li>
+
+                <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-4 mb-6">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-black text-theme">$14.95</span>
+                    <span className="text-theme-muted text-sm font-semibold">/ month</span>
+                    <span className="text-theme-muted text-xs ml-auto">or <strong className="text-cyan-400">$125.00/year</strong> ($10.41/mo)</span>
+                  </div>
+                </div>
+
+                <ul className="space-y-3.5 text-xs text-theme-muted mb-8">
+                  <li className="flex items-center gap-2 text-theme font-semibold"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Everything in Starter Shield, PLUS:</strong></li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Out-of-Stock (OOS) Ad Budget Guard:</strong> Intercepts paid clicks to sold out items & shows in-stock alternatives</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Loop & Chain Compressor:</strong> Untangles multi-hop 301 chains & breaks infinite browser crash loops</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Broken Media & 0-Byte Asset Guard:</strong> Scans for missing CDN photos and corrupted thumbnails</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Zombie Script Hunter:</strong> Audits theme for leftover uninstalled app JavaScript causing 500s</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Storewide Deep Crawler:</strong> Hourly audit of menus, footers, blogs, and collections</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Priority Co-Marketing Network:</strong> Monetize dead inventory for 15–20% partner commissions</li>
                 </ul>
               </div>
               <a
                 href="https://app.404killer.com"
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 hover:brightness-110 text-slate-950 font-black text-center transition-all block shadow-lg"
+                className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 hover:brightness-110 text-slate-950 font-black text-center transition-all block shadow-lg text-sm"
               >
-                Get Annual Pass ($60/yr)
+                Start Pro 7-Day Free Trial ($14.95/mo or $125/yr)
               </a>
             </div>
           </div>
