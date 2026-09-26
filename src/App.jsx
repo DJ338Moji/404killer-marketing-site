@@ -88,7 +88,7 @@ function Home() {
 
           {/* Subtitle */}
           <p className="text-lg md:text-2xl text-theme-muted max-w-3xl mx-auto leading-relaxed font-medium">
-            <strong className="text-theme">404 Killer: Revenue Shield</strong> automatically detects and heals 404 broken URLs, protects paid Meta & TikTok ad traffic, and optimizes your store for AI search engines in under 60 seconds.
+            <strong className="text-theme">404 Killer App: Revenue Shield</strong> automatically detects and heals 404 broken URLs, protects paid Meta & TikTok ad traffic, and optimizes your store for AI search engines in under 60 seconds.
           </p>
 
           {/* Price Anchor Callout */}
@@ -552,7 +552,7 @@ function App() {
             <Logo className="h-10" showText={false} theme={theme} />
           </Link>
         </div>
-        <p className="mb-4 text-theme-muted">© 2026 404 Killer: Revenue Shield. Never Lose Another Sale to a Dead Link.</p>
+        <p className="mb-4 text-theme-muted">© 2026 404 Killer App: Revenue Shield. Never Lose Another Sale to a Dead Link.</p>
         <div className="flex justify-center gap-6">
           <Link to="/support" className="text-theme-muted hover:text-theme transition-colors font-bold">Support</Link>
           <Link to="/privacy" className="text-theme-muted hover:text-theme transition-colors">Privacy Policy</Link>
