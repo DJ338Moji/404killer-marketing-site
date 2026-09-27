@@ -4,7 +4,7 @@ import { SparklesIcon, XMarkIcon, PaperAirplaneIcon, ChatBubbleLeftRightIcon } f
 const AiAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { role: 'assistant', content: "Hi! I'm Mojipass AI. Ask me anything about our ecosystem—for Brands, Merchants, Partners and Consumers!" }
+    { role: 'assistant', content: "Hi! I'm 404 Killer AI. Ask me anything about our automated 301 redirects, paid ad spend protection, and Shopify setup!" }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -28,22 +28,37 @@ const AiAssistant = () => {
       const isDev = window.location.hostname === 'localhost';
       const apiUrl = isDev
         ? 'http://localhost:4000/api/v1/ai/ask'
-        : 'https://mojipass-core-api-production.up.railway.app/api/v1/ai/ask';
+        : 'https://app.404killer.com/api/ai/ask';
 
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question: userMessage })
-      });
-
-      const data = await response.json();
-      if (data.success) {
-        setMessages(prev => [...prev, { role: 'assistant', content: data.answer }]);
-      } else {
-        throw new Error(data.error);
+      let answer = null;
+      try {
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: userMessage })
+        });
+        const data = await response.json();
+        if (data?.success && data?.answer) answer = data.answer;
+      } catch (e) {
+        // Fallback to local AI knowledge base
       }
+
+      if (!answer) {
+        const lower = userMessage.toLowerCase();
+        if (lower.includes('price') || lower.includes('cost') || lower.includes('plan') || lower.includes('tier')) {
+          answer = "404 Killer App offers two plans: Starter Shield at $8.95/mo (or $60/yr) and Pro Revenue Sentinel at $14.95/mo (or $125/yr). Both come with a 7-day free trial!";
+        } else if (lower.includes('install') || lower.includes('shopify') || lower.includes('setup') || lower.includes('code')) {
+          answer = "Setup takes under 60 seconds with 1-click Shopify App Store installation. There are zero code changes or liquid theme modifications needed.";
+        } else if (lower.includes('ad') || lower.includes('utm') || lower.includes('meta') || lower.includes('tiktok') || lower.includes('google')) {
+          answer = "Our Paid Ad Spend Sentinel protects your active UTM campaigns. If an advertised item sells out, traffic is automatically rerouted to the closest in-stock alternative so you keep the sale!";
+        } else {
+          answer = "404 Killer App autonomously intercepts dead Shopify URLs in under 50ms and 301-redirects shoppers to matching collections or in-stock replacements. Need help? Contact us anytime at support@404killer.com!";
+        }
+      }
+
+      setMessages(prev => [...prev, { role: 'assistant', content: answer }]);
     } catch (error) {
-      setMessages(prev => [...prev, { role: 'assistant', content: "I'm having a small connection issue. Please try again or contact support@mojipass.com!" }]);
+      setMessages(prev => [...prev, { role: 'assistant', content: "404 Killer App operates 24/7 to protect your storefront revenue. Have questions? Reach out to support@404killer.com!" }]);
     } finally {
       setIsLoading(false);
     }
@@ -76,7 +91,7 @@ const AiAssistant = () => {
                 <SparklesIcon className="w-6 h-6 text-emerald-400" />
               </div>
               <div>
-                <h3 className="text-white font-bold leading-none">Ask Mojipass AI</h3>
+                <h3 className="text-white font-bold leading-none">Ask 404 Killer AI</h3>
                 <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest mt-1 block">Online Assistant</span>
               </div>
             </div>
@@ -125,7 +140,7 @@ const AiAssistant = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                placeholder="Ask about CPAs, Merchants..."
+                placeholder="Ask about 404 redirects, ad spend protection, pricing..."
                 className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-6 pr-14 text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500/50 transition-all text-sm shadow-inner"
               />
               <button
@@ -137,7 +152,7 @@ const AiAssistant = () => {
               </button>
             </div>
             <p className="text-[10px] text-slate-500 text-center mt-4 uppercase tracking-widest font-medium opacity-50">
-              Powered by Mojipass AI & Gemini Pro
+              Powered by 404 Killer AI & Gemini Pro
             </p>
           </div>
         </div>

@@ -31,7 +31,7 @@ export default function Support() {
           </div>
           <h2 className="text-3xl font-black tracking-tight text-theme">Message Sent!</h2>
           <p className="text-theme-muted leading-relaxed">
-            We've received your request. Our support intelligence team will get back to you at <b>support@mojipass.com</b> within 24 hours.
+            We've received your request. Our support intelligence team will get back to you at <b>support@404killer.com</b> within 24 hours.
           </p>
           <button 
             onClick={() => setSubmitted(false)}
@@ -60,7 +60,7 @@ export default function Support() {
             HOW CAN WE <span className="text-emerald-400">HELP</span> YOU?
           </h1>
           <p className="text-xl text-theme-muted max-w-2xl mx-auto leading-relaxed">
-            Whether you're a brand, merchant, or partner—we're here to ensure your experience in the network is frictionless.
+            We're here to help you protect your store revenue, salvage paid ad spend, and eliminate broken links.
           </p>
         </div>
 
@@ -72,8 +72,8 @@ export default function Support() {
                 <EnvelopeIcon className="w-5 h-5 text-blue-400" />
               </div>
               <h3 className="font-bold text-theme mb-1">Direct Email</h3>
-              <p className="text-sm text-theme-muted mb-3 italic">support@mojipass.com</p>
-              <p className="text-xs text-theme-muted leading-relaxed">For fast-track support related to your account or active campaigns.</p>
+              <p className="text-sm text-theme-muted mb-3 italic">support@404killer.com</p>
+              <p className="text-xs text-theme-muted leading-relaxed">For fast-track support related to your account or Shopify store setup.</p>
             </div>
 
             <div className="bg-[var(--card-bg)] border border-[var(--card-border)] p-6 rounded-2xl backdrop-blur-sm">
@@ -114,11 +114,11 @@ export default function Support() {
               <div className="space-y-2">
                 <label className="text-xs font-black text-theme-muted uppercase tracking-widest ml-1">Subject</label>
                 <select className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-theme focus:outline-none focus:border-emerald-500/50 transition-all font-medium appearance-none">
-                  <option className="bg-[#0b0c10]">Merchant Integration Support</option>
-                  <option className="bg-[#0b0c10]">Brand Campaign Inquiry</option>
-                  <option className="bg-[#0b0c10]">Partner/Creator Payouts</option>
-                  <option className="bg-[#0b0c10]">Technical Bug Report</option>
-                  <option className="bg-[#0b0c10]">Other Request</option>
+                  <option className="bg-[#0b0c10]">Shopify App Setup & Auto-Healer</option>
+                  <option className="bg-[#0b0c10]">Paid Ad Spend / UTM Protection</option>
+                  <option className="bg-[#0b0c10]">Billing & Plan Inquiries</option>
+                  <option className="bg-[#0b0c10]">Feature Request & Technical Support</option>
+                  <option className="bg-[#0b0c10]">Other Inquiry</option>
                 </select>
               </div>
 

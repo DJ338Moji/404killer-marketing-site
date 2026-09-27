@@ -19,13 +19,13 @@ export default function Resources() {
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-widest mb-6"
           >
             <GraduationCap className="w-3 h-3" />
-            <span>Mojipass® Academy</span>
+            <span>404 Killer App Academy</span>
           </motion.div>
           <h1 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
-            Resources & <span className="text-emerald-400">Tutorials</span>
+            Resources & <span className="text-emerald-400">Guides</span>
           </h1>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Everything you need to master the reward-driven marketplace. From quick start guides for influencers to deep-dives for global brands.
+            Everything you need to master storefront traffic retention, protect paid ad spend, and automate Shopify 301 redirects.
           </p>
         </div>
 
@@ -45,15 +45,13 @@ export default function Resources() {
               <BookOpen className="w-8 h-8 text-blue-400" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-white mb-3">API Documentation</h3>
-              <p className="text-slate-400 mb-6 font-medium">Build custom integrations with the Mojipass® headless engine.</p>
+              <h3 className="text-2xl font-bold text-white mb-3">Documentation & Guides</h3>
+              <p className="text-slate-400 mb-6 font-medium">Technical guides for Shopify 301 redirects, UTM preservation, and AEO schema.</p>
               <a 
-                href="https://docs.mojipass.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+                href="https://app.404killer.com" 
                 className="inline-block text-emerald-400 font-bold hover:text-emerald-300 transition-colors uppercase text-sm tracking-widest px-6 py-3 border border-emerald-500/20 rounded-xl hover:bg-emerald-500/10"
               >
-                Read Docs
+                Open Dashboard
               </a>
             </div>
           </motion.div>
@@ -68,15 +66,13 @@ export default function Resources() {
               <MessageSquare className="w-8 h-8 text-emerald-400" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-white mb-3">Community Hub</h3>
-              <p className="text-slate-400 mb-6 font-medium">Join 500+ partners and brands sharing success blueprints.</p>
+              <h3 className="text-2xl font-bold text-white mb-3">Merchant Support</h3>
+              <p className="text-slate-400 mb-6 font-medium">Get rapid assistance from our Shopify redirection engineers.</p>
               <a 
-                href="https://discord.gg/mojipass" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+                href="/support" 
                 className="inline-block text-emerald-400 font-bold hover:text-emerald-300 transition-colors uppercase text-sm tracking-widest px-6 py-3 border border-emerald-500/20 rounded-xl hover:bg-emerald-500/10"
               >
-                Join Discord
+                Contact Support
               </a>
             </div>
           </motion.div>

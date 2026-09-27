@@ -19,7 +19,7 @@ import Resources from './pages/Resources';
 import RoiCalculator from './components/RoiCalculator';
 
 const AiAssistant = lazy(() => import('./components/AiAssistant'));
-const MerchantVideoWalkthrough = lazy(() => import('./components/MerchantVideoWalkthrough'));
+import MerchantVideoWalkthrough from './components/MerchantVideoWalkthrough';
 
 function usePostMountAnalytics() {
   React.useEffect(() => {
@@ -464,7 +464,7 @@ function WalkthroughPage() {
     <div className="max-w-5xl mx-auto px-4 py-12">
       <div className="mb-6 flex items-center justify-between">
         <Link to="/" className="text-sm font-semibold text-emerald-400 hover:underline flex items-center gap-2">
-          &larr; Back to Mojipass Home
+          &larr; Back to 404 Killer App Home
         </Link>
       </div>
       <div className="rounded-3xl overflow-hidden border border-[var(--card-border)] bg-[var(--card-bg)] shadow-2xl p-6">

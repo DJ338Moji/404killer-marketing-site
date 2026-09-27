@@ -30,7 +30,7 @@ export default function RoiCalculator() {
             How Much Revenue Is Leaking From Your Store?
           </h2>
           <p className="text-theme-muted text-base leading-relaxed">
-            See how recovering just a handful of broken links, deleted SKUs, and expired promo codes pays for Mojipass hundreds of times over.
+            See how recovering just a handful of broken links, deleted SKUs, and expired promo codes pays for 404 Killer App hundreds of times over.
           </p>
         </div>
 
@@ -133,7 +133,7 @@ export default function RoiCalculator() {
             </div>
 
             <a
-              href="https://app.mojipass.com"
+              href="https://app.404killer.com"
               className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black text-sm hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-lg"
             >
               Start 7-Day Free Trial <ArrowRight className="w-4 h-4" />
