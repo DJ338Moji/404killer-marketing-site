@@ -27,8 +27,9 @@ const CHAPTERS = [
     title: 'The Silent Ad Spend Burn',
     subtitle: 'How 404s Bleed Paid ROAS & Conversions',
     startTime: 0,
-    endTime: 22,
-    duration: 22,
+    endTime: 20.0,
+    duration: 20.0,
+    audioSrc: '/audio/chapter_1.mp3',
     badge: 'The Problem',
     color: 'from-red-500 to-rose-600',
     accentColor: '#f43f5e',
@@ -38,9 +39,10 @@ const CHAPTERS = [
     id: 2,
     title: 'Autonomous 50ms Auto-Healer',
     subtitle: 'Instant 301 Smart Category Matching',
-    startTime: 22,
-    endTime: 46,
-    duration: 24,
+    startTime: 20.0,
+    endTime: 42.6,
+    duration: 22.6,
+    audioSrc: '/audio/chapter_2.mp3',
     badge: 'Real-Time Interception',
     color: 'from-emerald-500 to-teal-600',
     accentColor: '#10b981',
@@ -50,9 +52,10 @@ const CHAPTERS = [
     id: 3,
     title: 'Paid Ad & Out-of-Stock Guard',
     subtitle: 'UTM Protection & Zero Campaign Downtime',
-    startTime: 46,
-    endTime: 70,
-    duration: 24,
+    startTime: 42.6,
+    endTime: 61.9,
+    duration: 19.3,
+    audioSrc: '/audio/chapter_3.mp3',
     badge: 'Ad ROAS Defense',
     color: 'from-blue-500 to-cyan-600',
     accentColor: '#06b6d4',
@@ -62,9 +65,10 @@ const CHAPTERS = [
     id: 4,
     title: 'Live ROI Dashboard & AI Schema',
     subtitle: 'Rescued Revenue & Google AI Indexing',
-    startTime: 70,
-    endTime: 95,
-    duration: 25,
+    startTime: 61.9,
+    endTime: 81.4,
+    duration: 19.5,
+    audioSrc: '/audio/chapter_4.mp3',
     badge: 'Measurable Value',
     color: 'from-purple-500 to-emerald-500',
     accentColor: '#a855f7',
@@ -81,87 +85,74 @@ export default function MerchantVideoWalkthrough({ onClose }) {
   const [speed, setSpeed] = useState(1);
   const [showCaptions, setShowCaptions] = useState(true);
   const containerRef = useRef(null);
+  const audioRef = useRef(null);
 
-  const totalDuration = 95; // 1:35 total tour
+  const totalDuration = 81.4; // Exact duration of OpenAI Onyx audio track
   const currentChapter = CHAPTERS[activeChapterIndex] || CHAPTERS[0];
 
-  // Timer simulation loop
+  // Play / Pause synchronization
   useEffect(() => {
-    let interval = null;
+    if (!audioRef.current) return;
     if (isPlaying) {
-      interval = setInterval(() => {
-        setCurrentTime((prev) => {
-          const next = prev + 0.5 * speed;
-          if (next >= totalDuration) {
-            setIsPlaying(false);
-            return 0;
-          }
-          return next;
-        });
-      }, 500);
+      audioRef.current.play().catch(() => {
+        // Autoplay may be restricted until user interacts with the page
+      });
+    } else {
+      audioRef.current.pause();
     }
-    return () => clearInterval(interval);
-  }, [isPlaying, speed]);
+  }, [isPlaying]);
 
-  // Sync active chapter with current time
+  // Mute synchronization
   useEffect(() => {
-    const idx = CHAPTERS.findIndex(
-      (c) => currentTime >= c.startTime && currentTime < c.endTime
-    );
+    if (audioRef.current) {
+      audioRef.current.muted = isMuted;
+    }
+  }, [isMuted]);
+
+  // Playback rate synchronization
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.playbackRate = speed;
+    }
+  }, [speed]);
+
+  const handleTimeUpdate = () => {
+    if (!audioRef.current) return;
+    const time = audioRef.current.currentTime;
+    setCurrentTime(time);
+    const idx = CHAPTERS.findIndex(c => time >= c.startTime && time < c.endTime);
     if (idx !== -1 && idx !== activeChapterIndex) {
       setActiveChapterIndex(idx);
     }
-  }, [currentTime, activeChapterIndex]);
+  };
 
-  // Improved Speech Synthesis Voiceover with natural voice priority
-  useEffect(() => {
-    if (!isPlaying || isMuted) {
-      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-      return;
-    }
-
-    if ('speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(currentChapter.script);
-      utterance.rate = 1.0 * speed;
-      utterance.pitch = 1.0;
-
-      // Select highest-quality human/natural voice available on user's OS
-      const loadVoices = () => {
-        const voices = window.speechSynthesis.getVoices();
-        if (voices && voices.length > 0) {
-          const preferredVoice = voices.find(v => 
-            v.name.includes('Natural') || 
-            v.name.includes('Google US English') ||
-            v.name.includes('Samantha') || 
-            v.name.includes('Ava') || 
-            v.name.includes('Daniel') || 
-            v.name.includes('Premium') ||
-            (v.lang === 'en-US' && !v.name.includes('Bad'))
-          );
-          if (preferredVoice) utterance.voice = preferredVoice;
-          window.speechSynthesis.speak(utterance);
-        } else {
-          window.speechSynthesis.speak(utterance);
-        }
-      };
-
-      if (window.speechSynthesis.getVoices().length > 0) {
-        loadVoices();
-      } else {
-        window.speechSynthesis.onvoiceschanged = loadVoices;
-      }
-    }
-
-    return () => {
-      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-    };
-  }, [activeChapterIndex, isPlaying, isMuted, speed]);
+  const handleAudioEnded = () => {
+    setIsPlaying(false);
+    setCurrentTime(0);
+    setActiveChapterIndex(0);
+    if (audioRef.current) audioRef.current.currentTime = 0;
+  };
 
   const handleSeek = (time) => {
     setCurrentTime(time);
+    if (audioRef.current) {
+      audioRef.current.currentTime = time;
+    }
     const idx = CHAPTERS.findIndex(c => time >= c.startTime && time < c.endTime);
     if (idx !== -1) setActiveChapterIndex(idx);
+  };
+
+  const togglePlay = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+        setIsPlaying(false);
+      } else {
+        audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
+      }
+    } else {
+      setIsPlaying(!isPlaying);
+    }
   };
 
   const formatTime = (secs) => {
@@ -177,6 +168,15 @@ export default function MerchantVideoWalkthrough({ onClose }) {
         isFullscreen ? 'fixed inset-0 z-50 max-w-none rounded-none' : ''
       }`}
     >
+      {/* OpenAI High-Definition Audio Narration (Voice: Onyx) */}
+      <audio
+        ref={audioRef}
+        src="/audio/walkthrough_full.mp3"
+        preload="auto"
+        onTimeUpdate={handleTimeUpdate}
+        onEnded={handleAudioEnded}
+      />
+
       {/* Top Window Bar */}
       <div className="bg-[#0b1329] px-6 py-3 border-b border-white/10 flex items-center justify-between select-none">
         <div className="flex items-center gap-2">
@@ -389,7 +389,7 @@ export default function MerchantVideoWalkthrough({ onClose }) {
           <div className="flex items-center justify-between text-xs text-slate-300">
             <div className="flex items-center gap-3">
               <button
-                onClick={() => setIsPlaying(!isPlaying)}
+                onClick={togglePlay}
                 className="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center hover:brightness-110 shadow-lg shadow-emerald-500/20"
                 title={isPlaying ? 'Pause' : 'Play'}
               >
