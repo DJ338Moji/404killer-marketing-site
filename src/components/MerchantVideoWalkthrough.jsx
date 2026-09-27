@@ -94,9 +94,12 @@ export default function MerchantVideoWalkthrough({ onClose }) {
   useEffect(() => {
     if (!audioRef.current) return;
     if (isPlaying) {
-      audioRef.current.play().catch(() => {
-        // Autoplay may be restricted until user interacts with the page
-      });
+      const p = audioRef.current.play();
+      if (p && typeof p.catch === 'function') {
+        p.catch(() => {
+          // Autoplay may be restricted until user interacts with the page
+        });
+      }
     } else {
       audioRef.current.pause();
     }
@@ -148,7 +151,12 @@ export default function MerchantVideoWalkthrough({ onClose }) {
         audioRef.current.pause();
         setIsPlaying(false);
       } else {
-        audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
+        const p = audioRef.current.play();
+        if (p && typeof p.then === 'function') {
+          p.then(() => setIsPlaying(true)).catch(() => {});
+        } else {
+          setIsPlaying(true);
+        }
       }
     } else {
       setIsPlaying(!isPlaying);

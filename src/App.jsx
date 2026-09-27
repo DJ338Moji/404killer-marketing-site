@@ -16,6 +16,8 @@ import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Support from './pages/Support';
 import Resources from './pages/Resources';
+import Audit from './pages/Audit';
+import Agencies from './pages/Agencies';
 import RoiCalculator from './components/RoiCalculator';
 
 const AiAssistant = lazy(() => import('./components/AiAssistant'));
@@ -106,12 +108,18 @@ function Home() {
             >
               Start Free 7-Day Trial <ArrowRightIcon className="w-5 h-5 stroke-[2.5]" />
             </a>
+            <Link
+              to="/audit"
+              className="w-full sm:w-auto px-7 py-4 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:border-emerald-400"
+            >
+              ⚡ Run Free Store Audit
+            </Link>
             <button
               type="button"
               onClick={() => setShowMerchantVideo(true)}
-              className="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-theme rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2 text-emerald-400 cursor-pointer shadow-lg hover:border-emerald-500/30"
+              className="w-full sm:w-auto px-7 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-theme rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2 text-emerald-400 cursor-pointer shadow-lg hover:border-emerald-500/30"
             >
-              <span>▶</span> Watch 90s Walkthrough
+              <span>▶</span> Watch Video
             </button>
           </div>
 
@@ -499,9 +507,13 @@ function App() {
             <Logo className="h-8 md:h-12 lg:h-14" textColor="text-theme" theme={theme} />
           </Link>
           <div className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-theme-muted shrink-0">
+            <Link to="/audit" className="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1 transition-colors">
+              ⚡ Free Store Audit
+            </Link>
             <a href="#features" className="hover:text-theme transition-colors">Features</a>
             <a href="#roi-calculator" className="hover:text-theme transition-colors">ROI Calculator</a>
             <a href="#pricing" className="hover:text-theme transition-colors">Pricing</a>
+            <Link to="/agencies" className="hover:text-theme transition-colors font-medium">Agencies (25% Cut)</Link>
             <Link to="/resources" className="hover:text-theme transition-colors">Guides & Docs</Link>
             <button
               type="button"
@@ -534,6 +546,8 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/audit" element={<Audit />} />
+          <Route path="/agencies" element={<Agencies />} />
           <Route path="/walkthrough" element={<WalkthroughPage />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
@@ -553,7 +567,9 @@ function App() {
           </Link>
         </div>
         <p className="mb-4 text-theme-muted">© 2026 404 Killer App: Revenue Shield. Never Lose Another Sale to a Dead Link.</p>
-        <div className="flex justify-center gap-6">
+        <div className="flex justify-center gap-6 flex-wrap">
+          <Link to="/audit" className="text-emerald-400 hover:text-emerald-300 transition-colors font-bold">⚡ Free Store Audit</Link>
+          <Link to="/agencies" className="text-theme-muted hover:text-theme transition-colors font-semibold">Agency Partners (25%)</Link>
           <Link to="/support" className="text-theme-muted hover:text-theme transition-colors font-bold">Support</Link>
           <Link to="/privacy" className="text-theme-muted hover:text-theme transition-colors">Privacy Policy</Link>
           <Link to="/terms" className="text-theme-muted hover:text-theme transition-colors">Terms of Service</Link>
