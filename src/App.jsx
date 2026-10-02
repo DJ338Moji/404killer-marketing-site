@@ -502,19 +502,26 @@ function App() {
         className="fixed w-full z-50 bg-[var(--color-bg)]/80 backdrop-blur-md border-b border-[var(--card-border)]"
         style={{ WebkitTransform: 'translateZ(0)', transform: 'translateZ(0)', willChange: 'transform' }}
       >
-        <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
-          <Link to="/" onClick={() => { if (window.location.pathname === '/') window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-            <Logo className="h-8 md:h-12 lg:h-14" textColor="text-theme" theme={theme} />
+        <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between gap-4">
+          <Link 
+            to="/" 
+            className="shrink-0 flex items-center mr-4 lg:mr-8"
+            onClick={() => { if (window.location.pathname === '/') window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+          >
+            <Logo className="h-8 md:h-12" textColor="text-theme" theme={theme} />
           </Link>
-          <div className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-theme-muted shrink-0">
-            <Link to="/audit" className="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1 transition-colors">
-              ⚡ Free Store Audit
+          <div className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8 text-xs lg:text-sm font-medium text-theme-muted shrink-0">
+            <Link 
+              to="/audit" 
+              className="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1.5 transition-colors whitespace-nowrap px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20"
+            >
+              <span>⚡</span> Free Store Audit
             </Link>
-            <a href="#features" className="hover:text-theme transition-colors">Features</a>
-            <a href="#roi-calculator" className="hover:text-theme transition-colors">ROI Calculator</a>
-            <a href="#pricing" className="hover:text-theme transition-colors">Pricing</a>
-            <Link to="/agencies" className="hover:text-theme transition-colors font-medium">Agencies (25% Cut)</Link>
-            <Link to="/resources" className="hover:text-theme transition-colors">Guides & Docs</Link>
+            <a href="#features" className="hover:text-theme transition-colors whitespace-nowrap">Features</a>
+            <a href="#roi-calculator" className="hover:text-theme transition-colors whitespace-nowrap hidden lg:inline-block">ROI Calculator</a>
+            <a href="#pricing" className="hover:text-theme transition-colors whitespace-nowrap">Pricing</a>
+            <Link to="/agencies" className="hover:text-theme transition-colors font-medium whitespace-nowrap hidden xl:inline-block">Agencies (25% Cut)</Link>
+            <Link to="/resources" className="hover:text-theme transition-colors whitespace-nowrap hidden 2xl:inline-block">Guides & Docs</Link>
             <button
               type="button"
               onClick={() => {
@@ -525,15 +532,15 @@ function App() {
                   window.dispatchEvent(event);
                 }
               }}
-              className="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5 font-bold text-xs uppercase tracking-wider cursor-pointer"
+              className="text-emerald-400 hover:text-emerald-300 transition-colors hidden xl:flex items-center gap-1.5 font-bold text-xs uppercase tracking-wider cursor-pointer whitespace-nowrap"
             >
               <span>▶</span> Watch Video
             </button>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0 ml-auto md:ml-0">
             <a
               href="https://app.404killer.com"
-              className="px-5 md:px-7 py-2 md:py-2.5 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:brightness-110 text-slate-950 rounded-full text-xs md:text-sm font-black transition-all shadow-[0_0_25px_rgba(16,185,129,0.35)] cursor-pointer"
+              className="px-5 md:px-7 py-2 md:py-2.5 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:brightness-110 text-slate-950 rounded-full text-xs md:text-sm font-black transition-all shadow-[0_0_25px_rgba(16,185,129,0.35)] cursor-pointer whitespace-nowrap"
             >
               Start Free Trial &rarr;
             </a>
