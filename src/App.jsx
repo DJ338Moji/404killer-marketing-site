@@ -611,7 +611,10 @@ function App() {
           <div className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8 text-xs lg:text-sm font-medium text-theme-muted shrink-0">
             <Link 
               to="/audit" 
-              className="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1.5 transition-colors whitespace-nowrap px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20"
+              onClick={() => {
+                window.dispatchEvent(new CustomEvent('reset-audit-scan'));
+              }}
+              className="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1.5 transition-colors whitespace-nowrap px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 cursor-pointer"
             >
               <span>⚡</span> Free Store Audit
             </Link>
