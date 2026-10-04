@@ -142,6 +142,11 @@ function Home() {
             </a>
             <Link
               to="/audit"
+              state={{ resetTime: Date.now() }}
+              onClick={() => {
+                window.dispatchEvent(new CustomEvent('reset-audit-scan'));
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
               className="w-full sm:w-auto px-7 py-4 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:border-emerald-400"
             >
               ⚡ Run Free Store Audit
@@ -679,7 +684,17 @@ function App() {
         </div>
         <p className="mb-4 text-theme-muted">© 2026 404 Killer App: Revenue Shield. Never Lose Another Sale to a Dead Link.</p>
         <div className="flex justify-center gap-6 flex-wrap">
-          <Link to="/audit" className="text-emerald-400 hover:text-emerald-300 transition-colors font-bold">⚡ Free Store Audit</Link>
+          <Link 
+            to="/audit" 
+            state={{ resetTime: Date.now() }}
+            onClick={() => {
+              window.dispatchEvent(new CustomEvent('reset-audit-scan'));
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="text-emerald-400 hover:text-emerald-300 transition-colors font-bold"
+          >
+            ⚡ Free Store Audit
+          </Link>
           <Link to="/agencies" className="text-theme-muted hover:text-theme transition-colors font-semibold">Agency Partners (25%)</Link>
           <Link to="/support" className="text-theme-muted hover:text-theme transition-colors font-bold">Support</Link>
           <Link to="/privacy" className="text-theme-muted hover:text-theme transition-colors">Privacy Policy</Link>
