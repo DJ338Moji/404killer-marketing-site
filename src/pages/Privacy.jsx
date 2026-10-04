@@ -22,9 +22,9 @@ export default function Privacy({ theme }) {
 
           <section className="space-y-10">
             <div>
-              <h2 className="text-2xl font-bold text-emerald-400 mb-4">1. Our Commitment to Store Data Integrity</h2>
+              <h2 className="text-2xl font-bold text-emerald-400 mb-4">1. Our Commitment to Store Data Integrity & Non-Disclosure</h2>
               <p className="leading-relaxed">404 Killer App: Revenue Shield is operated by <strong>DevRevIQ, LLC</strong>. We build autonomous storefront protection and URL healing technology for Shopify merchants. We operate on the principle of minimal data collection: we access only the operational data necessary to detect broken URLs, salvage paid ad traffic, and configure automated 301 redirects.</p>
-              <p className="leading-relaxed mt-4 text-theme-muted">We do not sell, rent, or monetize your store data, customer records, or catalog information to third parties.</p>
+              <p className="leading-relaxed mt-4 text-emerald-400 font-semibold">Our Non-Disclosure Guarantee: We will NEVER share, sell, rent, monetize, or publicly disclose specific customer data, merchant brand identities, individual transaction figures, or proprietary store catalog information to any third party. Any performance telemetry used for benchmarking or anecdotal case references is strictly aggregated, anonymized, and de-identified.</p>
             </div>
 
             <div>

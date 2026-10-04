@@ -116,6 +116,48 @@ export default function Agencies() {
         </div>
       </div>
 
+      {/* New: Hosted Agency Portal & Immutable Reports Showcase */}
+      <div className="bg-gradient-to-r from-emerald-950/40 via-slate-900/90 to-cyan-950/40 border border-emerald-500/30 rounded-3xl p-6 sm:p-10 mb-16 shadow-2xl">
+        <div className="max-w-3xl mx-auto text-center mb-8">
+          <span className="text-xs font-bold uppercase tracking-wider text-cyan-400">The Agency Portal Advantage ($149/mo or $1,599/yr)</span>
+          <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight mt-1">
+            Audit-Grade Proof of Performance. Zero Added Cost.
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-300 mt-2">
+            Give your agency an unfair advantage. Prove your continuous ROI with tamper-proof client audit reports and 1-click CSV data exports.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-slate-950/60 border border-slate-800 rounded-2xl p-5">
+            <div className="text-emerald-400 font-black text-sm mb-1 flex items-center gap-1.5">
+              <span>🔒</span> Immutable Client Reports
+            </div>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Generate permanent, locked audit reports with unique shareable links. Reports cannot be deleted or backdated, giving your clients indisputable proof that your retainer is saving them money.
+            </p>
+          </div>
+
+          <div className="bg-slate-950/60 border border-slate-800 rounded-2xl p-5">
+            <div className="text-cyan-400 font-black text-sm mb-1 flex items-center gap-1.5">
+              <span>📊</span> 1-Click CSV Data Exporter
+            </div>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Export every 404 intercept, source URL, target redirect, and dollar-impact calculation into clean CSV spreadsheets in one click to attach directly to monthly invoices.
+            </p>
+          </div>
+
+          <div className="bg-slate-950/60 border border-slate-800 rounded-2xl p-5">
+            <div className="text-amber-400 font-black text-sm mb-1 flex items-center gap-1.5">
+              <span>⚡</span> Klaviyo & Ad Pre-Flight QA
+            </div>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Automatically QA email campaign preview blasts and continuously monitor Meta, Google, and TikTok ad destination URLs so your clients never burn budget on dead links.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Interactive Agency Calculator */}
       <div className="bg-gradient-to-br from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-10 mb-16 shadow-2xl">
         <div className="max-w-2xl mx-auto text-center mb-8">

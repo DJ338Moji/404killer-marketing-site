@@ -352,24 +352,24 @@ function Home() {
         </div>
       </section>
 
-      {/* Pricing Section (2 Tiers) */}
+      {/* Pricing Section (3 Tiers) */}
       <section id="pricing" className="py-20 px-6 relative z-10">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-black uppercase tracking-widest mb-3">
               Transparent Founder Pricing
             </div>
             <h2 className="text-3xl md:text-5xl font-black text-theme tracking-tight mb-4">
-              Two Powerful Tiers. Unlimited Return on Investment.
+              Three Powerful Tiers. Total Revenue Protection.
             </h2>
             <p className="text-theme-muted text-lg max-w-2xl mx-auto">
               Rescuing just one single customer from a dead link or out-of-stock bounce pays for months of your subscription.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
             {/* Tier 1: Starter Shield */}
-            <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-3xl p-8 md:p-10 flex flex-col justify-between backdrop-blur-sm hover:border-emerald-500/30 transition-all">
+            <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-3xl p-8 flex flex-col justify-between backdrop-blur-sm hover:border-emerald-500/30 transition-all">
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-xs uppercase font-bold text-emerald-400 tracking-wider">Starter Shield</div>
@@ -384,8 +384,8 @@ function Home() {
                   <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-black text-theme">$8.95</span>
                     <span className="text-theme-muted text-sm font-semibold">/ month</span>
-                    <span className="text-theme-muted text-xs ml-auto">or <strong className="text-emerald-400">$60/year</strong> ($5/mo)</span>
                   </div>
+                  <div className="text-theme-muted text-xs mt-1">or <strong className="text-emerald-400">$60/year</strong> ($5/mo)</div>
                 </div>
 
                 <ul className="space-y-3.5 text-xs text-theme-muted mb-8">
@@ -401,21 +401,21 @@ function Home() {
                 href="https://app.404killer.com"
                 className="w-full py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-theme font-bold text-center transition-all block text-sm"
               >
-                Start Free Trial ($8.95/mo or $60/yr)
+                Start Free Trial ($8.95/mo)
               </a>
             </div>
 
             {/* Tier 2: Pro Revenue Sentinel */}
-            <div className="bg-gradient-to-b from-emerald-950/40 via-[var(--card-bg)] to-[var(--card-bg)] border-2 border-emerald-500/60 rounded-3xl p-8 md:p-10 flex flex-col justify-between backdrop-blur-md relative shadow-2xl">
-              <div className="absolute -top-3.5 right-8 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black text-[11px] px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">
-                ⭐ Most Popular • Full Assurance
+            <div className="bg-gradient-to-b from-emerald-950/40 via-[var(--card-bg)] to-[var(--card-bg)] border-2 border-emerald-500/60 rounded-3xl p-8 flex flex-col justify-between backdrop-blur-md relative shadow-2xl">
+              <div className="absolute -top-3.5 right-6 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black text-[11px] px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">
+                ⭐ Most Popular
               </div>
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-xs uppercase font-bold text-cyan-400 tracking-wider">Pro Revenue Sentinel</div>
                   <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Save $54 on Annual</span>
                 </div>
-                <h3 className="text-2xl font-black text-theme mb-3">Enterprise Storefront Sentinel</h3>
+                <h3 className="text-2xl font-black text-theme mb-3">Storefront Sentinel</h3>
                 <p className="text-sm text-theme-muted mb-6">
                   Complete site reliability, out-of-stock ad salvage, and redirect loop compression for scaling brands.
                 </p>
@@ -424,27 +424,81 @@ function Home() {
                   <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-black text-theme">$14.95</span>
                     <span className="text-theme-muted text-sm font-semibold">/ month</span>
-                    <span className="text-theme-muted text-xs ml-auto">or <strong className="text-cyan-400">$125.00/year</strong> ($10.41/mo)</span>
                   </div>
+                  <div className="text-theme-muted text-xs mt-1">or <strong className="text-cyan-400">$125.00/year</strong> ($10.41/mo)</div>
                 </div>
 
                 <ul className="space-y-3.5 text-xs text-theme-muted mb-8">
-                  <li className="flex items-center gap-2 text-theme font-semibold"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Everything in Starter Shield, PLUS:</strong></li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Out-of-Stock (OOS) Ad Budget Guard:</strong> Intercepts paid clicks to sold out items & shows in-stock alternatives</li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Loop & Chain Compressor:</strong> Untangles multi-hop 301 chains & breaks infinite browser crash loops</li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Broken Media & 0-Byte Asset Guard:</strong> Scans for missing CDN photos and corrupted thumbnails</li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Zombie Script Hunter:</strong> Audits theme for leftover uninstalled app JavaScript causing 500s</li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Storewide Deep Crawler:</strong> Hourly audit of menus, footers, blogs, and collections</li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Priority Co-Marketing Network:</strong> Monetize dead inventory for 15–20% partner commissions</li>
+                  <li className="flex items-center gap-2 text-theme font-semibold"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Everything in Starter, PLUS:</strong></li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Out-of-Stock (OOS) Ad Guard:</strong> Reroute sold-out clicks to active items</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Loop & Chain Compressor:</strong> Fix infinite 301 loops</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Broken Media Guard:</strong> Scans for missing CDN photos</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Zombie Script Hunter:</strong> Cleans up leftover uninstalled app code</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Storewide Deep Crawler:</strong> Hourly audit of menus & footers</li>
                 </ul>
               </div>
               <a
                 href="https://app.404killer.com"
                 className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 hover:brightness-110 text-slate-950 font-black text-center transition-all block shadow-lg text-sm"
               >
-                Start Pro 7-Day Free Trial ($14.95/mo or $125/yr)
+                Start Pro Trial ($14.95/mo)
               </a>
             </div>
+
+            {/* Tier 3: Agency & Brand Sentinel Portal */}
+            <div className="bg-gradient-to-b from-cyan-950/40 via-[var(--card-bg)] to-[var(--card-bg)] border-2 border-cyan-500/60 rounded-3xl p-8 flex flex-col justify-between backdrop-blur-md relative shadow-2xl">
+              <div className="absolute -top-3.5 right-6 bg-gradient-to-r from-cyan-500 to-blue-500 text-slate-950 font-black text-[11px] px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">
+                🛡️ Agency & Multi-Brand
+              </div>
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="text-xs uppercase font-bold text-cyan-400 tracking-wider">Sentinel Portal</div>
+                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">10% Off Annual</span>
+                </div>
+                <h3 className="text-2xl font-black text-theme mb-3">Email & Ad Link Portal</h3>
+                <p className="text-sm text-theme-muted mb-6">
+                  Built for Agencies & High-Volume Brands. Pre-flight email QA, ad sentinels, immutable client ROI reports & CSV exports.
+                </p>
+
+                <div className="bg-cyan-500/10 border border-cyan-500/30 rounded-2xl p-4 mb-6">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-black text-theme">$149.00</span>
+                    <span className="text-theme-muted text-sm font-semibold">/ month</span>
+                  </div>
+                  <div className="text-theme-muted text-xs mt-1">or <strong className="text-cyan-400">$1,599/year</strong> ($133.25/mo)</div>
+                </div>
+
+                <ul className="space-y-3.5 text-xs text-theme-muted mb-8">
+                  <li className="flex items-center gap-2 text-theme font-semibold"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Everything in Pro Sentinel, PLUS:</strong></li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Email Pre-Flight QA:</strong> Klaviyo / ESP test send auditor</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Ad Landing Page Sentinel:</strong> Polling of Meta, Google & TikTok URLs</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Multi-Store Agency Portal:</strong> Single dashboard for all clients</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Immutable Client Reports:</strong> Permanent, tamper-proof proof-of-work</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>1-Click CSV Exporter:</strong> Client-side raw telemetry downloads</li>
+                </ul>
+              </div>
+              <a
+                href="https://app.404killer.com"
+                className="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 hover:brightness-110 text-slate-950 font-black text-center transition-all block shadow-lg text-sm"
+              >
+                Start Portal Trial ($149/mo)
+              </a>
+            </div>
+          </div>
+
+          {/* Legal Acceptance Notice */}
+          <div className="mt-12 text-center max-w-3xl mx-auto px-4">
+            <p className="text-xs text-theme-muted leading-relaxed">
+              By activating 404 Killer App, you agree to our{' '}
+              <Link to="/terms" className="text-emerald-400 underline font-semibold hover:text-emerald-300">
+                Master Customer Agreement & Terms of Service
+              </Link>{' '}
+              and our{' '}
+              <Link to="/privacy" className="text-emerald-400 underline font-semibold hover:text-emerald-300">
+                Strict Privacy Guarantee
+              </Link>
+              . Specific customer and merchant data is strictly confidential and <strong>never shared or sold</strong>.
+            </p>
           </div>
         </div>
       </section>
