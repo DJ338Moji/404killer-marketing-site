@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
   ShieldAlert,
   ShieldCheck,
@@ -30,12 +30,21 @@ export default function Audit() {
   const [scanStage, setScanStage] = useState(0);
   const [scanResult, setScanResult] = useState(null);
 
+  const location = useLocation();
+
   // Listen for reset events from navbar or other links
   useEffect(() => {
     const handleResetEvent = () => handleReset();
     window.addEventListener('reset-audit-scan', handleResetEvent);
     return () => window.removeEventListener('reset-audit-scan', handleResetEvent);
   }, []);
+
+  // When location changes or reset flag is passed in state, reset view
+  useEffect(() => {
+    if (location.state?.reset || location.state?.resetTime) {
+      handleReset();
+    }
+  }, [location.key, location.state]);
 
   const scanSteps = [
     'Connecting to domain and verifying SSL/DNS routes...',

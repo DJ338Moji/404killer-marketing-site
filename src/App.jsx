@@ -584,6 +584,7 @@ function WalkthroughPage() {
 function App() {
   usePostMountAnalytics();
   usePartnerReferralTracking();
+  const location = useLocation();
   const [isLoginOpen, setIsLoginOpen] = React.useState(false);
   const [theme, setTheme] = React.useState(document.documentElement.getAttribute('data-theme') || '');
 
@@ -611,8 +612,10 @@ function App() {
           <div className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8 text-xs lg:text-sm font-medium text-theme-muted shrink-0">
             <Link 
               to="/audit" 
+              state={{ resetTime: Date.now() }}
               onClick={() => {
                 window.dispatchEvent(new CustomEvent('reset-audit-scan'));
+                window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               className="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1.5 transition-colors whitespace-nowrap px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 cursor-pointer"
             >
@@ -654,7 +657,7 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/audit" element={<Audit />} />
+          <Route path="/audit" element={<Audit key={location.key} />} />
           <Route path="/agencies" element={<Agencies />} />
           <Route path="/walkthrough" element={<WalkthroughPage />} />
           <Route path="/privacy" element={<Privacy />} />
