@@ -117,12 +117,12 @@ function Home() {
             <span className="block bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 py-1">
               DEAD 404 LINKS
             </span>
-            <span className="block text-theme">ON SHOPIFY.</span>
+            <span className="block text-theme">ACROSS ANY PLATFORM.</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-lg md:text-2xl text-theme-muted max-w-3xl mx-auto leading-relaxed font-medium">
-            <strong className="text-theme">404 Killer App: Revenue Shield</strong> automatically detects and heals 404 broken URLs, protects paid Meta & TikTok ad traffic, and optimizes your store for AI search engines in under 60 seconds.
+            <strong className="text-theme">404 Killer: The Autonomous Revenue Shield</strong> detects and heals 404 broken URLs, monitors SSL & domain handshakes, protects paid Meta & Google ad spend, and optimizes your site for AI search engines—on Shopify, WooCommerce, Headless, or any web stack.
           </p>
 
           {/* Price Anchor Callout */}
@@ -162,7 +162,7 @@ function Home() {
 
           <div className="pt-4 flex items-center justify-center gap-3 text-theme-muted text-xs font-bold uppercase tracking-wider">
             <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-            1-Click Shopify App Install • Zero Code Changes Required • Cancel Anytime
+            Shopify Native App • Universal Edge CDN (&lt;15ms) • 1-Line Universal GTM Tag
           </div>
         </div>
       </section>
@@ -200,7 +200,7 @@ function Home() {
               Six Automated Shields. Zero Leaked Revenue.
             </h2>
             <p className="text-theme-muted text-lg max-w-2xl mx-auto">
-              Shopify stores lose thousands every month to broken URLs, out-of-stock ad bounces, and redirect loops. 404 Killer handles it all autonomously.
+              E-commerce stores and digital platforms lose thousands every month to broken URLs, expired SSL certificates, and out-of-stock ad bounces. 404 Killer handles it all autonomously.
             </p>
           </div>
 
@@ -427,11 +427,12 @@ function Home() {
 
                 <ul className="space-y-3.5 text-xs text-theme-muted mb-8">
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> Autonomous 24/7 404 broken URL crawl & healing</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>SSL Certificate & Domain Sentinel:</strong> 24/7 TLS check & expiry alerts</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> Meta, Google & TikTok ad spend UTM link protector</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> Instant 301 redirects to closest active categories</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> 1-Click AEO & Google AI Overview structured data</li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> Daily link health check digests</li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> 7-Day Free Trial • 1-Click Install</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Universal Compatibility:</strong> Shopify App OR 1-Line GTM Tag</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> 7-Day Free Trial • 30-Day Money-Back Guarantee</li>
                 </ul>
               </div>
               <a

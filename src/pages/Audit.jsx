@@ -398,10 +398,10 @@ export default function Audit() {
           <span>Autonomous Diagnostics Engine</span>
         </div>
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight">
-          Free Website & Storefront <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Health Audit</span>
+          Universal Website & Storefront <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Health Audit</span>
         </h1>
         <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Instantly evaluate any website, e-commerce storefront, or web application for broken links, wasted ad traffic, and tech stack reliability in under 15 seconds.
+          Instantly evaluate any e-commerce storefront, B2B website, or web application for broken links, SSL certificate integrity, wasted ad traffic, and tech stack reliability across all platforms in under 15 seconds.
         </p>
       </div>
 
@@ -416,7 +416,7 @@ export default function Audit() {
               </label>
               <input
                 type="text"
-                placeholder="e.g. www.mojipass.com or yourstore.com"
+                placeholder="e.g. www.epicgardening.com, expatech.com, or yourstore.com"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 className="w-full bg-slate-950/70 border border-slate-700/80 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-all placeholder:text-slate-500"
@@ -448,11 +448,13 @@ export default function Audit() {
                 onChange={(e) => setPlatform(e.target.value)}
                 className="w-full bg-slate-950/70 border border-slate-700/80 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-emerald-400 transition-all"
               >
-                <option value="shopify">Shopify / Shopify Plus (E-Commerce)</option>
-                <option value="woocommerce">WooCommerce / WordPress (E-Commerce)</option>
-                <option value="bigcommerce">BigCommerce (E-Commerce)</option>
-                <option value="saas">SaaS / Web App / Digital Platform (Non-Catalog)</option>
-                <option value="custom">Custom React / Next.js / Headless</option>
+                <option value="shopify">🛍️ Shopify / Shopify Plus</option>
+                <option value="woocommerce">🛒 WooCommerce / WordPress</option>
+                <option value="magento">🏢 Magento / Adobe Commerce</option>
+                <option value="bigcommerce">🏬 BigCommerce</option>
+                <option value="headless">⚡ Custom Headless / Composable (Next.js, Hydrogen, Nuxt)</option>
+                <option value="webflow">🌐 Webflow / Squarespace / Wix</option>
+                <option value="saas">🚀 SaaS / B2B Web App & Digital Platform</option>
               </select>
             </div>
 
@@ -869,13 +871,13 @@ export default function Audit() {
                 <div className="p-5 rounded-2xl bg-cyan-950/30 border border-cyan-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="text-xs text-slate-300">
                     <strong className="text-white block text-sm">Recommended Solution for {scanResult.domain}:</strong>
-                    Install the <strong>Universal 404 Killer JavaScript Tag</strong> via Google Tag Manager to protect marketing landing pages, partner redirect links, and unhandled application routes.
+                    Deploy the <strong>Universal 404 Killer Tag or Edge CDN Shield</strong> to protect marketing funnels, affiliate redirect links, SSL health, and unhandled routes.
                   </div>
                   <a
                     href="https://app.404killer.com"
                     className="py-3 px-6 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider hover:brightness-110 transition-all shrink-0 shadow-lg"
                   >
-                    Get Universal Script ($8.95/mo)
+                    Activate Revenue Shield
                   </a>
                 </div>
               </div>
@@ -907,13 +909,17 @@ export default function Audit() {
                     Specific URLs & Autonomous 50ms Auto-Healer Locked
                   </h4>
                   <p className="text-xs text-slate-300 max-w-md mt-1 mb-5">
-                    To protect store privacy and stop ad spend leakage, exact URLs and automatic 301 category auto-healers unlock immediately upon activating 404 Killer App.
+                    To protect store privacy and stop ad spend leakage, exact URLs and automatic 301 category auto-healers unlock immediately upon activating 404 Killer.
                   </p>
                   <a
                     href="https://app.404killer.com"
                     className="w-full max-w-md py-3.5 px-6 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider hover:brightness-110 transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2"
                   >
-                    <span>Auto-Heal All {scanResult.brokenCount} Leaks on Shopify</span>
+                    <span>
+                      {scanResult.detectedPlatform?.toLowerCase().includes('shopify')
+                        ? `Auto-Heal All ${scanResult.brokenCount} Leaks on Shopify`
+                        : `Auto-Heal All ${scanResult.brokenCount} Leaks on ${scanResult.domain}`}
+                    </span>
                     <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
