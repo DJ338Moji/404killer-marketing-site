@@ -45,8 +45,8 @@ const AiAssistant = () => {
 
       if (!answer) {
         const lower = userMessage.toLowerCase();
-        if (lower.includes('price') || lower.includes('cost') || lower.includes('plan') || lower.includes('tier')) {
-          answer = "404 Killer App offers two plans: Starter Shield at $8.95/mo (or $60/yr) and Pro Revenue Sentinel at $14.95/mo (or $125/yr). Both come with a 7-day free trial!";
+        if (lower.includes('price') || lower.includes('cost') || lower.includes('plan') || lower.includes('tier') || lower.includes('agency')) {
+          answer = "404 Killer App offers three tiers: Starter Shield at $8.95/mo (or $60/yr), Pro Revenue Sentinel at $14.95/mo (or $125/yr), and Agency & Multi-Brand Sentinel Portal at $149/mo (or $1,599/yr). Starter and Pro include a 7-day free trial, while Agency Sentinel includes instant provisioning backed by our 30-day money-back guarantee!";
         } else if (lower.includes('install') || lower.includes('shopify') || lower.includes('setup') || lower.includes('code')) {
           answer = "Setup takes under 60 seconds with 1-click Shopify App Store installation. There are zero code changes or liquid theme modifications needed.";
         } else if (lower.includes('ad') || lower.includes('utm') || lower.includes('meta') || lower.includes('tiktok') || lower.includes('google')) {

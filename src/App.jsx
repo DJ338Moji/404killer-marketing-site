@@ -497,9 +497,12 @@ function Home() {
                     <span className="text-4xl font-black text-theme">$149.00</span>
                     <span className="text-theme-muted text-sm font-semibold">/ month</span>
                   </div>
-                  <div className="text-theme-muted text-xs mt-1">or <strong className="text-cyan-400">$1,599/year</strong> ($133.25/mo)</div>
-                  <div className="mt-2.5 pt-2 border-t border-cyan-500/20 text-[11px] text-cyan-300 font-bold">
-                    Includes up to 5 brands/stores • +$25/mo per add-on brand
+                  <div className="text-theme-muted text-xs mt-1">or <strong className="text-cyan-400">$1,599/year</strong> ($133.25/mo) • Instant Activation</div>
+                  <div className="mt-2.5 pt-2 border-t border-cyan-500/20 flex flex-col gap-1">
+                    <span className="text-[11px] text-cyan-300 font-bold">Includes up to 5 brands/stores • +$25/mo per add-on brand</span>
+                    <span className="text-[11px] text-emerald-400 font-bold flex items-center gap-1.5">
+                      <span>🛡️</span> 30-Day Risk-Free Money-Back Guarantee
+                    </span>
                   </div>
                 </div>
 
@@ -512,12 +515,17 @@ function Home() {
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>1-Click CSV Exporter:</strong> Client-side raw telemetry downloads</li>
                 </ul>
               </div>
-              <a
-                href={getAppUrl()}
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 hover:brightness-110 text-slate-950 font-black text-center transition-all block shadow-lg text-sm"
-              >
-                Start Portal Trial ($149/mo)
-              </a>
+              <div>
+                <a
+                  href={getAppUrl()}
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 hover:brightness-110 text-slate-950 font-black text-center transition-all block shadow-lg text-sm"
+                >
+                  Activate Agency Sentinel ($149/mo)
+                </a>
+                <div className="text-center text-[11px] text-theme-muted mt-2 font-medium">
+                  Instant Provisioning • 30-Day Risk-Free Guarantee
+                </div>
+              </div>
             </div>
           </div>
 
