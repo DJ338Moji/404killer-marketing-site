@@ -15,7 +15,10 @@ import {
   RefreshCw,
   Mail,
   Globe,
-  Server
+  Server,
+  Users,
+  Target,
+  PieChart
 } from 'lucide-react';
 
 export default function Audit() {
@@ -477,6 +480,192 @@ export default function Audit() {
               </div>
             </div>
           </div>
+
+          {/* Target Demographic & Audience Intelligence Card */}
+          {scanResult.demographics && (
+            <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+                <div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-[11px] font-black uppercase tracking-wider text-cyan-400 mb-2">
+                    <Target className="w-3.5 h-3.5" />
+                    <span>Audience & Demographic Telemetry</span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                    Target Demographic & Revenue Leakage Profile
+                  </h3>
+                  <p className="text-xs text-slate-400 mt-1 max-w-2xl leading-relaxed">
+                    Customer cohorts, income brackets, and acquisition channels synthesized non-invasively from public tracking pixel tags, catalog price elasticity, and copywriting signals.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2">
+                  {scanResult.demographics.priceTier && (
+                    <div className="px-3 py-1.5 rounded-xl bg-slate-950/80 border border-slate-800 text-[11px] font-medium text-slate-300">
+                      <span className="text-slate-500 mr-1.5">Estimated Basket:</span>
+                      <strong className="text-emerald-400 font-semibold">{scanResult.demographics.priceTier}</strong>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Detected Pixels & Channels Bar */}
+              {scanResult.demographics.detectedPixels && scanResult.demographics.detectedPixels.length > 0 && (
+                <div className="mt-4 pt-4 border-b border-slate-800/60 pb-4 flex flex-wrap items-center gap-2">
+                  <span className="text-[11px] uppercase tracking-wider font-bold text-slate-400 flex items-center gap-1 mr-1">
+                    <Users className="w-3.5 h-3.5 text-cyan-400" />
+                    Detected Ad Channels & Tags:
+                  </span>
+                  {scanResult.demographics.detectedPixels.map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className="px-2.5 py-1 rounded-lg bg-slate-950/70 border border-slate-700/60 text-[11px] font-mono text-cyan-300"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              {/* Primary Demographic Hero Box */}
+              {scanResult.demographics.primary && (
+                <div className="mt-6 p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-slate-950/90 via-slate-950/60 to-slate-900/60 border border-emerald-500/30 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 px-4 py-1.5 bg-emerald-500/20 border-b border-l border-emerald-500/30 rounded-bl-xl text-[11px] font-black uppercase tracking-wider text-emerald-300">
+                    Primary Target • {scanResult.demographics.primary.percentage || '60%+'}
+                  </div>
+
+                  <div className="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-1">
+                    Dominant Buyer Cohort
+                  </div>
+                  <h4 className="text-lg sm:text-xl font-black text-white mb-4">
+                    {scanResult.demographics.primary.cohort}
+                  </h4>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+                    <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800/80">
+                      <div className="text-[10px] uppercase font-bold text-slate-400">Age Bracket</div>
+                      <div className="text-sm font-black text-white mt-0.5">{scanResult.demographics.primary.age}</div>
+                    </div>
+                    <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800/80">
+                      <div className="text-[10px] uppercase font-bold text-slate-400">Gender Distribution</div>
+                      <div className="text-sm font-black text-white mt-0.5">{scanResult.demographics.primary.gender}</div>
+                    </div>
+                    <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800/80">
+                      <div className="text-[10px] uppercase font-bold text-slate-400">Household Income / GMV</div>
+                      <div className="text-sm font-black text-emerald-400 mt-0.5">{scanResult.demographics.primary.income}</div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2 text-xs">
+                    <div className="text-slate-300 flex items-start gap-2">
+                      <span className="font-bold text-slate-400 shrink-0 w-28">Core Motivations:</span>
+                      <span>{scanResult.demographics.primary.motivations}</span>
+                    </div>
+                    <div className="text-slate-300 flex items-start gap-2">
+                      <span className="font-bold text-slate-400 shrink-0 w-28">Ad Channels:</span>
+                      <span className="text-cyan-300 font-medium">{scanResult.demographics.primary.channels}</span>
+                    </div>
+                  </div>
+
+                  {scanResult.demographics.primary.leakageRisk && (
+                    <div className="mt-4 p-3 rounded-xl bg-amber-950/30 border border-amber-500/30 text-xs text-amber-200 flex items-start gap-2">
+                      <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                      <div>
+                        <strong className="text-amber-300 mr-1.5">Primary Cohort 404 Revenue Leak:</strong>
+                        {scanResult.demographics.primary.leakageRisk}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Secondary and Tertiary Demographic 2-Col Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                {/* Secondary Target */}
+                {scanResult.demographics.secondary && (
+                  <div className="p-5 rounded-2xl bg-slate-950/70 border border-slate-800 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-[10px] font-black uppercase tracking-wider text-cyan-400">
+                          Secondary Target
+                        </span>
+                        <span className="text-xs font-mono font-bold text-slate-400">
+                          {scanResult.demographics.secondary.percentage}
+                        </span>
+                      </div>
+                      <h5 className="text-base font-bold text-white mb-2">
+                        {scanResult.demographics.secondary.cohort}
+                      </h5>
+                      <div className="flex flex-wrap gap-2 text-[11px] text-slate-300 mb-3">
+                        <span className="px-2 py-0.5 bg-slate-900 rounded-md border border-slate-800">
+                          Age: <strong>{scanResult.demographics.secondary.age}</strong>
+                        </span>
+                        <span className="px-2 py-0.5 bg-slate-900 rounded-md border border-slate-800">
+                          {scanResult.demographics.secondary.gender}
+                        </span>
+                        <span className="px-2 py-0.5 bg-slate-900 rounded-md border border-slate-800 text-emerald-400">
+                          {scanResult.demographics.secondary.income}
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-300 mb-2 leading-relaxed">
+                        <strong className="text-slate-400">Motivations:</strong> {scanResult.demographics.secondary.motivations}
+                      </p>
+                      <p className="text-xs text-slate-300 leading-relaxed">
+                        <strong className="text-slate-400">Channels:</strong> {scanResult.demographics.secondary.channels}
+                      </p>
+                    </div>
+
+                    {scanResult.demographics.secondary.leakageRisk && (
+                      <div className="mt-3 pt-3 border-t border-slate-800 text-[11px] text-slate-400">
+                        <strong className="text-slate-300">Cohort Vulnerability:</strong> {scanResult.demographics.secondary.leakageRisk}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Tertiary Target */}
+                {scanResult.demographics.tertiary && (
+                  <div className="p-5 rounded-2xl bg-slate-950/70 border border-slate-800 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-[10px] font-black uppercase tracking-wider text-purple-400">
+                          Tertiary / Emerging Cohort
+                        </span>
+                        <span className="text-xs font-mono font-bold text-slate-400">
+                          {scanResult.demographics.tertiary.percentage}
+                        </span>
+                      </div>
+                      <h5 className="text-base font-bold text-white mb-2">
+                        {scanResult.demographics.tertiary.cohort}
+                      </h5>
+                      <div className="flex flex-wrap gap-2 text-[11px] text-slate-300 mb-3">
+                        <span className="px-2 py-0.5 bg-slate-900 rounded-md border border-slate-800">
+                          Age: <strong>{scanResult.demographics.tertiary.age}</strong>
+                        </span>
+                        <span className="px-2 py-0.5 bg-slate-900 rounded-md border border-slate-800">
+                          {scanResult.demographics.tertiary.gender}
+                        </span>
+                        <span className="px-2 py-0.5 bg-slate-900 rounded-md border border-slate-800 text-emerald-400">
+                          {scanResult.demographics.tertiary.income}
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-300 mb-2 leading-relaxed">
+                        <strong className="text-slate-400">Motivations:</strong> {scanResult.demographics.tertiary.motivations}
+                      </p>
+                      <p className="text-xs text-slate-300 leading-relaxed">
+                        <strong className="text-slate-400">Channels:</strong> {scanResult.demographics.tertiary.channels}
+                      </p>
+                    </div>
+
+                    {scanResult.demographics.tertiary.leakageRisk && (
+                      <div className="mt-3 pt-3 border-t border-slate-800 text-[11px] text-slate-400">
+                        <strong className="text-slate-300">Cohort Vulnerability:</strong> {scanResult.demographics.tertiary.leakageRisk}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
 
           {/* Inspected Endpoints & Gated Table */}
           <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 backdrop-blur-xl relative overflow-hidden shadow-2xl">
