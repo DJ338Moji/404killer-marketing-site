@@ -119,12 +119,12 @@ export default function Agencies() {
       {/* New: Hosted Agency Portal & Immutable Reports Showcase */}
       <div className="bg-gradient-to-r from-emerald-950/40 via-slate-900/90 to-cyan-950/40 border border-emerald-500/30 rounded-3xl p-6 sm:p-10 mb-16 shadow-2xl">
         <div className="max-w-3xl mx-auto text-center mb-8">
-          <span className="text-xs font-bold uppercase tracking-wider text-cyan-400">The Agency Portal Advantage ($149/mo or $1,599/yr)</span>
+          <span className="text-xs font-bold uppercase tracking-wider text-cyan-400">The Agency Portal Advantage ($149/mo • Includes 5 Brands)</span>
           <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight mt-1">
             Audit-Grade Proof of Performance. Zero Added Cost.
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 mt-2">
-            Give your agency an unfair advantage. Prove your continuous ROI with tamper-proof client audit reports and 1-click CSV data exports.
+            Give your agency an unfair advantage. Includes up to 5 client brands (+$25/mo per add-on brand). Prove continuous ROI with tamper-proof client audit reports and 1-click CSV data exports.
           </p>
         </div>
 

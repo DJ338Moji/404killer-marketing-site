@@ -32,6 +32,38 @@ function usePostMountAnalytics() {
   }, []);
 }
 
+export function getAppUrl(path = '') {
+  let partner = '';
+  if (typeof window !== 'undefined') {
+    try {
+      partner = localStorage.getItem('404killer_partner_ref') || '';
+      if (!partner) {
+        const match = document.cookie.match(/404killer_partner_ref=([^;]+)/);
+        if (match) partner = decodeURIComponent(match[1]);
+      }
+    } catch (e) {}
+  }
+  const base = 'https://app.404killer.com' + path;
+  if (partner) {
+    const sep = base.includes('?') ? '&' : '?';
+    return `${base}${sep}ref=${encodeURIComponent(partner)}`;
+  }
+  return base;
+}
+
+function usePartnerReferralTracking() {
+  React.useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const ref = params.get('ref') || params.get('partner') || params.get('via');
+      if (ref) {
+        localStorage.setItem('404killer_partner_ref', ref.trim());
+        document.cookie = `404killer_partner_ref=${encodeURIComponent(ref.trim())};path=/;max-age=5184000;SameSite=Lax`;
+      }
+    } catch (e) {}
+  }, []);
+}
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   React.useEffect(() => {
@@ -103,7 +135,7 @@ function Home() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <a
-              href="https://app.404killer.com"
+              href={getAppUrl()}
               className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:brightness-110 text-slate-950 rounded-full font-black text-lg shadow-[0_0_40px_-10px_rgba(16,185,129,0.5)] transition-all transform hover:scale-105 flex items-center justify-center gap-2 cursor-pointer"
             >
               Start Free 7-Day Trial <ArrowRightIcon className="w-5 h-5 stroke-[2.5]" />
@@ -342,7 +374,7 @@ function Home() {
               <div className="text-xs uppercase tracking-widest text-emerald-400 font-bold mb-2">Priority Beta Access</div>
               <div className="text-sm font-semibold text-theme-muted mb-4">Included free for all 404 Killer subscribers</div>
               <a
-                href="https://app.404killer.com"
+                href={getAppUrl()}
                 className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl text-sm transition-all inline-flex items-center gap-2"
               >
                 Lock In Founder Access <ArrowRightIcon className="w-4 h-4" />
@@ -398,7 +430,7 @@ function Home() {
                 </ul>
               </div>
               <a
-                href="https://app.404killer.com"
+                href={getAppUrl()}
                 className="w-full py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-theme font-bold text-center transition-all block text-sm"
               >
                 Start Free Trial ($8.95/mo)
@@ -438,7 +470,7 @@ function Home() {
                 </ul>
               </div>
               <a
-                href="https://app.404killer.com"
+                href={getAppUrl()}
                 className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 hover:brightness-110 text-slate-950 font-black text-center transition-all block shadow-lg text-sm"
               >
                 Start Pro Trial ($14.95/mo)
@@ -466,10 +498,13 @@ function Home() {
                     <span className="text-theme-muted text-sm font-semibold">/ month</span>
                   </div>
                   <div className="text-theme-muted text-xs mt-1">or <strong className="text-cyan-400">$1,599/year</strong> ($133.25/mo)</div>
+                  <div className="mt-2.5 pt-2 border-t border-cyan-500/20 text-[11px] text-cyan-300 font-bold">
+                    Includes up to 5 brands/stores • +$25/mo per add-on brand
+                  </div>
                 </div>
 
                 <ul className="space-y-3.5 text-xs text-theme-muted mb-8">
-                  <li className="flex items-center gap-2 text-theme font-semibold"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Everything in Pro Sentinel, PLUS:</strong></li>
+                  <li className="flex items-center gap-2 text-theme font-semibold"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Up to 5 Brands Included</strong> (+$25/mo per extra brand)</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Email Pre-Flight QA:</strong> Klaviyo / ESP test send auditor</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Ad Landing Page Sentinel:</strong> Polling of Meta, Google & TikTok URLs</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Multi-Store Agency Portal:</strong> Single dashboard for all clients</li>
@@ -478,7 +513,7 @@ function Home() {
                 </ul>
               </div>
               <a
-                href="https://app.404killer.com"
+                href={getAppUrl()}
                 className="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 hover:brightness-110 text-slate-950 font-black text-center transition-all block shadow-lg text-sm"
               >
                 Start Portal Trial ($149/mo)
@@ -540,6 +575,7 @@ function WalkthroughPage() {
 
 function App() {
   usePostMountAnalytics();
+  usePartnerReferralTracking();
   const [isLoginOpen, setIsLoginOpen] = React.useState(false);
   const [theme, setTheme] = React.useState(document.documentElement.getAttribute('data-theme') || '');
 
@@ -593,7 +629,7 @@ function App() {
           </div>
           <div className="flex items-center gap-3 shrink-0 ml-auto md:ml-0">
             <a
-              href="https://app.404killer.com"
+              href={getAppUrl()}
               className="px-5 md:px-7 py-2 md:py-2.5 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:brightness-110 text-slate-950 rounded-full text-xs md:text-sm font-black transition-all shadow-[0_0_25px_rgba(16,185,129,0.35)] cursor-pointer whitespace-nowrap"
             >
               Start Free Trial &rarr;
