@@ -27,20 +27,20 @@ const CHAPTERS = [
     title: 'The Silent Ad Spend Burn',
     subtitle: 'How 404s Bleed Paid ROAS & Conversions',
     startTime: 0,
-    endTime: 20.0,
-    duration: 20.0,
+    endTime: 20.1,
+    duration: 20.1,
     audioSrc: '/audio/chapter_1.mp3',
     badge: 'The Problem',
     color: 'from-red-500 to-rose-600',
     accentColor: '#f43f5e',
-    script: "Shopify merchants lose thousands of dollars every month when paid Meta, Google, and TikTok ads land on sold-out products, deleted collections, or 404 dead ends. When high-intent shoppers hit a broken page, ninety-four percent bounce instantly. Your paid ad budget is burned, and the customer is lost to a competitor."
+    script: "Online merchants lose thousands of dollars every month when paid Meta, Google, and TikTok ads land on sold-out products, deleted collections, or 404 dead ends. When high-intent shoppers hit a broken page, ninety-four percent bounce instantly. Your paid ad budget is burned, and the customer is lost to a competitor."
   },
   {
     id: 2,
     title: 'Autonomous 50ms Auto-Healer',
     subtitle: 'Instant 301 Smart Category Matching',
-    startTime: 20.0,
-    endTime: 42.6,
+    startTime: 20.1,
+    endTime: 42.7,
     duration: 22.6,
     audioSrc: '/audio/chapter_2.mp3',
     badge: 'Real-Time Interception',
@@ -52,8 +52,8 @@ const CHAPTERS = [
     id: 3,
     title: 'Paid Ad & Out-of-Stock Guard',
     subtitle: 'UTM Protection & Zero Campaign Downtime',
-    startTime: 42.6,
-    endTime: 61.9,
+    startTime: 42.7,
+    endTime: 62.0,
     duration: 19.3,
     audioSrc: '/audio/chapter_3.mp3',
     badge: 'Ad ROAS Defense',
@@ -65,14 +65,14 @@ const CHAPTERS = [
     id: 4,
     title: 'Live ROI Dashboard & AI Schema',
     subtitle: 'Rescued Revenue & Google AI Indexing',
-    startTime: 61.9,
+    startTime: 62.0,
     endTime: 81.4,
-    duration: 19.5,
+    duration: 19.4,
     audioSrc: '/audio/chapter_4.mp3',
     badge: 'Measurable Value',
     color: 'from-purple-500 to-emerald-500',
     accentColor: '#a855f7',
-    script: "Track every rescued dollar, salvaged ad click, and flattened redirect loop right inside your Shopify admin dashboard. Plus, with one-click Answer Engine Optimization schema, your store is indexed directly by Google AI Overviews, Perplexity, and ChatGPT. That is 404 Killer App: complete revenue protection."
+    script: "Track every rescued dollar, salvaged ad click, and flattened redirect loop right inside your store admin dashboard. Plus, with one-click Answer Engine Optimization schema, your store is indexed directly by Google AI Overviews, Perplexity, and ChatGPT. That is 404 Killer App: complete revenue protection."
   }
 ];
 

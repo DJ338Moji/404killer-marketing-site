@@ -65,10 +65,20 @@ function usePartnerReferralTracking() {
 }
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   React.useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '');
+      const timer = setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 150);
+      return () => clearTimeout(timer);
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 }
 
@@ -94,8 +104,13 @@ function Home() {
     }
 
     const handleOpenEvent = () => setShowMerchantVideo(true);
+    const handleCloseEvent = () => setShowMerchantVideo(false);
     window.addEventListener('open-walkthrough', handleOpenEvent);
-    return () => window.removeEventListener('open-walkthrough', handleOpenEvent);
+    window.addEventListener('close-walkthrough', handleCloseEvent);
+    return () => {
+      window.removeEventListener('open-walkthrough', handleOpenEvent);
+      window.removeEventListener('close-walkthrough', handleCloseEvent);
+    };
   }, []);
 
   return (
@@ -627,9 +642,48 @@ function App() {
             >
               <span>⚡</span> Free Store Audit
             </Link>
-            <a href="#features" className="hover:text-theme transition-colors whitespace-nowrap">Features</a>
-            <a href="#roi-calculator" className="hover:text-theme transition-colors whitespace-nowrap hidden lg:inline-block">ROI Calculator</a>
-            <a href="#pricing" className="hover:text-theme transition-colors whitespace-nowrap">Pricing</a>
+            <a 
+              href="/#features" 
+              onClick={(e) => {
+                window.dispatchEvent(new CustomEvent('close-walkthrough'));
+                if (location.pathname === '/') {
+                  e.preventDefault();
+                  document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+                  window.history.pushState(null, '', '/#features');
+                }
+              }}
+              className="hover:text-theme transition-colors whitespace-nowrap"
+            >
+              Features
+            </a>
+            <a 
+              href="/#roi-calculator" 
+              onClick={(e) => {
+                window.dispatchEvent(new CustomEvent('close-walkthrough'));
+                if (location.pathname === '/') {
+                  e.preventDefault();
+                  document.getElementById('roi-calculator')?.scrollIntoView({ behavior: 'smooth' });
+                  window.history.pushState(null, '', '/#roi-calculator');
+                }
+              }}
+              className="hover:text-theme transition-colors whitespace-nowrap hidden lg:inline-block"
+            >
+              ROI Calculator
+            </a>
+            <a 
+              href="/#pricing" 
+              onClick={(e) => {
+                window.dispatchEvent(new CustomEvent('close-walkthrough'));
+                if (location.pathname === '/') {
+                  e.preventDefault();
+                  document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+                  window.history.pushState(null, '', '/#pricing');
+                }
+              }}
+              className="hover:text-theme transition-colors whitespace-nowrap"
+            >
+              Pricing
+            </a>
             <Link to="/agencies" className="hover:text-theme transition-colors font-medium whitespace-nowrap hidden xl:inline-block">Agencies (25% Cut)</Link>
             <Link to="/resources" className="hover:text-theme transition-colors whitespace-nowrap hidden 2xl:inline-block">Guides & Docs</Link>
             <button
