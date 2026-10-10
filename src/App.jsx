@@ -51,6 +51,21 @@ export function getAppUrl(path = '') {
   return base;
 }
 
+export const STRIPE_PAYMENT_LINKS = {
+  starter: {
+    monthly: 'https://buy.stripe.com/14A6oI8O2102g2jbEl9oc00',
+    annual: 'https://buy.stripe.com/00w7sM3tIfUWbM3dMt9oc01'
+  },
+  pro: {
+    monthly: 'https://buy.stripe.com/4gM14o1lAbEG2btdMt9oc02',
+    annual: 'https://buy.stripe.com/8x2fZifcq246aHZbEl9oc03'
+  },
+  agency: {
+    monthly: 'https://buy.stripe.com/7sY9AUe8m9wy17p0ZH9oc04',
+    annual: 'https://buy.stripe.com/fZuaEYd4ibEG7vNeQx9oc05'
+  }
+};
+
 function usePartnerReferralTracking() {
   React.useEffect(() => {
     try {
@@ -96,6 +111,7 @@ const openPortal = (subdomain) => {
 
 function Home() {
   const [showMerchantVideo, setShowMerchantVideo] = React.useState(false);
+  const [billingCycle, setBillingCycle] = React.useState('monthly');
 
   React.useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -150,7 +166,7 @@ function Home() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <a
-              href={getAppUrl()}
+              href="#pricing"
               className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:brightness-110 text-slate-950 rounded-full font-black text-lg shadow-[0_0_40px_-10px_rgba(16,185,129,0.5)] transition-all transform hover:scale-105 flex items-center justify-center gap-2 cursor-pointer"
             >
               Start Free 7-Day Trial <ArrowRightIcon className="w-5 h-5 stroke-[2.5]" />
@@ -394,7 +410,7 @@ function Home() {
               <div className="text-xs uppercase tracking-widest text-emerald-400 font-bold mb-2">Priority Beta Access</div>
               <div className="text-sm font-semibold text-theme-muted mb-4">Included free for all 404 Killer subscribers</div>
               <a
-                href={getAppUrl()}
+                href="#pricing"
                 className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl text-sm transition-all inline-flex items-center gap-2"
               >
                 Lock In Founder Access <ArrowRightIcon className="w-4 h-4" />
@@ -417,6 +433,37 @@ function Home() {
             <p className="text-theme-muted text-lg max-w-2xl mx-auto">
               Rescuing just one single customer from a dead link or out-of-stock bounce pays for months of your subscription.
             </p>
+
+            {/* Monthly / Annual Billing Toggle */}
+            <div className="mt-8 inline-flex items-center p-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
+              <button
+                type="button"
+                onClick={() => setBillingCycle('monthly')}
+                className={`px-6 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                  billingCycle === 'monthly'
+                    ? 'bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black shadow-md'
+                    : 'text-theme-muted hover:text-theme'
+                }`}
+              >
+                Monthly Billing
+              </button>
+              <button
+                type="button"
+                onClick={() => setBillingCycle('annual')}
+                className={`px-6 py-2 rounded-full text-xs font-bold transition-all cursor-pointer flex items-center gap-2 ${
+                  billingCycle === 'annual'
+                    ? 'bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black shadow-md'
+                    : 'text-theme-muted hover:text-theme'
+                }`}
+              >
+                <span>Annual Billing</span>
+                <span className={`text-[10px] font-black uppercase px-2 py-0.5 rounded-full ${
+                  billingCycle === 'annual' ? 'bg-slate-950 text-emerald-300' : 'bg-emerald-500/20 text-emerald-400'
+                }`}>
+                  Save up to 44%
+                </span>
+              </button>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
@@ -434,10 +481,20 @@ function Home() {
 
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-4 mb-6">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-black text-theme">$8.95</span>
-                    <span className="text-theme-muted text-sm font-semibold">/ month</span>
+                    <span className="text-4xl font-black text-theme">
+                      {billingCycle === 'annual' ? '$60.00' : '$8.95'}
+                    </span>
+                    <span className="text-theme-muted text-sm font-semibold">
+                      {billingCycle === 'annual' ? '/ year' : '/ month'}
+                    </span>
                   </div>
-                  <div className="text-theme-muted text-xs mt-1">or <strong className="text-emerald-400">$60/year</strong> ($5/mo)</div>
+                  <div className="text-theme-muted text-xs mt-1">
+                    {billingCycle === 'annual' ? (
+                      <>Billed annually (<strong className="text-emerald-400">$5.00/mo</strong>) • Save $47/yr</>
+                    ) : (
+                      <>or <strong className="text-emerald-400">$60/year</strong> ($5/mo) • Cancel anytime</>
+                    )}
+                  </div>
                 </div>
 
                 <ul className="space-y-3.5 text-xs text-theme-muted mb-8">
@@ -450,12 +507,22 @@ function Home() {
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> 7-Day Free Trial • 30-Day Money-Back Guarantee</li>
                 </ul>
               </div>
-              <a
-                href={getAppUrl()}
-                className="w-full py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-theme font-bold text-center transition-all block text-sm"
-              >
-                Start Free Trial ($8.95/mo)
-              </a>
+              <div>
+                <a
+                  href={billingCycle === 'annual' ? STRIPE_PAYMENT_LINKS.starter.annual : STRIPE_PAYMENT_LINKS.starter.monthly}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-theme font-black text-center transition-all block text-sm shadow-md cursor-pointer"
+                >
+                  {billingCycle === 'annual' ? 'Start Free Trial ($60/yr)' : 'Start Free Trial ($8.95/mo)'}
+                </a>
+                <a
+                  href={getAppUrl()}
+                  className="text-center text-[11px] text-theme-muted hover:text-emerald-400 mt-2.5 font-medium transition-colors block"
+                >
+                  Or install on Shopify App Store &rarr;
+                </a>
+              </div>
             </div>
 
             {/* Tier 2: Pro Revenue Sentinel */}
@@ -466,7 +533,9 @@ function Home() {
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-xs uppercase font-bold text-cyan-400 tracking-wider">Pro Revenue Sentinel</div>
-                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Save $54 on Annual</span>
+                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    {billingCycle === 'annual' ? 'Save $54/yr' : 'Save $54 on Annual'}
+                  </span>
                 </div>
                 <h3 className="text-2xl font-black text-theme mb-3">Storefront Sentinel</h3>
                 <p className="text-sm text-theme-muted mb-6">
@@ -475,10 +544,20 @@ function Home() {
 
                 <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-4 mb-6">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-black text-theme">$14.95</span>
-                    <span className="text-theme-muted text-sm font-semibold">/ month</span>
+                    <span className="text-4xl font-black text-theme">
+                      {billingCycle === 'annual' ? '$125.00' : '$14.95'}
+                    </span>
+                    <span className="text-theme-muted text-sm font-semibold">
+                      {billingCycle === 'annual' ? '/ year' : '/ month'}
+                    </span>
                   </div>
-                  <div className="text-theme-muted text-xs mt-1">or <strong className="text-cyan-400">$125.00/year</strong> ($10.41/mo)</div>
+                  <div className="text-theme-muted text-xs mt-1">
+                    {billingCycle === 'annual' ? (
+                      <>Billed annually (<strong className="text-cyan-400">$10.41/mo</strong>) • Save $54/yr</>
+                    ) : (
+                      <>or <strong className="text-cyan-400">$125.00/year</strong> ($10.41/mo) • Cancel anytime</>
+                    )}
+                  </div>
                 </div>
 
                 <ul className="space-y-3.5 text-xs text-theme-muted mb-8">
@@ -490,12 +569,22 @@ function Home() {
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Storewide Deep Crawler:</strong> Hourly audit of menus & footers</li>
                 </ul>
               </div>
-              <a
-                href={getAppUrl()}
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 hover:brightness-110 text-slate-950 font-black text-center transition-all block shadow-lg text-sm"
-              >
-                Start Pro Trial ($14.95/mo)
-              </a>
+              <div>
+                <a
+                  href={billingCycle === 'annual' ? STRIPE_PAYMENT_LINKS.pro.annual : STRIPE_PAYMENT_LINKS.pro.monthly}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 hover:brightness-110 text-slate-950 font-black text-center transition-all block shadow-lg text-sm cursor-pointer"
+                >
+                  {billingCycle === 'annual' ? 'Start Pro Trial ($125/yr)' : 'Start Pro Trial ($14.95/mo)'}
+                </a>
+                <a
+                  href={getAppUrl()}
+                  className="text-center text-[11px] text-theme-muted hover:text-cyan-400 mt-2.5 font-medium transition-colors block"
+                >
+                  Or install on Shopify App Store &rarr;
+                </a>
+              </div>
             </div>
 
             {/* Tier 3: Agency & Brand Sentinel Portal */}
@@ -515,10 +604,20 @@ function Home() {
 
                 <div className="bg-cyan-500/10 border border-cyan-500/30 rounded-2xl p-4 mb-6">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-black text-theme">$149.00</span>
-                    <span className="text-theme-muted text-sm font-semibold">/ month</span>
+                    <span className="text-4xl font-black text-theme">
+                      {billingCycle === 'annual' ? '$1,599.00' : '$149.00'}
+                    </span>
+                    <span className="text-theme-muted text-sm font-semibold">
+                      {billingCycle === 'annual' ? '/ year' : '/ month'}
+                    </span>
                   </div>
-                  <div className="text-theme-muted text-xs mt-1">or <strong className="text-cyan-400">$1,599/year</strong> ($133.25/mo) • Instant Activation</div>
+                  <div className="text-theme-muted text-xs mt-1">
+                    {billingCycle === 'annual' ? (
+                      <>Billed annually (<strong className="text-cyan-400">$133.25/mo</strong>) • 10% Off</>
+                    ) : (
+                      <>or <strong className="text-cyan-400">$1,599/year</strong> ($133.25/mo) • Instant Activation</>
+                    )}
+                  </div>
                   <div className="mt-2.5 pt-2 border-t border-cyan-500/20 flex flex-col gap-1">
                     <span className="text-[11px] text-cyan-300 font-bold">Includes up to 5 brands/stores • +$25/mo per add-on brand</span>
                     <span className="text-[11px] text-emerald-400 font-bold flex items-center gap-1.5">
@@ -538,13 +637,19 @@ function Home() {
               </div>
               <div>
                 <a
-                  href={getAppUrl()}
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 hover:brightness-110 text-slate-950 font-black text-center transition-all block shadow-lg text-sm"
+                  href={billingCycle === 'annual' ? STRIPE_PAYMENT_LINKS.agency.annual : STRIPE_PAYMENT_LINKS.agency.monthly}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 hover:brightness-110 text-slate-950 font-black text-center transition-all block shadow-lg text-sm cursor-pointer"
                 >
-                  Activate Agency Sentinel ($149/mo)
+                  {billingCycle === 'annual' ? 'Activate Agency Sentinel ($1,599/yr)' : 'Activate Agency Sentinel ($149/mo)'}
                 </a>
-                <div className="text-center text-[11px] text-theme-muted mt-2 font-medium">
-                  Instant Provisioning • 30-Day Risk-Free Guarantee
+                <div className="flex items-center justify-center gap-2 text-center text-[11px] text-theme-muted mt-2 font-medium">
+                  <span>Instant Provisioning</span>
+                  <span>•</span>
+                  <Link to="/agencies" className="text-cyan-400 hover:underline">
+                    Agency Partner Program &rarr;
+                  </Link>
                 </div>
               </div>
             </div>
@@ -703,7 +808,14 @@ function App() {
           </div>
           <div className="flex items-center gap-3 shrink-0 ml-auto md:ml-0">
             <a
-              href={getAppUrl()}
+              href="/#pricing"
+              onClick={(e) => {
+                if (location.pathname === '/') {
+                  e.preventDefault();
+                  document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+                  window.history.pushState(null, '', '/#pricing');
+                }
+              }}
               className="px-5 md:px-7 py-2 md:py-2.5 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:brightness-110 text-slate-950 rounded-full text-xs md:text-sm font-black transition-all shadow-[0_0_25px_rgba(16,185,129,0.35)] cursor-pointer whitespace-nowrap"
             >
               Start Free Trial &rarr;

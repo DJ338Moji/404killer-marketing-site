@@ -156,6 +156,31 @@ export default function Agencies() {
             </p>
           </div>
         </div>
+
+        {/* Instant Stripe Activation CTA */}
+        <div className="mt-8 pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="https://buy.stripe.com/7sY9AUe8m9wy17p0ZH9oc04"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-500 hover:brightness-110 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <span>Activate Agency Monthly ($149/mo)</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
+          <a
+            href="https://buy.stripe.com/fZuaEYd4ibEG7vNeQx9oc05"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto px-7 py-3.5 bg-slate-900/90 hover:bg-slate-800 border border-cyan-500/40 text-cyan-300 font-bold rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <span>Activate Annual ($1,599/yr • 10% Off)</span>
+            <Sparkles className="w-4 h-4 text-cyan-400" />
+          </a>
+        </div>
+        <div className="text-center text-[11px] text-slate-400 mt-3 font-medium">
+          Instant provisioning for up to 5 client brands • 30-day risk-free guarantee • No waiting for approval
+        </div>
       </div>
 
       {/* Interactive Agency Calculator */}
