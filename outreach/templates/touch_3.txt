@@ -1,0 +1,17 @@
+Subject: closing loop on {{agency_name}}
+
+Hey {{first_name}},
+
+Assuming this isn't a priority right now or your media team already has an automated system for live link health.
+
+If you ever want to run a live audit across a client store or explore our partner portal, you can keep this link handy:
+https://404killer.com/agencies
+
+Wishing you and the {{agency_name}} team continued scale!
+
+Cheers,
+Dale Johnson
+Founder & CEO | 404 Killer App
+(435) 962-4444
+djohnson@404killer.com
+https://404killer.com

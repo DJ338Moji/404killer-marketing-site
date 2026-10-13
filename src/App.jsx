@@ -18,6 +18,7 @@ import Support from './pages/Support';
 import Resources from './pages/Resources';
 import Audit from './pages/Audit';
 import Agencies from './pages/Agencies';
+import Cfo from './pages/Cfo';
 import RoiCalculator from './components/RoiCalculator';
 
 const AiAssistant = lazy(() => import('./components/AiAssistant'));
@@ -790,6 +791,7 @@ function App() {
               Pricing
             </a>
             <Link to="/agencies" className="hover:text-theme transition-colors font-medium whitespace-nowrap hidden xl:inline-block">Agencies (25% Cut)</Link>
+            <Link to="/cfo" className="text-cyan-400 hover:text-cyan-300 transition-colors font-bold whitespace-nowrap hidden xl:inline-block">CFO Playbook</Link>
             <Link to="/resources" className="hover:text-theme transition-colors whitespace-nowrap hidden 2xl:inline-block">Guides & Docs</Link>
             <button
               type="button"
@@ -831,6 +833,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/audit" element={<Audit key={location.key} />} />
           <Route path="/agencies" element={<Agencies />} />
+          <Route path="/cfo" element={<Cfo />} />
           <Route path="/walkthrough" element={<WalkthroughPage />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
@@ -862,6 +865,7 @@ function App() {
           >
             ⚡ Free Store Audit
           </Link>
+          <Link to="/cfo" className="text-cyan-400 hover:text-cyan-300 transition-colors font-bold">🏛️ CFO Playbook & P&L Model</Link>
           <Link to="/agencies" className="text-theme-muted hover:text-theme transition-colors font-semibold">Agency Partners (25%)</Link>
           <Link to="/support" className="text-theme-muted hover:text-theme transition-colors font-bold">Support</Link>
           <Link to="/privacy" className="text-theme-muted hover:text-theme transition-colors">Privacy Policy</Link>

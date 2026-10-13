@@ -1,0 +1,24 @@
+Subject: quick heads up on {{agency_name}}'s ad traffic
+
+Hey {{first_name}},
+
+Noticed your team is driving heavy Meta and Google ad volume across your Shopify roster (especially in {{specialization}}).
+
+Quick heads up: when merchants delete out-of-stock seasonal variants or rename collections, paid ad traffic frequently smashes into dead 404 pages. Even a 1.5% broken link rate on high-spend accounts bleeds ~$1,500 to $3,500/month in burned ad budget—and clients end up blaming their media buyers when blended ROAS slips.
+
+We built 404 Killer App (Revenue Shield) specifically for performance agencies:
+- 50ms autonomous link healer via Shopify GraphQL (zero manual 301 work)
+- Paid Ad Spend Guard that protects Meta, TikTok, and Google ad spend
+- 25% lifetime recurring rev-share for your agency on every client store
+
+You can run an instant, free live catalog crawl across any client store here:
+https://404killer.com/agencies
+
+Would it make sense to connect for 10 minutes this week to show you how we protect client retainers across your roster?
+
+Best,
+Dale Johnson
+Founder & CEO | 404 Killer App
+(435) 962-4444
+djohnson@404killer.com
+https://404killer.com
