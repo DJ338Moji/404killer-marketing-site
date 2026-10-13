@@ -115,7 +115,7 @@ For CFOs and Chief Information Security Officers (CISOs), evaluating new softwar
 2. **Review the Live Bleed Scorecard:**  
    Inspect the exact dollar amount of current ad spend landing on 404 error templates.
 3. **Deploy Autonomous Edge Protection:**  
-   Install 404 Killer App on the primary Shopify Plus instance with the 7-day free trial. Eliminate the 404 ad tax permanently.
+   Install 404 Killer App on the primary Shopify Plus instance with instant production activation. Eliminate the 404 ad tax permanently.
 
 ---
 *For direct CFO inquiries, financial modeling walkthroughs, or custom enterprise audits:*  

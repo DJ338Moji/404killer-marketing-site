@@ -87,7 +87,7 @@ When our merchandising team archives out-of-stock SKUs or updates seasonal colle
 Deploy 404 Killer App (Revenue Shield) (https://404killer.com), an autonomous Shopify edge utility that intercepts broken catalog routes in <50ms and dynamically routes paid shoppers to live in-stock alternatives via native Shopify GraphQL.
 
 4. GOVERNANCE, RISK & ROI ECONOMICS:
-- Software OpEx: $149/month or $1,599/year (includes 7-day free trial)
+- Software OpEx: $149/month or $1,599/year (Instant Enterprise & Agency Activation)
 - Implementation CapEx: $0 (2-minute plug-and-play setup, zero developer hours)
 - Security & Compliance: Zero customer PII ingested; <50ms edge execution
 - Expected Payback Period: ~${paybackHours} hours of preserved ad traffic
@@ -324,7 +324,7 @@ Approval to activate the subscription at https://404killer.com/cfo`;
 
             <div className="mt-6 pt-5 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-xs text-slate-400">
-                Includes <strong className="text-white">7-Day Free Trial</strong> • Zero CapEx • Cancel anytime
+                <strong className="text-white">Instant Production Activation</strong> • Zero CapEx • Cancel anytime
               </div>
               <a
                 href={STRIPE_PAYMENT_LINKS.agency.annual}
@@ -574,7 +574,7 @@ Approval to activate the subscription at https://404killer.com/cfo`;
             Authorize Autonomous Capital Protection Today
           </h2>
           <p className="text-slate-300 max-w-2xl mx-auto text-sm md:text-base mb-8">
-            Start with a risk-free 7-day trial or lock in annual enterprise coverage. Recover your full annual software investment in under {paybackHours} hours of preserved ad traffic.
+            Deploy instant production coverage across your storefront or agency portfolio. Recover your full annual software investment in under {paybackHours} hours of preserved ad traffic.
           </p>
 
           <div className="inline-flex items-center bg-slate-950 p-1 rounded-full border border-slate-800 mb-8">

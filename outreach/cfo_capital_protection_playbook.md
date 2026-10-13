@@ -159,7 +159,7 @@ When evaluating software subscriptions, disciplined CFOs apply four tests: **Cos
 > Deploy **404 Killer App (Revenue Shield)** ([https://404killer.com](https://404killer.com)), an autonomous Shopify edge utility that intercepts dead catalog links in <50ms and dynamically routes paid shoppers to live in-stock alternatives via native Shopify GraphQL.
 > 
 > **3. Financial Economics & Risk:**  
-> - **Software OpEx:** $149/month ($1,599/year) — includes a 7-day free trial.  
+> - **Software OpEx:** $149/month ($1,599/year) — Instant Enterprise & Agency Production Activation.  
 > - **Implementation Cost:** $0 (2-minute plug-and-play setup, zero developer hours).  
 > - **Compliance & Security:** Zero customer PII ingested; zero storefront latency impact.  
 > - **Expected Payback Period:** < 48 hours of preserved ad traffic.  
