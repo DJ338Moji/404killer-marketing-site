@@ -176,4 +176,4 @@ When evaluating software subscriptions, disciplined CFOs apply four tests: **Cos
 ---
 
 *© 2026 DevRevIQ LLC / 404 Killer App. All Rights Reserved.*  
-*8770 E Via De Viva, Scottsdale, AZ 85258 | `(435) 962-4444` | `djohnson@404killer.com`*
+*`(435) 962-4444` &nbsp;|&nbsp; `djohnson@404killer.com` &nbsp;|&nbsp; [https://404killer.com](https://404killer.com)*
