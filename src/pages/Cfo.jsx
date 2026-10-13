@@ -75,7 +75,7 @@ From: Marketing & E-Commerce Operations
 Subject: Eliminating Paid Ad Spend Bleed on Archived Catalog Routes ($1,599/yr OpEx for Est. $${annualEbitdaRecovery.toLocaleString()}/yr EBITDA Preservation)
 
 1. EXECUTIVE SUMMARY & PROBLEM IDENTIFIED:
-When our merchandising team archives out-of-stock SKUs or updates seasonal collections, our active Meta, Google PMax, and influencer links continue driving paid clicks ($${avgCpc.toFixed(2)} avg CPC) into HTTP 404 dead ends. Because ad networks bill on outbound click departure and their policy crawlers lag by up to 72 hours, we are absorbing an estimated ${brokenRate}% dead-click tax on our $${monthlyAdSpend.toLocaleString()}/mo ad budget with 0% conversion return.
+When our merchandising team archives out-of-stock SKUs or updates seasonal collections, our active Meta, Google PMax, TikTok, Pinterest Promoted Pins, and YouTube Shopping/Creator links continue driving paid clicks ($${avgCpc.toFixed(2)} avg CPC) into HTTP 404 dead ends. Because ad networks bill on outbound click departure and evergreen links on Pinterest and YouTube live for 12–24+ months, we are absorbing an estimated ${brokenRate}% dead-click tax on our $${monthlyAdSpend.toLocaleString()}/mo ad budget with 0% conversion return.
 
 2. FORENSIC P&L IMPACT AT OUR CURRENT SCALE:
 - Monthly Paid Clicks Hitting 404 Endpoints: ~${monthlyDeadClicks.toLocaleString()} clicks/mo
@@ -117,7 +117,7 @@ Approval to activate the subscription at https://404killer.com/cfo`;
           </h1>
 
           <p className="text-lg text-slate-300 max-w-3xl leading-relaxed mb-8">
-            Broken catalog links are not an IT housekeeping issue—they are an unmonitored, continuous <strong className="text-white">working capital leak</strong>. Every time an out-of-stock SKU is archived while Meta or Google ads are scaling, your corporate card is billed for clicks that deliver <strong className="text-rose-400">$0.00 in gross margin</strong>.
+            Broken catalog links are not an IT housekeeping issue—they are an unmonitored, continuous <strong className="text-white">working capital leak</strong>. Every time an out-of-stock SKU is archived while Meta, Google, TikTok, Pinterest, or YouTube campaigns are live, your corporate card is billed for clicks that deliver <strong className="text-rose-400">$0.00 in gross margin</strong>.
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
@@ -184,7 +184,7 @@ Approval to activate the subscription at https://404killer.com/cfo`;
             {/* Monthly Ad Spend */}
             <div>
               <div className="flex justify-between text-sm mb-2">
-                <span className="text-slate-300 font-medium">Monthly Paid Ad Spend (Meta / Google / TikTok)</span>
+                <span className="text-slate-300 font-medium">Monthly Paid Ad Spend (Meta, Google, TikTok, Pinterest, YouTube)</span>
                 <span className="text-emerald-400 font-black">${monthlyAdSpend.toLocaleString()} / mo</span>
               </div>
               <input
@@ -339,27 +339,27 @@ Approval to activate the subscription at https://404killer.com/cfo`;
         </div>
       </section>
 
-      {/* Why Google, Meta & Amazon Never Refund 404s */}
+      {/* Why Google, Meta, Pinterest & YouTube Never Refund 404s */}
       <section className="py-16 bg-slate-900/50 border-y border-slate-800/80">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-rose-400">Contractual & Technical Diligence</span>
             <h2 className="text-2xl md:text-3xl font-black text-white mt-1 mb-4">
-              Why Google, Meta & Amazon Will Never Refund Your "404 Ad Tax"
+              Why Ad Platforms Will Never Refund Your "404 Ad Tax"
             </h2>
             <p className="text-slate-300 text-sm md:text-base leading-relaxed">
               Finance controllers frequently assume that ad networks automatically stop charging—or issue credits—when a landing page returns a 404 error. Here is why that assumption costs retailers millions:
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-slate-950 border border-slate-800 rounded-2xl p-6">
               <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 font-black mb-4">
                 01
               </div>
               <h3 className="text-lg font-bold text-white mb-2">Billing Happens on Departure</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
-                Under Google Ads and Meta auction terms, your credit card is charged the microsecond a shopper taps the ad. Like an airline flying a passenger to a closed hotel, the ad network bills for <strong className="text-slate-200">traffic delivery</strong>, not destination uptime.
+                Under Google, Meta, Pinterest, and TikTok auction terms, your card is billed the microsecond a shopper taps the ad. Like an airline flying a passenger to a closed hotel, ad networks bill for <strong className="text-slate-200">traffic delivery</strong>, not destination uptime.
               </p>
             </div>
 
@@ -369,7 +369,7 @@ Approval to activate the subscription at https://404killer.com/cfo`;
               </div>
               <h3 className="text-lg font-bold text-white mb-2">False Pixel Telemetry</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
-                Because global tracking scripts (Meta Pixel, GTM, TikTok) sit in your theme's <code className="text-amber-300">&lt;head&gt;</code>, they still fire a <code className="text-amber-300">PageView</code> event when the 404 error template renders. Even if suppressed, billing already cleared at the ad server.
+                Because global tracking scripts (Meta Pixel, GTM, Pinterest Tag, TikTok) sit in your theme's <code className="text-amber-300">&lt;head&gt;</code>, they still fire a <code className="text-amber-300">PageView</code> event when the 404 error template renders. Even if suppressed, billing already cleared.
               </p>
             </div>
 
@@ -380,6 +380,16 @@ Approval to activate the subscription at https://404killer.com/cfo`;
               <h3 className="text-lg font-bold text-white mb-2">The 72-Hour Crawler Lag</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
                 Ad policy crawlers (<code className="text-cyan-300">Googlebot-Ads</code>) only audit product URLs on periodic 24–72 hour cycles. When a hot SKU sells out on Tuesday, live ad spend continues pumping into that dead link until Friday—with <strong className="text-slate-200">zero retroactive refunds</strong>.
+              </p>
+            </div>
+
+            <div className="bg-slate-950 border border-slate-800 rounded-2xl p-6">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-black mb-4">
+                04
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">The "Immortal Pin & Video" Trap</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">
+                While IG Stories vanish in 24 hours, <strong className="text-slate-200">Pinterest Promoted Pins and YouTube Video Descriptions live for 12–24+ months</strong>. High-intent shoppers click viral pins and haul videos long after seasonal SKUs are archived—compounding 404 losses every month.
               </p>
             </div>
           </div>
@@ -394,7 +404,7 @@ Approval to activate the subscription at https://404killer.com/cfo`;
             Sample Forensic Ledger: Real Storefront Ad Leakage
           </h2>
           <p className="text-sm text-slate-400 mt-2">
-            Excerpt from live diagnostic crawls across high-velocity apparel & fitness Shopify Plus storefronts (benchmarked on accounts such as Fashion Nova & Gymshark):
+            Excerpt from live diagnostic crawls across high-velocity apparel, home & fitness Shopify Plus storefronts (benchmarked on accounts such as Fashion Nova & Gymshark):
           </p>
         </div>
 
@@ -431,6 +441,15 @@ Approval to activate the subscription at https://404killer.com/cfo`;
                 <td className="py-3.5 px-4 font-bold text-amber-400">$8,640 / mo</td>
               </tr>
               <tr>
+                <td className="py-3.5 px-4 font-mono text-xs text-rose-300">/products/linen-resort-maxi-dress-ivory</td>
+                <td className="py-3.5 px-4 text-slate-300">Pinterest Promoted Shopping Pin (epik)</td>
+                <td className="py-3.5 px-4"><span className="px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 font-bold text-xs">404 Dead End</span></td>
+                <td className="py-3.5 px-4 text-slate-300">$0.88</td>
+                <td className="py-3.5 px-4 text-slate-300">3,100</td>
+                <td className="py-3.5 px-4 font-bold text-rose-400">$2,728 / mo</td>
+                <td className="py-3.5 px-4 font-bold text-amber-400">$5,580 / mo</td>
+              </tr>
+              <tr>
                 <td className="py-3.5 px-4 font-mono text-xs text-rose-300">/products/oversized-heavyweight-hoodie-blk</td>
                 <td className="py-3.5 px-4 text-slate-300">TikTok Creator Spark Ad #04</td>
                 <td className="py-3.5 px-4"><span className="px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 font-bold text-xs">404 Dead End</span></td>
@@ -441,7 +460,7 @@ Approval to activate the subscription at https://404killer.com/cfo`;
               </tr>
               <tr>
                 <td className="py-3.5 px-4 font-mono text-xs text-rose-300">/collections/athlete-collab-capsule-drop</td>
-                <td className="py-3.5 px-4 text-slate-300">IG Influencer Bio / Swipe-Up</td>
+                <td className="py-3.5 px-4 text-slate-300">YouTube Demand Gen & Creator Description Link</td>
                 <td className="py-3.5 px-4"><span className="px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 font-bold text-xs">404 Dead End</span></td>
                 <td className="py-3.5 px-4 text-slate-300">$1.35</td>
                 <td className="py-3.5 px-4 text-slate-300">1,850</td>
@@ -451,10 +470,10 @@ Approval to activate the subscription at https://404killer.com/cfo`;
             </tbody>
             <tfoot>
               <tr className="bg-slate-950 font-black text-white border-t border-slate-700">
-                <td className="py-4 px-4" colSpan={4}>TOTAL MONTHLY LEAKAGE (SAMPLE 4 ROUTES ALONE)</td>
-                <td className="py-4 px-4">12,950 clicks</td>
-                <td className="py-4 px-4 text-rose-400">$13,085 / mo</td>
-                <td className="py-4 px-4 text-amber-400">$23,310 / mo</td>
+                <td className="py-4 px-4" colSpan={4}>TOTAL MONTHLY LEAKAGE (SAMPLE 5 ROUTES ALONE)</td>
+                <td className="py-4 px-4">16,050 clicks</td>
+                <td className="py-4 px-4 text-rose-400">$15,813 / mo</td>
+                <td className="py-4 px-4 text-amber-400">$28,890 / mo</td>
               </tr>
             </tfoot>
           </table>
@@ -609,7 +628,7 @@ Approval to activate the subscription at https://404killer.com/cfo`;
                 </div>
                 <ul className="space-y-2 text-xs text-slate-300 mb-6">
                   <li>✓ Autonomous 50ms 404 Auto-Healing</li>
-                  <li>✓ Paid Ad Spend Guard (Meta / Google / TikTok)</li>
+                  <li>✓ Paid Ad Spend Guard (Meta, Google, TikTok, Pinterest & YouTube)</li>
                   <li>✓ Real-Time Saved Revenue Ledger</li>
                 </ul>
               </div>

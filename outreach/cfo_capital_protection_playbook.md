@@ -33,7 +33,7 @@ A common misconception among financial controllers is: *"If our landing page thr
 ```mermaid
 flowchart LR
     subgraph AdPlatform["1. Ad Platform Domain (Billable Event)"]
-        Impression["Ad Served on Google / IG / TikTok"] --> Click["User Taps Ad"]
+        Impression["Ad Served on Google / Meta / TikTok / Pinterest / YouTube"] --> Click["User Taps Ad"]
         Click --> Charge["💳 CREDIT CARD CHARGED ($0.85 - $1.60 CPC)"]
     end
     subgraph MerchantSite["2. Merchant Domain (Uninsured Risk)"]
@@ -45,10 +45,10 @@ flowchart LR
 ```
 
 ### 1. Billing Occurs on Departure, Not Arrival
-Under the Master Services Terms of Google Ads, Meta Business, TikTok, and Amazon DSP, the billable event is an **Outbound Click Redirect**. The microsecond a consumer taps your ad, the auction clears and your corporate credit card is billed. The ad network's contractual duty ends the moment the user's browser requests your domain.
+Under the Master Services Terms of Google Ads, Meta Business, TikTok, Pinterest, YouTube, and Amazon DSP, the billable event is an **Outbound Click Redirect**. The microsecond a consumer taps your ad, the auction clears and your corporate credit card is billed. The ad network's contractual duty ends the moment the user's browser requests your domain.
 
 ### 2. Why Tracking Pixels Make It Worse (False Telemetry)
-Tracking pixels (Meta Pixel, Google Tag Manager, Attentive, TikTok Pixel) are embedded in the global `<head>` of your storefront theme. When a shopper hits a `404 Not Found` page, your server still renders an HTML error template—which executes those global scripts.
+Tracking pixels (Meta Pixel, Google Tag Manager, Pinterest Tag, Attentive, TikTok Pixel) are embedded in the global `<head>` of your storefront theme. When a shopper hits a `404 Not Found` page, your server still renders an HTML error template—which executes those global scripts.
 * The ad platform receives a `200 OK` telemetry ping from the pixel saying *"The user viewed a page!"*
 * Even if your engineering team suppresses the pixel on 404 pages, **you are still billed 100% of the click cost**, because billing is triggered at the ad server, not by the destination pixel.
 
@@ -58,8 +58,13 @@ Google Ads (`Googlebot-Ads`) and Google Merchant Center run automated crawlers t
 * When your inventory system archives a fast-selling variant on Tuesday morning, your live Meta Advantage+ and Google PMax campaigns continue pumping high-CPM traffic into that dead URL until Friday.
 * **Zero Retroactive Credits:** Ad platforms never issue refunds for traffic delivered prior to crawler disapproval.
 
-### 4. The Structural Conflict of Interest ($Billions in Platform Margin)
-Dead-link ad clicks account for an estimated **1.2% to 3.0% of all e-commerce ad spend globally**. For Google and Meta, that represents billions of dollars in pure, high-margin auction revenue. Furthermore, under the **"Airline vs. Hotel" Liability Doctrine**, ad networks will never insure internal merchant inventory changes due to advertiser fraud and moral hazard risks.
+### 4. The "Immortal Pin & Evergreen Video" Trap (Pinterest & YouTube)
+While an Instagram Story vanishes in 24 hours and a TikTok post decays in 48 hours, **Pinterest Promoted/Shopping Pins and YouTube Video Descriptions/Shopping Feeds have an evergreen half-life of 6 to 24+ months**.
+* High-intent shoppers click viral Pinterest pins and YouTube review/haul descriptions a full year after a seasonal SKU or colorway was archived.
+* Because Pinterest and YouTube traffic compounds over time, unhealed catalog routes create an **ever-growing multi-year 404 tax** on your highest-intent visual search and video traffic.
+
+### 5. The Structural Conflict of Interest ($Billions in Platform Margin)
+Dead-link ad clicks account for an estimated **1.2% to 3.0% of all e-commerce ad spend globally**. For Google, Meta, and Pinterest, that represents billions of dollars in pure, high-margin auction revenue. Furthermore, under the **"Airline vs. Hotel" Liability Doctrine**, ad networks will never insure internal merchant inventory changes due to advertiser fraud and moral hazard risks.
 
 > [!IMPORTANT]
 > **The CFO Takeaway:** No external ad vendor will ever protect your capital once the click leaves their platform. **Capital protection must sit at your storefront's edge.**
@@ -117,7 +122,7 @@ flowchart TD
 
 ### Core Financial & Operational Capabilities:
 1. **Sub-50ms Autonomous Edge Healing:** Intercepts broken product, variant, and collection URLs instantaneously and routes the shopper to the highest-converting live alternative or parent category.
-2. **Paid Ad Spend Guard (`utm_`, `fbclid`, `gclid`, `ttclid`):** Prioritizes traffic carrying paid advertising tokens to ensure your media agency's blended ROAS and MER never dip from inventory churn.
+2. **Paid Ad Spend Guard (`utm_`, `fbclid`, `gclid`, `ttclid`, `epik`):** Prioritizes traffic carrying paid advertising tokens (Meta, Google, TikTok, Pinterest, and YouTube) to ensure your media agency's blended ROAS and MER never dip from inventory churn.
 3. **Real-Time CFO & CMO Attribution Ledger:** Tracks exact click volume intercepted, ad spend preserved, and incremental revenue recovered.
 
 ---
@@ -153,7 +158,7 @@ When evaluating software subscriptions, disciplined CFOs apply four tests: **Cos
 > **Subject:** Eliminating Paid Ad Spend Bleed on Archived Catalog Routes ($149/mo OpEx for Est. $5,000+/mo EBITDA Recovery)
 > 
 > **1. Problem Identified:**  
-> When our merchandising team archives out-of-stock SKUs or updates seasonal collections, our active Meta, Google PMax, and influencer links continue driving paid clicks ($0.85–$1.40 CPC) into HTTP 404 dead ends. Because ad networks bill on click departure and crawlers lag by up to 72 hours, we are absorbing a 1.0%–1.5% dead-click tax on our ad budget with 0% conversion return.
+> When our merchandising team archives out-of-stock SKUs or updates seasonal collections, our active Meta, Google PMax, TikTok, Pinterest Promoted Pins, and YouTube Shopping/Creator links continue driving paid clicks ($0.85–$1.40 CPC) into HTTP 404 dead ends. Because ad networks bill on click departure and evergreen links on Pinterest and YouTube live for 12–24+ months, we are absorbing a 1.0%–1.5% dead-click tax on our ad budget with 0% conversion return.
 > 
 > **2. Proposed Remediation:**  
 > Deploy **404 Killer App (Revenue Shield)** ([https://404killer.com](https://404killer.com)), an autonomous Shopify edge utility that intercepts dead catalog links in <50ms and dynamically routes paid shoppers to live in-stock alternatives via native Shopify GraphQL.
