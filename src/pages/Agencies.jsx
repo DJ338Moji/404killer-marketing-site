@@ -178,6 +178,22 @@ export default function Agencies() {
             <Sparkles className="w-4 h-4 text-cyan-400" />
           </a>
         </div>
+
+        {/* Agency Team Lunch SPIF Incentive */}
+        <div className="mt-6 mx-auto max-w-xl bg-amber-500/10 border border-amber-500/30 rounded-2xl p-4 flex items-center gap-3 text-left">
+          <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 text-lg shrink-0">
+            🍕
+          </div>
+          <div>
+            <div className="text-xs font-black uppercase tracking-wider text-amber-400 font-mono">
+              Q4 Launch Perk: $300 Media Buyer Team Lunch
+            </div>
+            <div className="text-[11px] text-slate-300 mt-0.5 leading-snug">
+              Activate your agency portal or onboard your first 3 client stores this month, and we'll send a $300 DoorDash / Uber Eats gift tab directly to your media buying squad.
+            </div>
+          </div>
+        </div>
+
         <div className="text-center text-[11px] text-slate-400 mt-3 font-medium">
           Instant provisioning for up to 5 client brands • 30-day risk-free guarantee • No waiting for approval
         </div>

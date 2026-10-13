@@ -263,8 +263,8 @@ def dry_run(limit=3):
         print(text_body.strip())
         print("-" * 60)
 
-def derive_alternative_email(agency_name, website, failed_email):
-    """Derives high-probability fallback email addresses for an agency."""
+def derive_alternative_email(agency_name, website, failed_email, contact_name=""):
+    """Derives high-probability fallback email addresses for an agency, prioritizing executive names."""
     domain = ""
     if website:
         domain = re.sub(r"^https?://(www\.)?", "", website).strip("/").split("/")[0]
@@ -274,14 +274,24 @@ def derive_alternative_email(agency_name, website, failed_email):
     if not domain:
         return None
 
-    # Priority order for fallback agency inboxes
-    fallbacks = [
+    fallbacks = []
+    # If we have a real person's name, prioritize first.last@domain and first@domain
+    clean_name = re.sub(r"[^a-zA-Z\s]", "", (contact_name or "")).strip().lower()
+    parts = [p for p in clean_name.split() if p not in ["agency", "director", "partnerships", "team", "desk", "lead"]]
+    if len(parts) >= 2:
+        fallbacks.append(f"{parts[0]}.{parts[-1]}@{domain}")
+        fallbacks.append(f"{parts[0]}@{domain}")
+    elif len(parts) == 1:
+        fallbacks.append(f"{parts[0]}@{domain}")
+
+    # Secondary functional agency inboxes
+    fallbacks.extend([
         f"partnerships@{domain}",
         f"hello@{domain}",
         f"contact@{domain}",
         f"growth@{domain}",
         f"info@{domain}"
-    ]
+    ])
 
     for alt in fallbacks:
         if alt != failed_email.lower():
@@ -321,7 +331,7 @@ def check_inbox_for_bounces_and_replies(app_password=None):
     cursor = conn.cursor()
 
     # Get list of all contacted emails
-    cursor.execute("SELECT id, email, agency_name, website FROM leads WHERE status IN ('TOUCH_1_SENT', 'TOUCH_2_SENT', 'TOUCH_3_SENT')")
+    cursor.execute("SELECT id, email, agency_name, website, contact_name FROM leads WHERE status IN ('TOUCH_1_SENT', 'TOUCH_2_SENT', 'TOUCH_3_SENT')")
     active_leads = {row["email"].lower(): row for row in cursor.fetchall()}
 
     bounces_found = 0
@@ -350,29 +360,21 @@ def check_inbox_for_bounces_and_replies(app_password=None):
                     print(f"\n⚠️  BOUNCE DETECTED for: {lead['agency_name']} <{active_email}>")
                     bounces_found += 1
                     
-                    alt_email = derive_alternative_email(lead["agency_name"], lead["website"], active_email)
+                    alt_email = derive_alternative_email(lead["agency_name"], lead["website"], active_email, lead["contact_name"])
                     now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
                     if alt_email:
-                        print(f"🔄 Discovered alternate fallback: {alt_email}. Queuing for re-outreach.")
-                        cursor.execute("""
-                        UPDATE leads SET 
-                            status = 'RETRY_QUEUED',
-                            bounced_at = ?,
-                            bounce_reason = 'Mail delivery failure',
-                            alternative_email = ?,
-                            updated_at = ?
-                        WHERE id = ?
-                        """, (now_str, alt_email, now_str, lead["id"]))
-                    else:
-                        cursor.execute("""
-                        UPDATE leads SET 
-                            status = 'BOUNCED',
-                            bounced_at = ?,
-                            bounce_reason = 'Mail delivery failure',
-                            updated_at = ?
-                        WHERE id = ?
-                        """, (now_str, now_str, lead["id"]))
+                        print(f"💡 Suggested fallback candidate: {alt_email} (stored for manual verification).")
+                    
+                    cursor.execute("""
+                    UPDATE leads SET 
+                        status = 'BOUNCED',
+                        bounced_at = ?,
+                        bounce_reason = 'Mail delivery failure',
+                        alternative_email = ?,
+                        updated_at = ?
+                    WHERE id = ?
+                    """, (now_str, alt_email, now_str, lead["id"]))
                     conn.commit()
                     break
 
