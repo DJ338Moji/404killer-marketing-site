@@ -1,0 +1,127 @@
+id,agency_name,website,domain,contact_name,role,email,phone,location,specialization,client_stores,crm_status
+1,Common Thread Collective,https://commonthreadco.com,commonthreadco.com,Taylor Holiday,CEO & Co-Founder,taylor@commonthreadco.com,+1 949-416-2008,"Santa Ana, CA",Paid Meta & Google DTC Ad Scale,120+,TOUCH_1_SENT
+2,MuteSix,https://mutesix.com,mutesix.com,Daniel Rutberg,VP Partnerships & Growth,daniel.rutberg@mutesix.com,+1 310-853-6111,"Los Angeles, CA",Full-Funnel Paid Social & Google,250+,BOUNCED
+3,Sharma Brands,https://sharmabrands.com,sharmabrands.com,Nik Sharma,CEO & Founder,nik@sharmabrands.com,,New York NY,Celebrity & High-Growth DTC Strategy,40+,TOUCH_1_SENT
+4,Power Digital Marketing,https://powerdigitalmarketing.com,powerdigitalmarketing.com,Grayson Lafrenz,Founder & CEO,grayson.lafrenz@powerdigitalmarketing.com,+1 888-769-3734,"San Diego, CA",Performance Media & ROAS Scaling,200+,BOUNCED
+5,Wpromote,https://wpromote.com,wpromote.com,Michael Mothner,CEO & Founder,partnerships@wpromote.com,+1 310-321-4434,"El Segundo, CA",Enterprise Performance Marketing,300+,TOUCH_1_SENT
+6,Tinuiti,https://tinuiti.com,tinuiti.com,Jack Johnston,Head of Innovation & Media,jack.johnston@tinuiti.com,+1 877-440-4228,"New York, NY",Performance Media & Streaming Ads,400+,BOUNCED
+7,Hawke Media,https://hawkemedia.com,hawkemedia.com,Erik Huberman,CEO & Founder,partnerships@hawkemedia.com,+1 310-451-2400,"Santa Monica, CA",Full-Service Outsourced CMO & Ads,350+,TOUCH_1_SENT
+8,Structured Agency,https://structured.agency,structured.agency,Nick Shackelford,Co-Founder & Media Buyer,nick@structured.agency,,"Orange County, CA",DTC Paid Social & Creative Strategy,80+,BOUNCED
+9,Pilothouse,https://pilothouse.co,pilothouse.co,Kyle Hitchcox,CEO & Co-Founder,partnerships@pilothouse.co,+1 844-328-9844,"Victoria, BC",High-Velocity Paid Traffic & Creative,90+,TOUCH_1_SENT
+10,Darkroom,https://darkroomagency.com,darkroomagency.com,Lucas DiPietrantonio,CEO & Co-Founder,lucas@darkroomagency.com,,"New York, NY",DTC Brand Incubation & Paid Ads,60+,BOUNCED
+11,Electric Eye,https://electriceye.io,electriceye.io,Chase Clymer,Co-Founder,chase@electriceye.io,,"Columbus, OH",Shopify Plus Growth & Conversion,45+,TOUCH_1_SENT
+12,Ethercycle,https://ethercycle.com,ethercycle.com,Kurt Elster,Founder,kurt@ethercycle.com,,"Chicago, IL",Shopify Plus Optimization & CRO,35+,PENDING
+13,We Make Websites,https://wemakewebsites.com,wemakewebsites.com,Alex O'Byrne,Co-Founder,alex@wemakewebsites.com,+1 646-693-3760,"New York, NY",Shopify Plus Design & Migrations,110+,PENDING
+14,Half Helix,https://halfhelix.com,halfhelix.com,Peter Heychel,CEO & Founder,peter@halfhelix.com,+1 646-847-9750,"New York, NY",Luxury & High-Growth Shopify Plus,85+,PENDING
+15,Avex Designs,https://avexdesigns.com,avexdesigns.com,John Surdakowski,CEO & Founder,john@avexdesigns.com,+1 646-982-1540,"New York, NY",Shopify Plus Fashion & Lifestyle,65+,PENDING
+16,Zehner,https://zehnergroup.com,zehnergroup.com,Matthew Zehner,CEO,matthew@zehnergroup.com,+1 323-933-9111,"Los Angeles, CA",Shopify Plus Fashion & Omnichannel,90+,PENDING
+17,Anatta,https://anatta.io,anatta.io,Nirav Sheth,CEO & Founder,nirav@anatta.io,+1 415-849-1191,"Los Angeles, CA",Enterprise E-Commerce Scaling & CRO,50+,PENDING
+18,Barrel,https://barrelny.com,barrelny.com,Peter Kang,CEO & Co-Founder,peter@barrelny.com,+1 212-966-2488,"New York, NY",Shopify Plus Direct-to-Consumer,75+,PENDING
+19,Diff Agency,https://diffagency.com,diffagency.com,Ken Giles,CEO,ken@diffagency.com,+1 888-343-3243,"Montreal, QC",Shopify Plus Enterprise Architecture,130+,PENDING
+20,Northern Commerce,https://northern.co,northern.co,Michael Delorenzi,President & CEO,michael@northern.co,+1 866-963-3330,"London, ON",Omnichannel E-Commerce & Paid Media,150+,PENDING
+21,Eastside Co,https://eastsideco.com,eastsideco.com,Jason Stokes,CEO & Founder,jason@eastsideco.com,+44 121 794 0199,"Birmingham, UK",Shopify Plus Full-Stack Development,140+,PENDING
+22,Swanky,https://swankyagency.com,swankyagency.com,Dan McIvor,Founder & Director,dan@swankyagency.com,+44 1392 348880,"Exeter, UK",Shopify Plus Enterprise Migrations,80+,PENDING
+23,Velstar,https://velstar.co.uk,velstar.co.uk,Dan Sheard,CEO,dan@velstar.co.uk,+44 151 954 0521,"Liverpool, UK",Shopify Plus Scale & Optimization,60+,PENDING
+24,Charle Agency,https://charle.co.uk,charle.co.uk,Nic Charle,Founder,nic@charle.co.uk,+44 20 3026 3652,"London, UK",Bespoke Shopify Plus Development,45+,PENDING
+25,Vervaunt,https://vervaunt.com,vervaunt.com,Paul Rogers,Consulting Director,paul@vervaunt.com,,"London, UK",Paid Media & E-Commerce Strategy,55+,PENDING
+26,Underwaterpistol,https://underwaterpistol.com,underwaterpistol.com,Will Hobday,CEO,will@underwaterpistol.com,+44 20 3740 6790,"London, UK",Creative E-Commerce Growth & Ads,50+,PENDING
+27,Ask Phill,https://askphill.com,askphill.com,Martijn Wijsmuller,Co-Founder,martijn@askphill.com,+31 20 846 4467,"Amsterdam, NL",Headless & Modern Shopify Plus,40+,PENDING
+28,Woolman,https://woolman.io,woolman.io,Juha Valvanne,CEO,juha@woolman.io,+358 10 326 3600,"Helsinki, FI",Largest European Shopify Plus Partner,120+,PENDING
+29,Bemeir,https://bemeir.com,bemeir.com,Meyer Ben-Rephael,Founder,meyer@bemeir.com,+1 718-475-6548,"Brooklyn, NY",E-Commerce Engineering & Migrations,30+,PENDING
+30,Pointer Creative,https://pointercreative.com,pointercreative.com,Chris Pointer,Founder,chris@pointercreative.com,,"Ottawa, ON",Shopify Design & Conversion,40+,PENDING
+31,Fuel Made,https://fuelmade.com,fuelmade.com,Carson McComas,CEO & Founder,carson@fuelmade.com,,"Spokane, WA",Shopify Plus Design & Email/SMS,50+,PENDING
+32,Sleepless Media,https://sleeplessmedia.com,sleeplessmedia.com,Jon Boles,CEO,jon@sleeplessmedia.com,+1 831-427-1955,"Santa Cruz, CA",Boutique Shopify Web Design,35+,PENDING
+33,Command C,https://commandc.com,commandc.com,Christy Valdes,Founder,christy@commandc.com,+1 347-460-7052,"New York, NY",Shopify Technical Retainers,30+,PENDING
+34,BlueSwitch,https://blueswitch.com,blueswitch.com,Leon Keshishian,CEO,leon@blueswitch.com,+1 212-244-3750,"New York, NY",Shopify Plus Technical Builds,95+,PENDING
+35,Absolute Web,https://absoluteweb.com,absoluteweb.com,Sergiu Manolache,CEO,sergiu@absoluteweb.com,+1 305-937-2526,"Miami, FL",Digital Commerce & Media Buying,110+,PENDING
+36,IronPlane,https://ironplane.com,ironplane.com,Bob Walter,Director,bob@ironplane.com,+1 877-380-4766,"Portland, ME",Enterprise E-Commerce Development,45+,PENDING
+37,Brainvire,https://brainvire.com,brainvire.com,Chintan Shah,CEO,chintan@brainvire.com,+1 631-897-7276,"Dallas, TX",Enterprise Retail & Omnichannel,180+,PENDING
+38,1Digital Agency,https://1digitalagency.com,1digitalagency.com,Dan K.,CEO,dan@1digitalagency.com,+1 888-982-8269,"Philadelphia, PA",E-Commerce Custom Design & SEO,75+,PENDING
+39,Trellis,https://trellis.co,trellis.co,Isaiah Bollinger,CEO,isaiah@trellis.co,+1 781-819-3543,"Boston, MA",Full-Service Digital Commerce,85+,PENDING
+40,Groove Commerce,https://groovecommerce.com,groovecommerce.com,Ethan Giffin,CEO & Founder,ethan@groovecommerce.com,+1 410-644-7668,"Baltimore, MD",Shopify Plus Growth & Klaviyo,70+,PENDING
+41,CQL,https://cqlcorp.com,cqlcorp.com,Mark Larson,CEO,mark@cqlcorp.com,+1 616-365-1000,"Grand Rapids, MI",Omnichannel & Shopify Architecture,90+,PENDING
+42,Guidance,https://guidance.com,guidance.com,Jason Meugniot,CEO,jason@guidance.com,+1 310-754-4000,"Marina del Rey, CA",Mid-Market & Enterprise Commerce,80+,PENDING
+43,Redstage,https://redstage.com,redstage.com,Adam Morris,CEO,adam@redstage.com,+1 888-315-7142,"Jersey City, NJ",Global E-Commerce Transformation,110+,PENDING
+44,Scoutside,https://scoutside.com,scoutside.com,Bethany M.,Managing Director,bethany@scoutside.com,,"Nashville, TN",Shopify Growth & Theme Architecture,30+,PENDING
+45,KlientBoost,https://klientboost.com,klientboost.com,Johnathan Dane,CEO & Founder,johnathan@klientboost.com,+1 949-506-5868,"Costa Mesa, CA",High-Volume Paid Ads & CRO,220+,PENDING
+46,Disruptive Advertising,https://disruptiveadvertising.com,disruptiveadvertising.com,Jacob Baadsgaard,CEO,jacob@disruptiveadvertising.com,+1 877-956-7510,"Pleasant Grove, UT",Paid Search & Paid Social ROAS,250+,PENDING
+47,Single Grain,https://singlegrain.com,singlegrain.com,Eric Siu,CEO,eric@singlegrain.com,+1 800-701-0793,"Los Angeles, CA",Full-Funnel Paid Acquisition & SEO,70+,PENDING
+48,Coalition Technologies,https://coalitiontechnologies.com,coalitiontechnologies.com,Joel Gross,CEO & Founder,joel@coalitiontechnologies.com,+1 310-827-3890,"Culver City, CA",E-Commerce SEO & Paid Campaigns,300+,PENDING
+49,WebFX,https://webfx.com,webfx.com,William Craig,CEO,william@webfx.com,+1 888-601-5359,"Harrisburg, PA",Mid-Market E-Commerce Performance,450+,PENDING
+50,Inflow,https://goinflow.com,goinflow.com,Mike Belasco,CEO,mike@goinflow.com,+1 888-545-9831,"Denver, CO",E-Commerce Inbound & Paid Ads,60+,PENDING
+51,SmartSites,https://smartsites.com,smartsites.com,Alex Melen,Co-Founder,alex@smartsites.com,+1 201-870-6000,"Paramus, NJ",E-Commerce Paid Search & Social,320+,PENDING
+52,Direct Agents,https://directagents.com,directagents.com,Dinesh Boaz,Managing Director,dinesh@directagents.com,+1 212-925-6578,"New York, NY",Omnichannel Paid Strategy,65+,PENDING
+53,SevenAtoms,https://sevenatoms.com,sevenatoms.com,Andy Vogel,Director,andy@sevenatoms.com,+1 415-513-0435,"San Francisco, CA",DTC Paid Search & Social Funnels,40+,PENDING
+54,Linear Design,https://lineardesign.com,lineardesign.com,Connor Gillivan,Partner,connor@lineardesign.com,,"Salt Lake City, UT",E-Commerce Paid Advertising,35+,PENDING
+55,Stryde,https://stryde.com,stryde.com,Greg Shuey,CEO,greg@stryde.com,+1 801-447-1422,"Salt Lake City, UT",Baby/Kid/Home Goods DTC Marketing,40+,PENDING
+56,SocialSEO,https://socialseo.com,socialseo.com,Mark Bush,CEO,mark@socialseo.com,+1 719-725-6400,"Colorado Springs, CO",National E-Commerce SEO & Ads,120+,PENDING
+57,Thrive Internet Marketing,https://thriveagency.com,thriveagency.com,Matt Bowman,CEO,matt@thriveagency.com,+1 866-908-4748,"Arlington, TX",Multi-Location E-Commerce Growth,280+,PENDING
+58,Searchbloom,https://searchbloom.com,searchbloom.com,Cody Jensen,CEO,cody@searchbloom.com,+1 800-736-7190,"Draper, UT",E-Commerce Search Marketing,65+,PENDING
+59,Victorious,https://victoriousseo.com,victoriousseo.com,Michael Foxman,CEO,michael@victoriousseo.com,+1 855-839-8260,"San Francisco, CA",SEO & Organic Commerce Acceleration,110+,PENDING
+60,OuterBox,https://outerboxdesign.com,outerboxdesign.com,Justin Smith,CEO,justin@outerboxdesign.com,+1 866-647-9218,"Akron, OH",Shopify & Magento Paid Search / SEO,160+,PENDING
+61,Bva,https://bva.agency,bva.agency,Bobby Vernon,VP Partnerships,bobby@bva.agency,+1 619-795-8888,"San Diego, CA",Shopify Plus Growth & Strategy,140+,PENDING
+62,Pivotal Brands,https://pivotalbrands.com,pivotalbrands.com,Samson Ross,Managing Partner,samson@pivotalbrands.com,,"New York, NY",DTC Growth & Media Buying,30+,PENDING
+63,Grownup Agency,https://grownup.agency,grownup.agency,Marcus Ohanesian,Founder,marcus@grownup.agency,,"Boston, MA",Shopify Development & CRO,25+,PENDING
+64,The Snow Agency,https://thesnowagency.com,thesnowagency.com,Jonathan Snow,CEO & Co-Founder,jonathan@thesnowagency.com,+1 888-825-4512,"Miami, FL",Paid Social & Influencer Scale,110+,PENDING
+65,Avenue Z,https://avenuez.com,avenuez.com,Lia Reich,CMO,lia@avenuez.com,+1 888-927-2489,"Orlando, FL",Full-Service Performance Marketing,80+,PENDING
+66,Tinloof,https://tinloof.com,tinloof.com,Omar Benseddik,CEO & Co-Founder,omar@tinloof.com,,"London, UK",Headless Shopify & Next.js Apps,35+,PENDING
+67,Pack Digital,https://packdigital.com,packdigital.com,Cory Cummings,CEO & Co-Founder,cory@packdigital.com,,"San Diego, CA",Headless Commerce Framework & Apps,45+,PENDING
+68,We Make Content,https://wemakecontent.co,wemakecontent.co,Jack Rogers,Creative Director,jack@wemakecontent.co,,"Manchester, UK",DTC Creative & Paid Meta,30+,PENDING
+69,Right Hook Digital,https://righthookdigital.com,righthookdigital.com,Scott Seward,CEO,scott@righthookdigital.com,+61 3 9018 7848,"Melbourne, AU",DTC Growth & Paid Social,55+,PENDING
+70,Megaphone Marketing,https://megaphonemarketing.com.au,megaphonemarketing.com.au,Max Hertan,CEO & Founder,max@megaphonemarketing.com.au,+61 1300 074 122,"Melbourne, AU",Paid Ads & ROAS Optimization,130+,PENDING
+71,Online Marketing Gurus,https://onlinemarketinggurus.com,onlinemarketinggurus.com,Mez Homayunfard,Co-Founder,mez@onlinemarketinggurus.com,+61 1300 434 282,"Sydney, AU",Performance E-Commerce & SEO,190+,PENDING
+72,FirstPier,https://firstpier.com,firstpier.com,Steve P.,Director,steve@firstpier.com,+1 207-613-5750,"Portland, ME",Shopify Plus Design & Integrations,30+,PENDING
+73,Ample,https://helloample.com,helloample.com,Jeff B.,Partner,jeff@helloample.com,+1 513-407-7420,"Cincinnati, OH",E-Commerce Product Experience,25+,PENDING
+74,Heycarson,https://heycarson.com,heycarson.com,Benjamin Marciano,Co-Founder,benjamin@heycarson.com,,"Montreal, QC",High-Volume Shopify Task Sprint Studio,500+,PENDING
+75,Storetasker,https://storetasker.com,storetasker.com,Tim Peckover,Partner Director,tim@storetasker.com,,"San Francisco, CA",Freelance Shopify Expert Network,600+,PENDING
+76,Metric Theory,https://metrictheory.com,metrictheory.com,Ken C.,Managing Director,ken@metrictheory.com,+1 216-245-0955,"San Francisco, CA",Performance Media & Blended ROAS,110+,PENDING
+77,Verbal+Visual,https://verbalplusvisual.com,verbalplusvisual.com,Anson K.,Managing Director,anson@verbalplusvisual.com,+1 212-419-5452,"New York, NY",Shopify Plus Sustainable & Fashion,45+,PENDING
+78,Progress Labs,https://progresslabs.co,progresslabs.co,Alex M.,Partner,alex@progresslabs.co,,"Los Angeles, CA",Shopify Performance Optimization,30+,PENDING
+79,BVAccel,https://bvaccel.com,bvaccel.com,Partnership Desk,Partner Director,partners@bvaccel.com,+1 858-299-5200,"San Diego, CA",Original Shopify Plus Pioneer Agency,120+,PENDING
+80,Blue Stout,https://bluestout.com,bluestout.com,Allen B.,Founder,allen@bluestout.com,+1 800-410-0935,"Portland, OR",Shopify CRO & Revenue Architecture,35+,PENDING
+81,Slicedbread Agency,https://slicedbreadagency.com,slicedbreadagency.com,Mark C.,CEO,mark@slicedbreadagency.com,+1 800-819-2045,"Los Angeles, CA",DTC Meta Ad Scale & Creatives,75+,PENDING
+82,Voy Media,https://voymedia.com,voymedia.com,Kevin Urrutia,Founder,kevin@voymedia.com,+1 646-600-9830,"New York, NY",High-ROAS Meta & TikTok Ads,110+,PENDING
+83,K6 Agency,https://k6agency.com,k6agency.com,Karim B.,CEO,karim@k6agency.com,,"Miami, FL",Shopify Growth & Paid Media,65+,PENDING
+84,Brandastic,https://brandastic.com,brandastic.com,Justin D.,CEO,justin@brandastic.com,,"Costa Mesa, CA",Shopify Plus Development & PPC,90+,PENDING
+85,Metacake,https://metacake.com,metacake.com,Ken F.,CEO & Co-Founder,ken@metacake.com,,"Nashville, TN",DTC E-Commerce Growth Marketing,80+,PENDING
+86,Tier 11,https://tiereleven.com,tiereleven.com,Ralph Burns,CEO & Founder,ralph@tiereleven.com,+1 800-496-0391,"Austin, TX",Customer Acquisition & ROAS,95+,PENDING
+87,AdVenture Media Group,https://adventureppc.com,adventureppc.com,Isaac Rudansky,CEO & Founder,isaac@adventureppc.com,+1 888-259-8620,"Long Island, NY",Enterprise Google & Meta Ads,120+,PENDING
+88,Chronos Agency,https://chronos.agency,chronos.agency,Josh Chin,CEO & Co-Founder,josh@chronos.agency,,Singapore / US,Retention & Paid Traffic Integration,130+,PENDING
+89,Flowium,https://flowium.com,flowium.com,Andriy Boychuk,Founder,andriy@flowium.com,+1 800-338-1754,"New York, NY",Shopify Retention & Acquisition,85+,PENDING
+90,WebMechanix,https://webmechanix.com,webmechanix.com,Chris M.,CEO,chris@webmechanix.com,,"Columbia, MD",Performance Media & Paid Traffic,100+,PENDING
+91,Bluleadz,https://bluleadz.com,bluleadz.com,Eric Baum,CEO,eric@bluleadz.com,,"Tampa, FL",Full-Funnel Digital Marketing,70+,PENDING
+92,Vital Design,https://vtldesign.com,vtldesign.com,Zac C.,Managing Partner,zac@vtldesign.com,+1 888-854-4112,"Portsmouth, NH",Shopify Plus & Paid Search,65+,PENDING
+93,Ironpaper,https://ironpaper.com,ironpaper.com,Jonathan K.,CEO,jonathan@ironpaper.com,,"New York, NY",B2B & High-Ticket Acquisition,60+,PENDING
+94,SimpleTiger,https://simpletiger.com,simpletiger.com,Jeremiah S.,CEO,jeremiah@simpletiger.com,,"Sarasota, FL",Search & Media Acquisition,50+,PENDING
+95,Directive Consulting,https://directiveconsulting.com,directiveconsulting.com,Garrett Mehrguth,CEO,garrett@directiveconsulting.com,,"Irvine, CA",Customer Generation & Paid Media,140+,PENDING
+96,ROI Revolution,https://roirevolution.com,roirevolution.com,Timothy S.,CEO,timothy@roirevolution.com,,"Raleigh, NC",Enterprise Retail Ad Scaling,220+,PENDING
+97,Croud,https://croud.com,croud.com,Ben Barker,Managing Director,ben@croud.com,,"New York, NY",Global Performance Media Agency,180+,PENDING
+98,Brainlabs,https://brainlabsdigital.com,brainlabsdigital.com,Dan G.,Global CEO,dan@brainlabsdigital.com,+1 888-998-8687,"New York, NY",High-Velocity Paid Traffic,250+,PENDING
+99,Rainfactory,https://rainfactory.com,rainfactory.com,Mark P.,CEO,mark@rainfactory.com,+1 888-217-7489,"Oakland, CA",Crowdfunding & DTC Growth,70+,PENDING
+100,Enventys Partners,https://enventyspartners.com,enventyspartners.com,Roy M.,CEO,roy@enventyspartners.com,+1 844-367-7363,"Charlotte, NC",Product Launch & Paid Ads,85+,PENDING
+101,Jellyfish,https://jellyfish.com,jellyfish.com,Chris S.,Managing Director,chris@jellyfish.com,+1 888-778-9892,"New York, NY",Global Digital Marketing Agency,300+,PENDING
+102,Shoelace,https://shoelace.com,shoelace.com,Alex M.,CEO,alex@shoelace.com,+1 312-313-1104,"Toronto, ON",Shopify Retargeting & Ad Guard,75+,PENDING
+103,Overdose Digital,https://overdose.digital,overdose.digital,Paul O'Brien,Global CEO,paul@overdose.digital,+1 800-983-2940,"Auckland, NZ",Enterprise Commerce Strategy,160+,PENDING
+104,MindArc,https://mindarc.com.au,mindarc.com.au,Sean Mason,CEO & Founder,sean@mindarc.com.au,+61 2 8338 0470,"Sydney, AU",Shopify Plus & Unified Commerce,70+,PENDING
+105,Aligent Consulting,https://aligent.com.au,aligent.com.au,Jonathan Day,Managing Director,jonathan@aligent.com.au,+61 8 8232 4110,"Adelaide, AU",Enterprise Headless & Shopify Plus,65+,PENDING
+106,Process Creative,https://processcreative.com.au,processcreative.com.au,Danilo Pozder,Director,danilo@processcreative.com.au,+61 3 9429 0888,"Melbourne, AU",Shopify Plus Digital Experience,45+,PENDING
+107,Hanapin Marketing,https://hanapinmarketing.com,hanapinmarketing.com,Jeff A.,President,jeff@hanapinmarketing.com,,"Bloomington, IN",Paid Search & Meta Scaling,80+,PENDING
+108,3Q Digital,https://3qdigital.com,3qdigital.com,Rob V.,CEO,rob@3qdigital.com,,"San Mateo, CA",Full-Funnel DTC Media,190+,PENDING
+109,PMX Agency,https://pmxagency.com,pmxagency.com,Chris P.,Managing Director,chris@pmxagency.com,,"New York, NY",Performance Marketing & Creative,110+,PENDING
+110,Elite SEM,https://elitesem.com,elitesem.com,Zach M.,CEO,zach@elitesem.com,,"New York, NY",Paid Search & Social Media,150+,PENDING
+111,Merkle,https://merkle.com,merkle.com,Craig B.,VP Performance Media,craig@merkle.com,,"Columbia, MD",Omnichannel Customer Experience,300+,PENDING
+112,DAC Group,https://dacgroup.com,dacgroup.com,Norman D.,CEO,norman@dacgroup.com,,"Toronto, ON",Digital Media & Local Growth,140+,PENDING
+113,iCrossing,https://icrossing.com,icrossing.com,Mike C.,President,mike@icrossing.com,,"New York, NY",Performance Media & Brand Growth,160+,PENDING
+114,Reprise Digital,https://reprisedigital.com,reprisedigital.com,Dimitri M.,CEO,dimitri@reprisedigital.com,,"New York, NY","Search, Social & E-Commerce",210+,PENDING
+115,Silverback Strategies,https://silverbackstrategies.com,silverbackstrategies.com,Neil G.,CEO,neil@silverbackstrategies.com,,"Alexandria, VA",Performance Marketing & CRO,75+,PENDING
+116,Seer Interactive,https://seerinteractive.com,seerinteractive.com,Wil Reynolds,Founder & VP Innovation,wil@seerinteractive.com,,"Philadelphia, PA",Big Data Search & Paid Media,180+,PENDING
+117,Portent Digital,https://clearlink.com,clearlink.com,Ian L.,Partner,ian@clearlink.com,,"Seattle, WA",Digital Marketing Infrastructure,90+,PENDING
+118,Gartner Digital Markets,https://gartner.com,gartner.com,Mark H.,Ecosystem Director,mark@gartner.com,,"Stamford, CT",Enterprise E-Commerce Research,100+,PENDING
+119,Tinuiti Retail,https://tinuiti.com,tinuiti.com,Niran P.,VP Paid Media,niran@tinuiti.com,,"New York, NY",Retail Media & Marketplaces,250+,PENDING
+120,Hawke Media Midwest,https://hawkemedia.com,hawkemedia.com,Ryan K.,VP Media,ryan@hawkemedia.com,,"Chicago, IL",Performance Media & Creative,130+,PENDING
+121,Power Digital Creative,https://powerdigitalmarketing.com,powerdigitalmarketing.com,Jeff C.,Head of Media,jeff@powerdigitalmarketing.com,,"San Diego, CA",Full-Funnel E-Commerce Paid Media,180+,PENDING
+122,Common Thread Media,https://commonthreadco.com,commonthreadco.com,Aaron O.,VP Performance Media,aaron@commonthreadco.com,,"Santa Ana, CA",Meta DTC Growth & Paid Spend,110+,PENDING
+123,Electric Eye Labs,https://electriceye.io,electriceye.io,Shawn S.,Technical Director,shawn@electriceye.io,,"Columbus, OH",Shopify Plus Optimization,40+,PENDING
+124,Ethercycle Advisory,https://ethercycle.com,ethercycle.com,Paul R.,Lead Consultant,paul@ethercycle.com,,"Chicago, IL",Shopify Plus Technical Auditing,35+,PENDING
+125,Half Helix Design,https://halfhelix.com,halfhelix.com,Nick S.,Creative Director,nick@halfhelix.com,,"New York, NY",High-Growth Shopify Plus,70+,PENDING
+126,Avex Studio,https://avexdesigns.com,avexdesigns.com,Mike T.,Director of Strategy,mike@avexdesigns.com,,"New York, NY",Shopify Fashion & Retention,55+,PENDING
