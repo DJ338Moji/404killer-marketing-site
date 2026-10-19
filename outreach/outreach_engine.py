@@ -50,9 +50,9 @@ DEFAULT_CONFIG = {
     "imap_port": 993,
     "sender_email": "djohnson@404killer.com",
     "sender_name": "Dale Johnson",
-    "daily_limit_week1": 10,
-    "daily_limit_week2": 25,
-    "daily_limit_mature": 45,
+    "daily_limit_week1": 20,
+    "daily_limit_week2": 35,
+    "daily_limit_mature": 50,
     "min_delay_sec": 480,  # 8 minutes
     "max_delay_sec": 900,  # 15 minutes
     "touch_2_delay_days": 3,
@@ -541,8 +541,8 @@ def send_outreach_batch(limit=10, instant=False, app_password=None):
     conn.close()
     print("\n🎉 Batch sending finished.")
 
-def send_test_email(recipient, app_password=None):
-    """Sends a sample Touch 1 email to the specified recipient to preview live formatting."""
+def send_test_email(recipient, app_password=None, stage=1):
+    """Sends a sample Touch email (stage 1, 2, or 3) to the specified recipient to preview live formatting."""
     password = app_password or os.environ.get("OUTREACH_APP_PASSWORD")
     if not password:
         print("❌ Error: No Google Workspace App Password provided.")
@@ -556,19 +556,19 @@ def send_test_email(recipient, app_password=None):
         "client_stores": "35+"
     }
     vars = format_lead_variables(sample_lead)
-    subject, text_body = render_template(1, vars, "txt")
-    _, html_body = render_template(1, vars, "html")
+    subject, text_body = render_template(stage, vars, "txt")
+    _, html_body = render_template(stage, vars, "html")
 
     msg = MIMEMultipart("alternative")
     msg["From"] = f"{DEFAULT_CONFIG['sender_name']} <{DEFAULT_CONFIG['sender_email']}>"
     msg["To"] = f"Dale Johnson <{recipient}>"
-    msg["Subject"] = f"[LIVE PREVIEW] {subject}"
+    msg["Subject"] = f"[LIVE PREVIEW - TOUCH {stage}] {subject}"
     msg["Reply-To"] = DEFAULT_CONFIG["sender_email"]
 
     msg.attach(MIMEText(text_body, "plain", "utf-8"))
     msg.attach(MIMEText(html_body, "html", "utf-8"))
 
-    print(f"📤 Sending test outreach email to {recipient} via Google Workspace SMTP...")
+    print(f"📤 Sending test outreach email (Touch {stage}) to {recipient} via Google Workspace SMTP...")
     try:
         server = smtplib.SMTP(DEFAULT_CONFIG["smtp_host"], DEFAULT_CONFIG["smtp_port"])
         server.starttls()
@@ -592,6 +592,7 @@ def main():
 
     test_parser = subparsers.add_parser("test", help="Send a test email to preview layout")
     test_parser.add_argument("--to", type=str, default="djohnson@404killer.com", help="Recipient email")
+    test_parser.add_argument("--stage", type=int, default=1, choices=[1, 2, 3], help="Touch stage to test (1, 2, or 3)")
     test_parser.add_argument("--password", type=str, default="", help="Google Workspace App Password")
 
     send_parser = subparsers.add_parser("send", help="Send the next batch of emails")
@@ -611,7 +612,7 @@ def main():
     elif args.command == "dry-run":
         dry_run(args.limit)
     elif args.command == "test":
-        send_test_email(args.to, args.password)
+        send_test_email(args.to, args.password, args.stage)
     elif args.command == "send":
         send_outreach_batch(args.limit, args.instant, args.password)
     elif args.command == "check-inbox":
