@@ -1,0 +1,40 @@
+Subject: {{brand_name}} Campaign Audit: High-intent ad traffic landing on 404s
+
+Hi {{first_name}},
+
+Quick diagnostic note for the growth & marketing team at {{brand_name}}:
+
+We ran a non-invasive route scan across {{domain}} this morning and noticed that several high-intent campaign and catalog paths are returning raw HTTP 404 error pages.
+
+When high-spend Meta Advantage+, Google Shopping, or influencer affiliate links land on an unpublished variant or retired seasonal SKU, shoppers bounce in under 2.3 seconds. The ad network still bills your account for the full CPC, while your blended ROAS suffers from the zero-conversion dead end.
+
+=======================================================
+⚡ FREE FORENSIC CAMPAIGN OVERVIEW: {{domain}}
+=======================================================
+• Campaign Route Health: D+ (ROAS Degradation Risk)
+• Estimated Monthly Ad Spend Leakage: ${{monthly_ad_bleed}} / month
+• Missing SKUs & Catalog Friction: {{missing_products_detail}}
+• Sample Dead-End URLs Sampled:
+  - https://{{domain}}{{sample_404_1}} [404 NOT FOUND]
+  - https://{{domain}}{{sample_404_2}} [404 NOT FOUND]
+=======================================================
+
+We built 404 Killer App as autonomous ROAS insurance for leading direct-to-consumer brands on Shopify Plus:
+
+1. Instant 50ms Edge Redirects: Automatically guides shoppers from retired or out-of-stock products to the closest active alternative before they abandon.
+2. Paid Traffic Intent Preservation: Protects incoming UTM tags, preserving campaign tracking and giving your media buyer credit for the salvaged sale.
+3. Zero Merchandising Overhead: Runs autonomously in the background via Shopify GraphQL—no spreadsheets or manual 301 redirects required.
+
+👉 CLICK HERE TO FIX IT NOW:
+https://404killer.com/audit?store={{domain}}
+
+(Inspects full live telemetry & unlocks 30-day trial for {{domain}})
+
+Would it make sense to connect for 10 minutes this week to show your media buyers how we salvage campaign traffic across your catalog?
+
+Cheers,
+Dale Johnson
+Founder & CEO | 404 Killer App
+Email: djohnson@404killer.com
+Phone: (435) 962-4444
+Web: https://404killer.com

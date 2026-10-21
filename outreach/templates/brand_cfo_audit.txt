@@ -1,0 +1,38 @@
+Subject: Store Audit: Estimated ${{monthly_ad_bleed}}/mo paid ad bleed on {{brand_name}}
+
+Hi {{first_name}},
+
+I ran a non-invasive catalog routing audit on {{domain}} this morning to evaluate customer drop-off on paid acquisition traffic ahead of high-volume seasonal scaling.
+
+When high-velocity inventory shifts or seasonal bundles sell out, paid Meta and Google ad clicks frequently land on raw Shopify 404 pages. Because 94% of visitors bounce off a 404 in under 2.3 seconds, that acquisition cost is completely lost, creating an invisible drag on your EBITDA.
+
+=======================================================
+🛡️ FREE FORENSIC SITE OVERVIEW: {{domain}}
+=======================================================
+• Store Health Grade: D+ (Critical Margin Risk)
+• Estimated Monthly Ad Bleed: ${{monthly_ad_bleed}} / month (~${{annual_ad_bleed}}/yr in burned ad spend)
+• Missing / Discontinued Products Impact: {{missing_products_detail}}
+• Sample Dead-End URLs Detected:
+  - https://{{domain}}{{sample_404_1}} [404 NOT FOUND]
+  - https://{{domain}}{{sample_404_2}} [404 NOT FOUND]
+=======================================================
+
+Instead of forcing your merchandising or engineering team to manually write and maintain hundreds of static URL redirects, 404 Killer App operates autonomously at the edge:
+
+1. 50ms Auto-Reroute: Automatically routes dead product URLs to the closest in-stock variant or active parent collection in under 50ms.
+2. Paid Ad Capital Shield: Intercepts clicks tagged with UTM, Google Ads (GCLID), and Meta (FBCLID) parameters before the user can bounce.
+3. Zero Maintenance: Installs directly from the Shopify App Store in 90 seconds with zero theme code alterations.
+
+👉 CLICK HERE TO FIX IT NOW:
+https://404killer.com/audit?store={{domain}}
+
+(Runs a full real-time interactive diagnostic & activates 30-day trial for {{domain}})
+
+Would you like to review the complete diagnostic breakdown for {{domain}} with our engineering team this week?
+
+Best regards,
+Dale Johnson
+Founder & CEO | 404 Killer App
+Email: djohnson@404killer.com
+Phone: (435) 962-4444
+Web: https://404killer.com

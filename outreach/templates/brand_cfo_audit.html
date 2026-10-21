@@ -1,0 +1,87 @@
+Subject: Store Audit: Estimated ${{monthly_ad_bleed}}/mo paid ad bleed on {{brand_name}}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 14.5px; line-height: 1.55; color: #1e293b; margin: 0; padding: 0; }
+  p { margin: 0 0 14px 0; }
+  ul { margin: 0 0 14px 20px; padding: 0; }
+  li { margin-bottom: 5px; }
+  a { color: #0284c7; text-decoration: none; font-weight: 500; }
+  a:hover { text-decoration: underline; }
+  .audit-card { background: #f8fafc; border: 1px solid #cbd5e1; border-left: 4px solid #ef4444; border-radius: 8px; padding: 16px 18px; margin: 18px 0; }
+  .audit-title { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #b91c1c; margin-bottom: 10px; }
+  .metric-row { margin-bottom: 6px; font-size: 13.5px; }
+  .metric-label { font-weight: 700; color: #334155; }
+  .code-pill { background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 12.5px; word-break: break-all; }
+  .cta-button { display: inline-block; background: #059669; color: #ffffff !important; font-weight: 700; font-size: 14px; padding: 12px 24px; border-radius: 8px; text-decoration: none !important; margin: 12px 0 6px 0; text-align: center; }
+  .cta-button:hover { background: #047857; }
+  .sig-table { font-size: 13.5px; line-height: 1.4; margin-top: 24px; padding-top: 16px; border-top: 1px solid #e2e8f0; }
+</style>
+</head>
+<body>
+  <p>Hi {{first_name}},</p>
+
+  <p>I ran a non-invasive catalog routing audit on <strong>{{domain}}</strong> this morning to evaluate customer drop-off on paid acquisition traffic ahead of high-volume seasonal scaling.</p>
+
+  <p>When high-velocity inventory shifts or seasonal bundles sell out, paid Meta and Google ad clicks frequently land on raw Shopify 404 pages. Because <strong>94% of visitors bounce off a 404 in under 2.3 seconds</strong>, that acquisition cost is completely lost, creating an invisible drag on your EBITDA.</p>
+
+  <div class="audit-card">
+    <div class="audit-title">🛡️ Free Forensic Site Overview — {{domain}}</div>
+    <div class="metric-row"><span class="metric-label">Store Health Grade:</span> <strong style="color: #dc2626;">D+ (Critical Margin Risk)</strong></div>
+    <div class="metric-row"><span class="metric-label">Estimated Monthly Ad Bleed:</span> <strong style="color: #dc2626;">${{monthly_ad_bleed}} / month</strong> (~${{annual_ad_bleed}}/yr in unrecovered ad spend)</div>
+    <div class="metric-row"><span class="metric-label">Missing / Discontinued Products Impact:</span> {{missing_products_detail}}</div>
+    <div class="metric-row" style="margin-top: 8px;">
+      <span class="metric-label">Sample Dead-End URLs Detected:</span><br>
+      <div style="margin-top: 4px; line-height: 1.6;">
+        • <span class="code-pill">https://{{domain}}{{sample_404_1}}</span> <strong style="color: #dc2626;">[404]</strong><br>
+        • <span class="code-pill">https://{{domain}}{{sample_404_2}}</span> <strong style="color: #dc2626;">[404]</strong>
+      </div>
+    </div>
+  </div>
+
+  <p>Instead of forcing your merchandising or engineering team to manually write and maintain hundreds of static URL redirects, <strong>404 Killer App</strong> operates autonomously at the edge:</p>
+
+  <ul>
+    <li><strong>50ms Auto-Reroute:</strong> Automatically routes dead product URLs to the closest in-stock variant or active parent collection in under 50ms.</li>
+    <li><strong>Paid Ad Capital Shield:</strong> Intercepts clicks tagged with UTM, Google Ads (GCLID), and Meta (FBCLID) parameters before the user can bounce.</li>
+    <li><strong>Zero Maintenance:</strong> Installs directly from the Shopify App Store in 90 seconds with zero theme code alterations.</li>
+  </ul>
+
+  <p>
+    <a href="https://404killer.com/audit?store={{domain}}" class="cta-button" target="_blank">
+      👉 Click Here to Fix It Now (Auto-Heal Broken Links) &rarr;
+    </a><br>
+    <span style="font-size: 12px; color: #64748b;">(Runs a full real-time interactive diagnostic & activates 30-day trial for {{domain}})</span>
+  </p>
+
+  <p>Would you like to review the complete diagnostic breakdown for {{domain}} with our engineering team this week?</p>
+
+  <p>Best regards,<br>Dale</p>
+
+  <table class="sig-table" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td style="padding-right: 14px; vertical-align: middle; border-right: 2px solid #10b981;">
+        <a href="https://404killer.com" target="_blank">
+          <img src="https://404killer.com/app-icon.png" alt="404 Killer App" width="52" height="52" style="display: block; border-radius: 10px; border: 0;" />
+        </a>
+      </td>
+      <td style="padding-left: 14px; vertical-align: top;">
+        <div style="font-size: 15px; font-weight: 800; color: #0f172a; margin-bottom: 2px;">Dale Johnson</div>
+        <div style="font-size: 12.5px; font-weight: 600; color: #10b981; margin-bottom: 5px;">Founder & CEO &nbsp;|&nbsp; 404 Killer App</div>
+        <div style="font-size: 12px; color: #475569; margin-bottom: 3px;">
+          📧 <a href="mailto:djohnson@404killer.com">djohnson@404killer.com</a>
+          &nbsp;&nbsp;•&nbsp;&nbsp;
+          📞 <a href="tel:+14359624444" style="color: #475569;">(435) 962-4444</a>
+        </div>
+        <div style="font-size: 12px; color: #475569;">
+          🌐 <a href="https://404killer.com" target="_blank" style="color: #10b981; font-weight: 700;">404killer.com</a>
+          &nbsp;&nbsp;•&nbsp;&nbsp;
+          🛡️ <a href="https://404killer.com/audit?store={{domain}}" target="_blank" style="color: #0284c7; font-weight: 600;">Store Diagnostic Portal</a>
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
