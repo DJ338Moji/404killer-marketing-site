@@ -64,11 +64,10 @@ export default function Audit() {
     return `${base}${path}`;
   };
 
-  const handleStartScan = async (e) => {
-    e.preventDefault();
+  const executeDiagnostic = async (targetUrl, targetEmail, targetPlatform = 'shopify') => {
     setError('');
 
-    let cleanUrl = url.trim();
+    let cleanUrl = targetUrl.trim();
     if (!cleanUrl) {
       setError('Please enter your website or storefront URL (e.g. brand.com or www.mojipass.com).');
       return;
@@ -78,12 +77,8 @@ export default function Audit() {
       cleanUrl = 'https://' + cleanUrl;
     }
 
-    if (!email.trim() || !validateEmail(email.trim())) {
-      setError('A valid business email is required to generate and receive your health score.');
-      return;
-    }
-
     setUrl(cleanUrl);
+    setEmail(targetEmail);
     setIsScanning(true);
     setScanStage(0);
 
@@ -92,8 +87,8 @@ export default function Audit() {
       const leads = JSON.parse(localStorage.getItem('404killer_audit_leads') || '[]');
       leads.push({
         url: cleanUrl,
-        email: email.trim(),
-        platform,
+        email: targetEmail.trim(),
+        platform: targetPlatform,
         createdAt: new Date().toISOString()
       });
       localStorage.setItem('404killer_audit_leads', JSON.stringify(leads));
@@ -115,8 +110,8 @@ export default function Audit() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           url: cleanUrl,
-          email: email.trim(),
-          platform
+          email: targetEmail.trim(),
+          platform: targetPlatform
         })
       });
       const data = await response.json();
@@ -375,6 +370,43 @@ export default function Audit() {
       }
     }
   };
+
+  const handleStartScan = async (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    setError('');
+
+    let cleanUrl = url.trim();
+    if (!cleanUrl) {
+      setError('Please enter your website or storefront URL (e.g. brand.com or www.mojipass.com).');
+      return;
+    }
+
+    if (!cleanUrl.startsWith('http://') && !cleanUrl.startsWith('https://')) {
+      cleanUrl = 'https://' + cleanUrl;
+    }
+
+    if (!email.trim() || !validateEmail(email.trim())) {
+      setError('A valid business email is required to generate and receive your health score.');
+      return;
+    }
+
+    await executeDiagnostic(cleanUrl, email.trim(), platform);
+  };
+
+  // Auto-run diagnostic if store / url / domain query parameter is present in URL
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const storeParam = params.get('store') || params.get('domain') || params.get('url');
+    if (storeParam && !scanResult && !isScanning) {
+      let cleanStore = storeParam.trim();
+      if (!cleanStore.startsWith('http://') && !cleanStore.startsWith('https://')) {
+        cleanStore = 'https://' + cleanStore;
+      }
+      const host = cleanStore.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
+      const emailParam = params.get('email') || `growth@${host}`;
+      executeDiagnostic(cleanStore, emailParam, 'shopify');
+    }
+  }, [location.search]);
 
   const handleReset = () => {
     setScanResult(null);
