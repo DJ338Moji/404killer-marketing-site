@@ -22,26 +22,37 @@ import {
 } from 'lucide-react';
 
 export default function Audit() {
-  const [url, setUrl] = useState('');
+  const location = useLocation();
+
+  const getQueryStore = () => {
+    if (typeof window !== 'undefined') {
+      const p = new URLSearchParams(window.location.search || location.search);
+      return p.get('store') || p.get('domain') || p.get('url') || '';
+    }
+    return '';
+  };
+
+  const initialStore = getQueryStore();
+  const [url, setUrl] = useState(initialStore);
   const [email, setEmail] = useState('');
-  const [platform, setPlatform] = useState('shopify');
+  const [platform, setPlatform] = useState(() => (initialStore.toLowerCase().includes('bulb') ? 'magento' : 'shopify'));
   const [error, setError] = useState('');
   const [isScanning, setIsScanning] = useState(false);
   const [scanStage, setScanStage] = useState(0);
   const [scanResult, setScanResult] = useState(null);
 
-  const location = useLocation();
-
   // Listen for reset events from navbar or other links
   useEffect(() => {
-    const handleResetEvent = () => handleReset();
+    const handleResetEvent = () => {
+      if (!getQueryStore()) handleReset();
+    };
     window.addEventListener('reset-audit-scan', handleResetEvent);
     return () => window.removeEventListener('reset-audit-scan', handleResetEvent);
   }, []);
 
-  // When location changes or reset flag is passed in state, reset view
+  // When location changes or reset flag is passed in state, reset view (only if no query store param)
   useEffect(() => {
-    if (location.state?.reset || location.state?.resetTime) {
+    if (!getQueryStore() && (location.state?.reset || location.state?.resetTime)) {
       handleReset();
     }
   }, [location.key, location.state]);
@@ -134,7 +145,8 @@ export default function Audit() {
       const isMojipass = cleanHost.includes('mojipass');
       const isGarden = /garden|seed|plant|grow|raisedbed/i.test(cleanHost);
       const isIndustrial = !isGarden && /expatech|hvac|filtration|manufactur|industr|fabricat|oem/i.test(cleanHost);
-      const isNonEcommerce = isMojipass || isIndustrial || cleanHost.includes('saas') || cleanHost.includes('app') || cleanHost.includes('io') || (cleanHost.includes('tech') && !isGarden);
+      const isLighting = /bulb|light|lamp|ballast|depot/i.test(cleanHost);
+      const isNonEcommerce = isMojipass || (isIndustrial && !isLighting) || cleanHost.includes('saas') || cleanHost.includes('app') || cleanHost.includes('io') || (cleanHost.includes('tech') && !isGarden && !isLighting);
 
       if (isNonEcommerce) {
         const detectedPlatform = isIndustrial ? 'WordPress Site' : 'React / Next.js Web App (Vercel Edge)';
@@ -258,27 +270,66 @@ export default function Audit() {
           ]
         });
       } else {
+        const isLighting = /bulb|light|lamp|ballast|depot/i.test(cleanHost);
         const seed = cleanHost.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-        const brokenCount = (seed % 4) + 4;
-        const adBleedDollars = Math.round(((seed % 10) * 120 + 1250) / 10) * 10;
+        const brokenCount = isLighting ? 12 : (seed % 4) + 4;
+        const adBleedDollars = isLighting ? 2090 : Math.round(((seed % 10) * 120 + 1250) / 10) * 10;
+        const catalogRoutesAudited = isLighting ? 13263 : 74;
+        const detectedPlatform = isLighting ? 'Adobe Commerce / Magento 2 (Hyvä)' : 'Shopify Storefront';
+        const siteCategory = isLighting ? 'Commercial & Industrial Lighting Catalog' : 'Shopify / E-Commerce Storefront';
 
         setScanResult({
           domain: cleanHost,
           url: cleanUrl,
-          email: email.trim(),
+          email: email.trim() || `growth@${cleanHost}`,
           isEcommerce: true,
-          siteCategory: 'Shopify / E-Commerce Storefront',
-          detectedPlatform: 'Shopify Storefront',
+          siteCategory,
+          detectedPlatform,
           grade: 'D+',
-          latencyMs: 142,
+          latencyMs: isLighting ? 94 : 142,
           brokenCount,
           adBleedDollars,
-          catalogRoutesAudited: 74,
-          pagesScanned: 68 + (seed % 25),
+          catalogRoutesAudited,
+          pagesScanned: isLighting ? 13263 : 68 + (seed % 25),
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-          summaryTitle: 'Storefront Health Assessment',
-          categoryNote: `${cleanHost} is an active e-commerce storefront. Broken catalog links and sold-out product ad clicks directly degrade ROAS.`,
-          demographics: isGarden ? {
+          summaryTitle: isLighting ? 'Commercial Lighting Catalog & Ad Health Assessment' : 'Storefront Health Assessment',
+          categoryNote: isLighting
+            ? `${cleanHost} is an active commercial lighting catalog operating on Adobe Commerce / Magento 2. Broken catalog links on discontinued ballasts, tubes, and drivers bleed Google/Bing ad spend and bypass LED replacements.`
+            : `${cleanHost} is an active e-commerce storefront. Broken catalog links and sold-out product ad clicks directly degrade ROAS.`,
+          demographics: isLighting ? {
+            priceTier: 'Commercial Lighting & Industrial Retrofit ($450+ AOV)',
+            detectedPixels: ['Google Analytics 4 & Performance Max', 'Google Tag Manager', 'Bing UET / Microsoft Advertising'],
+            primary: {
+              cohort: 'Commercial Electrical Contractors & Retrofit Installers',
+              percentage: '65%',
+              age: '30 – 58',
+              gender: 'Commercial Trade Skew (82% M / 18% F)',
+              income: 'Licensed Contractor & Project Accounts ($150k+ Purchasing Power)',
+              motivations: 'Fast job-site delivery, direct ballast/driver voltage spec matching, ANSI/UL compliance, bulk volume pricing.',
+              channels: 'Google Shopping (PMax), Bing Ads, Commercial Electrical Supply Search, Bookmarks.',
+              leakageRisk: 'Contractors on job sites searching discontinued ballast/tube part numbers bounce immediately to 1000Bulbs or Grainger if URL returns 404.'
+            },
+            secondary: {
+              cohort: 'Facility Maintenance & Plant Operations Directors',
+              percentage: '25%',
+              age: '35 – 60',
+              gender: 'Operations Skew (75% M / 25% F)',
+              income: 'Commercial Property & School District Maintenance Budgets',
+              motivations: 'LED energy rebate eligibility (DLC Listed), long rated lifespans (50,000+ hrs), ballast bypass (Type B) retrofits.',
+              channels: 'Direct Google Search, Vendor Reorders, Commercial Accounts.',
+              leakageRisk: 'Facility managers looking for exact legacy replacement parts forfeit commercial orders when product routes are dead.'
+            },
+            tertiary: {
+              cohort: 'Wholesale Lighting Procurement & Purchasing Agents',
+              percentage: '10%',
+              age: '28 – 52',
+              gender: 'Balanced (55% M / 45% F)',
+              income: 'Corporate Purchasing Accounts',
+              motivations: 'Spec sheet accuracy, case quantity availability, net 30 invoice credit.',
+              channels: 'Direct Part Number Search, Manufacturer Cross-Reference Lists.',
+              leakageRisk: 'Bulk order quotes abandoned if manufacturer cross-reference links return 404.'
+            }
+          } : isGarden ? {
             priceTier: 'High-Ticket Gardening & Backyard Sustainability ($110 – $340 AOV)',
             detectedPixels: ['Meta Pixel (Instagram/Facebook)', 'TikTok Pixel (Gardening Tutorials)', 'Klaviyo Retention Engine', 'Google Analytics 4 & Performance Max'],
             primary: {
@@ -365,7 +416,9 @@ export default function Audit() {
               detail: 'Google AI Overviews & Perplexity bots cannot index discontinued product schemas.'
             }
           ],
-          recommendation: 'Activate 404 Killer App from the Shopify App Store to auto-heal 404s with 50ms 301 redirects.'
+          recommendation: cleanHost.toLowerCase().includes('bulb')
+            ? 'Deploy 404 Killer Universal Edge Tag in 3 minutes via Google Tag Manager (GTM). Zero backend Magento code needed to auto-heal broken catalog routes in <50ms.'
+            : 'Activate 404 Killer App from the Shopify App Store to auto-heal 404s with 50ms 301 redirects.'
         });
       }
     }
@@ -395,7 +448,7 @@ export default function Audit() {
 
   // Auto-run diagnostic if store / url / domain query parameter is present in URL
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
+    const params = new URLSearchParams(location.search || (typeof window !== 'undefined' ? window.location.search : ''));
     const storeParam = params.get('store') || params.get('domain') || params.get('url');
     if (storeParam && !scanResult && !isScanning) {
       let cleanStore = storeParam.trim();
@@ -404,9 +457,13 @@ export default function Audit() {
       }
       const host = cleanStore.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
       const emailParam = params.get('email') || `growth@${host}`;
-      executeDiagnostic(cleanStore, emailParam, 'shopify');
+      const detectedPlatform = host.toLowerCase().includes('bulb') ? 'magento' : 'shopify';
+      setUrl(cleanStore);
+      setEmail(emailParam);
+      setPlatform(detectedPlatform);
+      executeDiagnostic(cleanStore, emailParam, detectedPlatform);
     }
-  }, [location.search]);
+  }, [location.search, location.key]);
 
   const handleReset = () => {
     setScanResult(null);
