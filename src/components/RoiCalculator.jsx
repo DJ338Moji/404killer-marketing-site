@@ -4,7 +4,7 @@ import { ShieldCheck, TrendingUp, DollarSign, ArrowRight } from 'lucide-react';
 export default function RoiCalculator() {
   const [aov, setAov] = useState(65);
   const [monthlyTraffic, setMonthlyTraffic] = useState(5000);
-  const [planType, setPlanType] = useState('monthly'); // 'monthly' ($8.95) or 'annual' ($60/yr = $5/mo)
+  const [planType, setPlanType] = useState('monthly'); // 'monthly' ($29) or 'annual' ($290/yr = $24.16/mo)
 
   // Calculations based on Shopify merchant benchmarks
   // Typically 1.5% - 3% of visitors encounter out-of-stock items, changed handles, or dead ad links
@@ -12,7 +12,7 @@ export default function RoiCalculator() {
   // Average ecommerce conversion rate is ~2.2%
   const recoveredOrders = Math.max(1, Math.round(deadLinkVisitors * 0.024));
   const monthlyRevenueSaved = recoveredOrders * aov;
-  const cost = planType === 'monthly' ? 8.95 : 5.00;
+  const cost = planType === 'monthly' ? 29.00 : 24.16;
   const netSaved = monthlyRevenueSaved - cost;
   const roi = Math.round((netSaved / cost) * 100);
 
@@ -92,7 +92,7 @@ export default function RoiCalculator() {
                       : 'bg-white/5 border-white/10 text-theme-muted hover:border-white/20'
                   }`}
                 >
-                  Monthly ($8.95/mo)
+                  Monthly ($29.00/mo)
                 </button>
                 <button
                   type="button"
@@ -103,8 +103,8 @@ export default function RoiCalculator() {
                       : 'bg-white/5 border-white/10 text-theme-muted hover:border-white/20'
                   }`}
                 >
-                  <span className="absolute -top-2.5 right-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black text-[10px] px-2 py-0.5 rounded-full uppercase">Save 44%</span>
-                  Annual ($60/yr • $5/mo)
+                  <span className="absolute -top-2.5 right-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black text-[10px] px-2 py-0.5 rounded-full uppercase">Save $58/yr</span>
+                  Annual ($290/yr • $24.16/mo)
                 </button>
               </div>
             </div>

@@ -65,14 +65,14 @@ export default function Cfo() {
 
   // Assume 60% gross margin contribution on recovered orders + 100% of direct ad waste saved
   const annualEbitdaRecovery = Math.round(annualBurnedAdCash + annualForfeitedGmv * 0.6);
-  const annualSoftwareCost = 1599;
+  const annualSoftwareCost = 2999;
   const roicMultiple = Math.max(1, Math.round(annualEbitdaRecovery / annualSoftwareCost));
   const paybackHours = Math.max(1, Math.round((annualSoftwareCost / (annualEbitdaRecovery / 365)) * 24));
 
   const memoText = `MEMORANDUM: High-ROI OpEx Authorization Request
 To: Chief Financial Officer / VP of Finance
 From: Marketing & E-Commerce Operations
-Subject: Eliminating Paid Ad Spend Bleed on Archived Catalog Routes ($1,599/yr OpEx for Est. $${annualEbitdaRecovery.toLocaleString()}/yr EBITDA Preservation)
+Subject: Eliminating Paid Ad Spend Bleed on Archived Catalog Routes ($2,999/yr OpEx for Est. $${annualEbitdaRecovery.toLocaleString()}/yr EBITDA Preservation)
 
 1. EXECUTIVE SUMMARY & PROBLEM IDENTIFIED:
 When our merchandising team archives out-of-stock SKUs or updates seasonal collections, our active Meta, Google PMax, TikTok, Pinterest Promoted Pins, and YouTube Shopping/Creator links continue driving paid clicks ($${avgCpc.toFixed(2)} avg CPC) into HTTP 404 dead ends. Because ad networks bill on outbound click departure and evergreen links on Pinterest and YouTube live for 12–24+ months, we are absorbing an estimated ${brokenRate}% dead-click tax on our $${monthlyAdSpend.toLocaleString()}/mo ad budget with 0% conversion return.
@@ -84,10 +84,10 @@ When our merchandising team archives out-of-stock SKUs or updates seasonal colle
 - Estimated Net Annual EBITDA Drag: -$${annualEbitdaRecovery.toLocaleString()}/yr
 
 3. PROPOSED REMEDIATION:
-Deploy 404 Killer App (Revenue Shield) (https://404killer.com), an autonomous Shopify edge utility that intercepts broken catalog routes in <50ms and dynamically routes paid shoppers to live in-stock alternatives via native Shopify GraphQL.
+Deploy 404 Killer App (Revenue Shield) (https://404killer.com), an autonomous Shopify & Enterprise edge utility that intercepts broken catalog routes in <50ms and dynamically routes paid shoppers to live in-stock alternatives via native Shopify GraphQL or GTM Universal Edge Tag.
 
 4. GOVERNANCE, RISK & ROI ECONOMICS:
-- Software OpEx: $149/month or $1,599/year (Instant Enterprise & Agency Activation)
+- Software OpEx: $299/month or $2,999/year (Instant Enterprise & Agency Sentinel Activation)
 - Implementation CapEx: $0 (2-minute plug-and-play setup, zero developer hours)
 - Security & Compliance: Zero customer PII ingested; <50ms edge execution
 - Expected Payback Period: ~${paybackHours} hours of preserved ad traffic
@@ -620,25 +620,26 @@ Approval to activate the subscription at https://404killer.com/cfo`;
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto text-left">
             <div className="bg-slate-950 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
               <div>
-                <div className="text-xs font-bold uppercase text-cyan-400 mb-1">Growth Storefront</div>
-                <div className="text-xl font-black text-white mb-2">Pro Revenue Shield</div>
+                <div className="text-xs font-bold uppercase text-cyan-400 mb-1">Growth Storefront (Up to 5,000 SKUs)</div>
+                <div className="text-xl font-black text-white mb-2">Growth Sentinel</div>
                 <div className="text-3xl font-black text-white mb-4">
-                  {billingCycle === 'annual' ? '$790' : '$79'}
+                  {billingCycle === 'annual' ? '$990' : '$99'}
                   <span className="text-sm font-normal text-slate-400">{billingCycle === 'annual' ? ' / year' : ' / month'}</span>
                 </div>
                 <ul className="space-y-2 text-xs text-slate-300 mb-6">
-                  <li>✓ Autonomous 50ms 404 Auto-Healing</li>
+                  <li>✓ Autonomous &lt;50ms 404 Auto-Healing</li>
                   <li>✓ Paid Ad Spend Guard (Meta, Google, TikTok, Pinterest & YouTube)</li>
+                  <li>✓ Klaviyo & Email Pre-Flight Link QA</li>
                   <li>✓ Real-Time Saved Revenue Ledger</li>
                 </ul>
               </div>
               <a
-                href={billingCycle === 'annual' ? STRIPE_PAYMENT_LINKS.pro.annual : STRIPE_PAYMENT_LINKS.pro.monthly}
+                href={billingCycle === 'annual' ? STRIPE_PAYMENT_LINKS.growth.annual : STRIPE_PAYMENT_LINKS.growth.monthly}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-all"
               >
-                Activate Pro Shield &rarr;
+                Activate Growth Sentinel &rarr;
               </a>
             </div>
 
@@ -647,25 +648,26 @@ Approval to activate the subscription at https://404killer.com/cfo`;
                 Most Popular for CFOs
               </div>
               <div>
-                <div className="text-xs font-bold uppercase text-emerald-400 mb-1">Enterprise & Multi-Store</div>
-                <div className="text-xl font-black text-white mb-2">Enterprise & Agency Shield</div>
+                <div className="text-xs font-bold uppercase text-emerald-400 mb-1">Enterprise & Multi-Store (10k+ SKUs)</div>
+                <div className="text-xl font-black text-white mb-2">Enterprise & Agency Sentinel</div>
                 <div className="text-3xl font-black text-white mb-4">
-                  {billingCycle === 'annual' ? '$1,599' : '$149'}
+                  {billingCycle === 'annual' ? '$2,999' : '$299'}
                   <span className="text-sm font-normal text-slate-400">{billingCycle === 'annual' ? ' / year' : ' / month'}</span>
                 </div>
                 <ul className="space-y-2 text-xs text-slate-300 mb-6">
-                  <li>✓ Unlimited Catalog Route Healing (&lt;50ms)</li>
+                  <li>✓ Unlimited Catalog Route Intercepts (&lt;50ms)</li>
+                  <li>✓ GTM Universal Edge Tag (Magento / Adobe / BigCommerce)</li>
                   <li>✓ Multi-Store & Headless Storefront Support</li>
                   <li>✓ Executive CFO Monthly EBITDA Attribution Report</li>
                 </ul>
               </div>
               <a
-                href={billingCycle === 'annual' ? STRIPE_PAYMENT_LINKS.agency.annual : STRIPE_PAYMENT_LINKS.agency.monthly}
+                href={billingCycle === 'annual' ? STRIPE_PAYMENT_LINKS.enterprise.annual : STRIPE_PAYMENT_LINKS.enterprise.monthly}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:brightness-110 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider transition-all"
               >
-                Authorize Enterprise Shield &rarr;
+                Authorize Enterprise Sentinel &rarr;
               </a>
             </div>
           </div>

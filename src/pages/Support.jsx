@@ -24,7 +24,7 @@ const DEPARTMENTS = [
     name: 'Orders, Invoicing & Billing',
     email: 'orders@404killer.com',
     icon: '💳',
-    description: 'Subscription modifications, annual Sentinel invoices ($1,599/yr), and 30-day money-back guarantee processing.'
+    description: 'Subscription modifications, annual Sentinel invoices ($2,999/yr), and 30-day money-back guarantee processing.'
   },
   {
     id: 'QA',

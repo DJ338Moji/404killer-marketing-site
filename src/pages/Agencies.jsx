@@ -15,6 +15,7 @@ import {
   Layers,
   Send
 } from 'lucide-react';
+import { STRIPE_PAYMENT_LINKS } from '../App';
 
 export default function Agencies() {
   const [storeCount, setStoreCount] = useState(25);
@@ -29,10 +30,10 @@ export default function Agencies() {
   const [clientTier, setClientTier] = useState('16-50');
   const [platformFocus, setPlatformFocus] = useState('Shopify');
 
-  // Calculator (Pro Plan: $14.95/mo * 25% = $3.7375/mo per store)
-  const monthlyEarnings = Math.round(storeCount * 14.95 * 0.25 * 100) / 100;
+  // Calculator (Growth Sentinel: $99.00/mo * 25% = $24.75/mo per store)
+  const monthlyEarnings = Math.round(storeCount * 99 * 0.25 * 100) / 100;
   const annualEarnings = Math.round(monthlyEarnings * 12);
-  const protectedAdSpend = storeCount * 1850 * 12; // Approx $1,850/mo protected per store
+  const protectedAdSpend = storeCount * 2500 * 12; // Approx $2,500/mo ad spend protected per store
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -160,21 +161,21 @@ export default function Agencies() {
         {/* Instant Stripe Activation CTA */}
         <div className="mt-8 pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="https://buy.stripe.com/7sY9AUe8m9wy17p0ZH9oc04"
+            href={STRIPE_PAYMENT_LINKS.enterprise.monthly}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-500 hover:brightness-110 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
           >
-            <span>Activate Agency Monthly ($149/mo)</span>
+            <span>Activate Agency Sentinel Monthly ($299/mo)</span>
             <ArrowRight className="w-4 h-4" />
           </a>
           <a
-            href="https://buy.stripe.com/fZuaEYd4ibEG7vNeQx9oc05"
+            href={STRIPE_PAYMENT_LINKS.enterprise.annual}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-7 py-3.5 bg-slate-900/90 hover:bg-slate-800 border border-cyan-500/40 text-cyan-300 font-bold rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
-            <span>Activate Annual ($1,599/yr • 10% Off)</span>
+            <span>Activate Annual ($2,999/yr • 2 Months Free)</span>
             <Sparkles className="w-4 h-4 text-cyan-400" />
           </a>
         </div>

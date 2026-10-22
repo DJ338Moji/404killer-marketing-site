@@ -116,7 +116,7 @@ const AiAssistant = () => {
       if (!answer) {
         const lower = userMessage.toLowerCase();
         if (lower.includes('price') || lower.includes('cost') || lower.includes('plan')) {
-          answer = "404 Killer App offers three tiers:\n• Starter Shield ($8.95/mo or $60/yr) with 7-day free trial.\n• Pro Sentinel ($14.95/mo or $125/yr) with 7-day free trial.\n• Agency Sentinel ($149/mo or $1,599/yr) with instant provisioning and a 30-day money-back guarantee.";
+          answer = "404 Killer App offers three value-metric tiers:\n• Starter Shield ($29/mo or $290/yr) for stores up to 500 SKUs with 7-day free trial.\n• Growth Sentinel ($99/mo or $990/yr) for stores up to 5,000 SKUs with 7-day free trial.\n• Enterprise & Agency Sentinel ($299/mo or $2,999/yr) for 10,000+ SKU catalogs, GTM Universal Tag, and multi-brand portals with a 30-day money-back guarantee.";
         } else if (lower.includes('ticket') || lower.includes('support') || lower.includes('help')) {
           answer = "You can open a tracked support ticket anytime! Click the 'Open Ticket' tab above or provide your email and issue details, and our automated system will route it to our engineering team.";
         } else {
