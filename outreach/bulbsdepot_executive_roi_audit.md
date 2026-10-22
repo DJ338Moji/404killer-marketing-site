@@ -18,8 +18,8 @@
 | **Estimated Monthly Ad Bleed** | **$2,090 / month ($25,080 / yr)** | Wasted Google Shopping & Bing Ads CPC clicks |
 | **Estimated Lost Annual GMV** | **$81,000 / year** | 15+ lost commercial contractor orders/month |
 | **Total Annual Revenue Leakage** | **$106,080 / year** | Pure EBITDA drag from unhandled 404 dead ends |
-| **Software Cost to Fix** | **$1,599 / year** ($149/mo) | Universal Edge Tag via Google Tag Manager |
-| **Projected 12-Month Net ROI** | **+65.3x ROI ($104,481 Net)** | Break-even achieved on **just 4 orders recovered** |
+| **Software Cost to Fix** | **$299 / month ($2,999 / yr)** | Enterprise Sentinel via Google Tag Manager |
+| **Projected 12-Month Net ROI** | **+34.3x ROI ($103,081 Net)** | Break-even achieved on **just 7 orders recovered** |
 
 ---
 
@@ -77,10 +77,10 @@ Electrical contractor and commercial facility re-lamping orders rarely sell in s
 │ 2. Lost Commercial Gross Merchandise Value    │ $81,000 / year              │
 │ 3. Total Annual Capital Bleed                 │ $106,080 / year             │
 ├───────────────────────────────────────────────┼─────────────────────────────┤
-│ 404 Killer Universal Edge Tag Investment      │ $1,599 / year ($149/mo)     │
+│ 404 Killer Enterprise Sentinel Investment     │ $2,999 / year ($299/mo)     │
 ├───────────────────────────────────────────────┼─────────────────────────────┤
-│ NET ANNUAL PROFIT RECOVERED                   │ +$104,481 / year            │
-│ PROJECTED ANNUAL RETURN ON INVESTMENT (ROI)   │ 65.3x (6,534% ROI)          │
+│ NET ANNUAL PROFIT RECOVERED                   │ +$103,081 / year            │
+│ PROJECTED ANNUAL RETURN ON INVESTMENT (ROI)   │ 34.3x (3,437% ROI)          │
 └───────────────────────────────────────────────┴─────────────────────────────┘
 ```
 
@@ -90,7 +90,7 @@ Electrical contractor and commercial facility re-lamping orders rarely sell in s
 3. **Lost Commercial Orders:** Even at a modest 1.5% checkout conversion rate:
    $$1,080 \text{ visitors} \times 1.5\% = 16 \text{ lost orders / month}$$
    $$16 \text{ orders} \times \$450 \text{ AOV} = \mathbf{\$7,200 / \text{month (\$86,400 / year)}} \text{ in lost sales.}$$
-4. **Break-Even Horizon:** Recovering just **4 orders over the entire year** ($1,800 GMV) completely covers the annual cost of 404 Killer. Every order saved after month one is pure profit.
+4. **Break-Even Horizon:** Recovering just **7 orders over the entire year** ($3,150 GMV) completely covers the annual cost of 404 Killer. Every order saved after month one is pure profit.
 
 ---
 
@@ -106,6 +106,12 @@ Custom Magento 2 module development and server-side URL rewrite rewrites cost th
 
 ---
 
+## 🛡️ Enterprise Trial & Agency Policy
+* **Site Owners (7-Day Risk-Free Pilot):** Direct storefront owners receive a dedicated 7-day risk-free pilot deployed via GTM to inspect live telemetry, intercepted routes, and recovered order revenue before committing.
+* **Agencies (Up to 5 Sites):** Digital performance agencies receive complimentary high-level storefront summary reports across up to 5 merchant accounts.
+
+---
+
 ### 🌐 Live Diagnostic Portal Link
-Your friend can view the live interactive diagnostic report for their store at:  
-👉 **https://404killer.com/audit?store=www.bulbsdepot.com**
+The live interactive diagnostic report is available at:  
+👉 **https://404killer.com/audit?store=www.bulbsdepot.com&email=wdecamp@bulbsdepot.com**

@@ -963,10 +963,10 @@ export default function Audit() {
                     Deploy the <strong>Universal 404 Killer Tag or Edge CDN Shield</strong> to protect marketing funnels, affiliate redirect links, SSL health, and unhandled routes.
                   </div>
                   <a
-                    href="https://app.404killer.com"
+                    href="/#pricing"
                     className="py-3 px-6 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider hover:brightness-110 transition-all shrink-0 shadow-lg"
                   >
-                    Activate Revenue Shield
+                    Activate Revenue Shield (7-Day Trial)
                   </a>
                 </div>
               </div>
@@ -1000,17 +1000,44 @@ export default function Audit() {
                   <p className="text-xs text-slate-300 max-w-md mt-1 mb-5">
                     To protect store privacy and stop ad spend leakage, exact URLs and automatic 301 category auto-healers unlock immediately upon activating 404 Killer.
                   </p>
-                  <a
-                    href="https://app.404killer.com"
-                    className="w-full max-w-md py-3.5 px-6 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider hover:brightness-110 transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2"
-                  >
-                    <span>
-                      {scanResult.detectedPlatform?.toLowerCase().includes('shopify')
-                        ? `Auto-Heal All ${scanResult.brokenCount} Leaks on Shopify`
-                        : `Auto-Heal All ${scanResult.brokenCount} Leaks on ${scanResult.domain}`}
-                    </span>
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
+                  {scanResult.detectedPlatform?.toLowerCase().includes('shopify') ? (
+                    <div className="w-full max-w-md space-y-2">
+                      <a
+                        href="https://app.404killer.com"
+                        className="w-full py-3.5 px-6 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider hover:brightness-110 transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2"
+                      >
+                        <span>Auto-Heal All {scanResult.brokenCount} Leaks on Shopify</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </a>
+                      <p className="text-[11px] text-slate-400">
+                        ⚡ 1-Click Install via Shopify App Store • 7-Day Free Trial
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="w-full max-w-md space-y-2.5">
+                      <a
+                        href="/#pricing"
+                        className="w-full py-3.5 px-6 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider hover:brightness-110 transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2"
+                      >
+                        <span>Start 7-Day Free Pilot for {scanResult.domain}</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </a>
+                      <p className="text-[11px] text-slate-400">
+                        ⚡ Deploys in 3 minutes via Google Tag Manager (GTM). Zero backend code required.
+                      </p>
+                      <div className="pt-1">
+                        <a
+                          href="https://buy.stripe.com/3cI5kEd4i8subM3bEl9oc0a"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] text-cyan-400 hover:text-cyan-300 font-semibold underline inline-flex items-center gap-1"
+                        >
+                          <span>Or activate Enterprise Sentinel directly ($299/mo)</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             )}
