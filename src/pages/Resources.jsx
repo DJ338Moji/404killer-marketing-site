@@ -25,7 +25,7 @@ export default function Resources() {
             Resources & <span className="text-emerald-400">Guides</span>
           </h1>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Everything you need to master storefront traffic retention, protect paid ad spend, and automate Shopify 301 redirects.
+            Everything you need to master storefront traffic retention, protect paid ad spend, and automate 301 edge redirects.
           </p>
         </div>
 
@@ -46,13 +46,21 @@ export default function Resources() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-white mb-3">Documentation & Guides</h3>
-              <p className="text-slate-400 mb-6 font-medium">Technical guides for Shopify 301 redirects, UTM preservation, and AEO schema.</p>
-              <a 
-                href="https://app.404killer.com" 
-                className="inline-block text-emerald-400 font-bold hover:text-emerald-300 transition-colors uppercase text-sm tracking-widest px-6 py-3 border border-emerald-500/20 rounded-xl hover:bg-emerald-500/10"
-              >
-                Open Dashboard
-              </a>
+              <p className="text-slate-400 mb-6 font-medium">Technical guides for Universal GTM 301 redirects, UTM preservation, and AEO schema.</p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <a 
+                  href="/setup" 
+                  className="inline-block bg-emerald-500 text-slate-950 font-black hover:bg-emerald-400 transition-colors uppercase text-sm tracking-widest px-6 py-3 rounded-xl"
+                >
+                  Open Tag Setup &amp; Verifier
+                </a>
+                <a 
+                  href="/audit" 
+                  className="inline-block text-emerald-400 font-bold hover:text-emerald-300 transition-colors uppercase text-sm tracking-widest px-6 py-3 border border-emerald-500/20 rounded-xl hover:bg-emerald-500/10"
+                >
+                  Run Store Audit
+                </a>
+              </div>
             </div>
           </motion.div>
 
@@ -67,7 +75,7 @@ export default function Resources() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-white mb-3">Merchant Support</h3>
-              <p className="text-slate-400 mb-6 font-medium">Get rapid assistance from our Shopify redirection engineers.</p>
+              <p className="text-slate-400 mb-6 font-medium">Get rapid assistance from our edge redirection engineers.</p>
               <a 
                 href="/support" 
                 className="inline-block text-emerald-400 font-bold hover:text-emerald-300 transition-colors uppercase text-sm tracking-widest px-6 py-3 border border-emerald-500/20 rounded-xl hover:bg-emerald-500/10"

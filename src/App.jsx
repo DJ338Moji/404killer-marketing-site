@@ -19,6 +19,7 @@ import Resources from './pages/Resources';
 import Audit from './pages/Audit';
 import Agencies from './pages/Agencies';
 import Cfo from './pages/Cfo';
+import Setup from './pages/Setup';
 import RoiCalculator from './components/RoiCalculator';
 
 const AiAssistant = lazy(() => import('./components/AiAssistant'));
@@ -163,7 +164,7 @@ function Home() {
 
           {/* Subtitle */}
           <p className="text-lg md:text-2xl text-theme-muted max-w-3xl mx-auto leading-relaxed font-medium">
-            <strong className="text-theme">404 Killer: The Autonomous Revenue Shield</strong> detects and heals 404 broken URLs, monitors SSL & domain handshakes, protects paid Meta & Google ad spend, and optimizes your site for AI search engines—on Shopify, WooCommerce, Headless, or any web stack.
+            <strong className="text-theme">404 Killer: The Autonomous Revenue Shield</strong> detects and heals 404 broken URLs, monitors SSL & domain handshakes, protects paid Google & Meta ad spend, and optimizes your catalog for AI search engines—on Magento, WooCommerce, BigCommerce, Shopify, or any custom storefront.
           </p>
 
           {/* Price Anchor Callout */}
@@ -203,7 +204,7 @@ function Home() {
 
           <div className="pt-4 flex items-center justify-center gap-3 text-theme-muted text-xs font-bold uppercase tracking-wider">
             <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-            Shopify Native App • Universal Edge CDN (&lt;15ms) • 1-Line Universal GTM Tag
+            Universal Edge CDN (&lt;15ms) • 3-Min Universal GTM Tag • 7-Day Free Pilot
           </div>
         </div>
       </section>
@@ -212,12 +213,12 @@ function Home() {
       <div className="border-y border-white/5 bg-white/5 backdrop-blur-sm py-6 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div>
-            <div className="text-2xl md:text-3xl font-black text-emerald-400">93 URLs</div>
-            <div className="text-xs text-theme-muted uppercase tracking-wider font-semibold mt-1">Audited Daily on RenuIQ.com</div>
+            <div className="text-2xl md:text-3xl font-black text-emerald-400">50,000+ SKUs</div>
+            <div className="text-xs text-theme-muted uppercase tracking-wider font-semibold mt-1">Audited & Monitored Daily</div>
           </div>
           <div>
             <div className="text-2xl md:text-3xl font-black text-cyan-400">0 Active 404s</div>
-            <div className="text-xs text-theme-muted uppercase tracking-wider font-semibold mt-1">100% Auto-Healed 301s</div>
+            <div className="text-xs text-theme-muted uppercase tracking-wider font-semibold mt-1">100% Auto-Healed at Edge</div>
           </div>
           <div>
             <div className="text-2xl md:text-3xl font-black text-purple-400">AI AEO Schema</div>
@@ -412,7 +413,7 @@ function Home() {
               <div className="flex items-center gap-4 text-xs font-bold text-slate-300">
                 <span>✓ Zero inventory risk</span>
                 <span>✓ Automated commission payouts</span>
-                <span>✓ Verified Shopify brands only</span>
+                <span>✓ Verified e-commerce brands only</span>
               </div>
             </div>
 
@@ -513,7 +514,7 @@ function Home() {
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> Meta, Google & TikTok ad spend UTM link protector</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> Instant 301 redirects to closest active categories</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> 1-Click AEO & Google AI Overview structured data</li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Universal Compatibility:</strong> Shopify App OR 1-Line GTM Tag</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Universal Compatibility:</strong> 3-Minute Google Tag Manager (GTM) or 1-Line Tag</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> 7-Day Free Trial • 30-Day Money-Back Guarantee</li>
                 </ul>
               </div>
@@ -526,12 +527,9 @@ function Home() {
                 >
                   {billingCycle === 'annual' ? 'Start Free Trial ($290/yr)' : 'Start Free Trial ($29/mo)'}
                 </a>
-                <a
-                  href={getAppUrl()}
-                  className="text-center text-[11px] text-theme-muted hover:text-emerald-400 mt-2.5 font-medium transition-colors block"
-                >
-                  Or install on Shopify App Store &rarr;
-                </a>
+                <div className="text-center text-[11px] text-theme-muted mt-2.5 font-medium">
+                  ⚡ 3-Min GTM Tag • 7-Day Free Trial
+                </div>
               </div>
             </div>
 
@@ -589,12 +587,9 @@ function Home() {
                 >
                   {billingCycle === 'annual' ? 'Start Growth Trial ($990/yr)' : 'Start Growth Trial ($99/mo)'}
                 </a>
-                <a
-                  href={getAppUrl()}
-                  className="text-center text-[11px] text-theme-muted hover:text-cyan-400 mt-2.5 font-medium transition-colors block"
-                >
-                  Or install on Shopify App Store &rarr;
-                </a>
+                <div className="text-center text-[11px] text-theme-muted mt-2.5 font-medium">
+                  ⚡ 3-Min GTM Tag • 7-Day Free Trial
+                </div>
               </div>
             </div>
 
@@ -610,7 +605,7 @@ function Home() {
                 </div>
                 <h3 className="text-2xl font-black text-theme mb-3">High-SKU & Agency Portal</h3>
                 <p className="text-sm text-theme-muted mb-6">
-                  Engineered for 10,000+ SKU catalogs (BulbsDepot, Parts, Industrial) & Multi-Brand Agencies. Pre-flight email QA, ad sentinels, immutable client ROI reports & CSV exports.
+                  Engineered for 10,000+ SKU catalogs (Lighting & Electrical, Auto Parts, Industrial Wholesale) & Multi-Brand Agencies. Pre-flight email QA, ad sentinels, immutable client ROI reports & CSV exports.
                 </p>
 
                 <div className="bg-cyan-500/10 border border-cyan-500/30 rounded-2xl p-4 mb-6">
@@ -644,6 +639,7 @@ function Home() {
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Ad Landing Page Sentinel:</strong> Polling of Google Shopping, Bing & Meta URLs</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Multi-Store Agency Portal:</strong> Single dashboard for all clients/warehouses</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Immutable Client Reports:</strong> Permanent, audit-grade proof-of-work</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Ad & Affiliate Shield (Optional Add-on):</strong> 1st-party edge proxy & fallback recovery</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>1-Click CSV Exporter:</strong> Client-side raw telemetry downloads</li>
                 </ul>
               </div>
@@ -845,6 +841,8 @@ function App() {
           <Route path="/audit" element={<Audit key={location.key} />} />
           <Route path="/agencies" element={<Agencies />} />
           <Route path="/cfo" element={<Cfo />} />
+          <Route path="/setup" element={<Setup />} />
+          <Route path="/install" element={<Setup />} />
           <Route path="/walkthrough" element={<WalkthroughPage />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
@@ -876,7 +874,8 @@ function App() {
           >
             ⚡ Free Store Audit
           </Link>
-          <Link to="/cfo" className="text-cyan-400 hover:text-cyan-300 transition-colors font-bold">🏛️ CFO Playbook & P&L Model</Link>
+          <Link to="/setup" className="text-emerald-400 hover:text-emerald-300 transition-colors font-bold">🛠️ Tag Setup &amp; Verifier</Link>
+          <Link to="/cfo" className="text-cyan-400 hover:text-cyan-300 transition-colors font-bold">🏛️ CFO Playbook &amp; P&amp;L Model</Link>
           <Link to="/agencies" className="text-theme-muted hover:text-theme transition-colors font-semibold">Agency Partners (25%)</Link>
           <Link to="/support" className="text-theme-muted hover:text-theme transition-colors font-bold">Support</Link>
           <Link to="/privacy" className="text-theme-muted hover:text-theme transition-colors">Privacy Policy</Link>
