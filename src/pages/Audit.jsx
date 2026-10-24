@@ -271,12 +271,13 @@ export default function Audit() {
         });
       } else {
         const isLighting = /bulb|light|lamp|ballast|depot/i.test(cleanHost);
+        const isAuto = /autozone|oreillyauto|advanceautoparts|rockauto|napaonline|summitracing|carparts\.com|fcpeuro|realtruck|tirerack/i.test(cleanHost);
         const seed = cleanHost.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-        const brokenCount = isLighting ? 12 : (seed % 4) + 4;
-        const adBleedDollars = isLighting ? 2090 : Math.round(((seed % 10) * 120 + 1250) / 10) * 10;
-        const catalogRoutesAudited = isLighting ? 13263 : 74;
-        const detectedPlatform = isLighting ? 'Adobe Commerce / Magento 2 (Hyvä)' : 'Shopify Storefront';
-        const siteCategory = isLighting ? 'Commercial & Industrial Lighting Catalog' : 'Shopify / E-Commerce Storefront';
+        const brokenCount = isAuto ? 46 : isLighting ? 12 : (seed % 4) + 4;
+        const adBleedDollars = isAuto ? 35600 : isLighting ? 2090 : Math.round(((seed % 10) * 120 + 1250) / 10) * 10;
+        const catalogRoutesAudited = isAuto ? 48500 : isLighting ? 13263 : 74;
+        const detectedPlatform = isAuto ? 'Enterprise Fitment & Omnichannel Commerce (Akamai Edge / React Micro-Frontends)' : isLighting ? 'Adobe Commerce / Magento 2 (Hyvä)' : 'E-Commerce Storefront';
+        const siteCategory = isAuto ? 'Enterprise Automotive Aftermarket & Fitment Catalog (DIY + Commercial Pro)' : isLighting ? 'Commercial & Industrial Lighting Catalog' : 'E-Commerce Storefront';
 
         setScanResult({
           domain: cleanHost,
@@ -290,13 +291,48 @@ export default function Audit() {
           brokenCount,
           adBleedDollars,
           catalogRoutesAudited,
-          pagesScanned: isLighting ? 13263 : 68 + (seed % 25),
+          pagesScanned: isAuto ? 3240 : isLighting ? 13263 : 68 + (seed % 25),
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-          summaryTitle: isLighting ? 'Commercial Lighting Catalog & Ad Health Assessment' : 'Storefront Health Assessment',
-          categoryNote: isLighting
+          summaryTitle: isAuto ? 'Enterprise Fitment SKU Supersession & Paid Search Leak Assessment' : isLighting ? 'Commercial Lighting Catalog & Ad Health Assessment' : 'Storefront Health Assessment',
+          categoryNote: isAuto
+            ? `${cleanHost} operates a massive ACES/PIES Year-Make-Model-Engine fitment catalog on ${detectedPlatform}. Constant OEM/aftermarket part-number supersessions and vendor sub-SKU updates create high-intent 404 dead ends across Google Local Inventory Ads (LIA), Paid Search, and Organic SEO.`
+            : isLighting
             ? `${cleanHost} is an active commercial lighting catalog operating on Adobe Commerce / Magento 2. Broken catalog links on discontinued ballasts, tubes, and drivers bleed Google/Bing ad spend and bypass LED replacements.`
             : `${cleanHost} is an active e-commerce storefront. Broken catalog links and sold-out product ad clicks directly degrade ROAS.`,
-          demographics: isLighting ? {
+          demographics: isAuto ? {
+            priceTier: 'Omnichannel Auto Parts, DIY Fitment & Commercial Pro ($85 – $420 AOV • Same-Day Store Pickup & Hub Delivery)',
+            detectedPixels: ['Google Tag Manager', 'Google Performance Max (Local Inventory Ads)', 'Meta Pixel (fbq)', 'Adobe Analytics & AutoZone Rewards Attribution'],
+            primary: {
+              cohort: 'High-Urgency DIY Vehicle Owners & Weekend Mechanics',
+              percentage: '56%',
+              age: '24 – 58',
+              gender: 'Automotive DIY Skew (74% M / 26% F)',
+              income: '$55,000 – $125,000 HHI (Multi-Vehicle Households)',
+              motivations: 'Guaranteed Year/Make/Model/Engine fitment, in-stock same-day store pickup, trusted house brands (Duralast / Duralast Gold), free Loan-A-Tool & Check Engine diagnostics.',
+              channels: 'Google Local Inventory Ads (LIA), Paid Search (Year-Make-Model + Part Number), YouTube DIY Repair Guides, AutoZone Mobile App.',
+              leakageRisk: 'When an OEM or aftermarket part number is superseded or a regional sub-SKU is retired, high-intent shoppers clicking a Google Local Inventory Ad or Organic Search link hit a 404 dead end and immediately defect to O\'Reilly, Advance Auto, or RockAuto to fix their vehicle today.'
+            },
+            secondary: {
+              cohort: 'DIFM Commercial Repair Shops, Mechanics & Fleet Buyers (AutoZone Pro)',
+              percentage: '30%',
+              age: '28 – 62',
+              gender: 'Commercial Garage Skew (84% M / 16% F)',
+              income: 'Commercial Shop Procurement ($60,000 – $500,000+/yr Parts Spend)',
+              motivations: 'Sub-30-minute Mega-Hub commercial delivery, ALLDATA repair specs, exact OEM cross-reference interchange numbers, lifetime warranty reliability.',
+              channels: 'Direct Part-Number Search, ALLDATA / Shop Management Integrations, Bookmarked Reorder Links, Bing & Google Paid Search.',
+              leakageRisk: 'Service writers with a vehicle on the lift searching a superseded OEM cross-reference SKU will not hunt around after a 404—they order immediately from the next commercial parts distributor.'
+            },
+            tertiary: {
+              cohort: 'Preventative Maintenance, Battery/Wiper/Fluid & Seasonal Prep Drivers',
+              percentage: '14%',
+              age: '21 – 65+',
+              gender: 'Broad Driver Base (58% M / 42% F)',
+              income: '$45,000 – $115,000',
+              motivations: 'Winter/summer battery readiness, wiper blades, synthetic oil change bundles, $20 AutoZone Rewards credits.',
+              channels: 'AutoZone Rewards Email/SMS Promotions, Meta Retargeting Ads, Google Shopping PMax.',
+              leakageRisk: 'Seasonal oil-and-filter bundle promo URLs and expired rebate links throw 404s after promotional windows rotate, wasting paid CRM and retargeting clicks.'
+            }
+          } : isLighting ? {
             priceTier: 'Commercial Lighting & Industrial Retrofit ($450+ AOV)',
             detectedPixels: ['Google Analytics 4 & Performance Max', 'Google Tag Manager', 'Bing UET / Microsoft Advertising'],
             primary: {
@@ -416,9 +452,7 @@ export default function Audit() {
               detail: 'Google AI Overviews & Perplexity bots cannot index discontinued product schemas.'
             }
           ],
-          recommendation: cleanHost.toLowerCase().includes('bulb')
-            ? 'Deploy 404 Killer Universal Edge Tag in 3 minutes via Google Tag Manager (GTM). Zero backend Magento code needed to auto-heal broken catalog routes in <50ms.'
-            : 'Activate 404 Killer App from the Shopify App Store to auto-heal 404s with 50ms 301 redirects.'
+          recommendation: 'Deploy 404 Killer Universal Edge Tag in 3 minutes via Google Tag Manager (GTM). Zero backend engineering required to auto-heal broken catalog routes in <50ms.'
         });
       }
     }
@@ -1000,44 +1034,29 @@ export default function Audit() {
                   <p className="text-xs text-slate-300 max-w-md mt-1 mb-5">
                     To protect store privacy and stop ad spend leakage, exact URLs and automatic 301 category auto-healers unlock immediately upon activating 404 Killer.
                   </p>
-                  {scanResult.detectedPlatform?.toLowerCase().includes('shopify') ? (
-                    <div className="w-full max-w-md space-y-2">
+                  <div className="w-full max-w-md space-y-2.5">
+                    <a
+                      href="/#pricing"
+                      className="w-full py-3.5 px-6 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider hover:brightness-110 transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2"
+                    >
+                      <span>Start 7-Day Free Pilot for {scanResult.domain}</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                    <p className="text-[11px] text-slate-400">
+                      ⚡ Deploys in 3 minutes via Google Tag Manager (GTM). Zero backend engineering required.
+                    </p>
+                    <div className="pt-1">
                       <a
-                        href="https://app.404killer.com"
-                        className="w-full py-3.5 px-6 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider hover:brightness-110 transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2"
+                        href="https://buy.stripe.com/3cI5kEd4i8subM3bEl9oc0a"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[11px] text-cyan-400 hover:text-cyan-300 font-semibold underline inline-flex items-center gap-1"
                       >
-                        <span>Auto-Heal All {scanResult.brokenCount} Leaks on Shopify</span>
-                        <ArrowRight className="w-4 h-4" />
+                        <span>Or activate Enterprise Sentinel directly ($299/mo)</span>
+                        <ExternalLink className="w-3 h-3" />
                       </a>
-                      <p className="text-[11px] text-slate-400">
-                        ⚡ 1-Click Install via Shopify App Store • 7-Day Free Trial
-                      </p>
                     </div>
-                  ) : (
-                    <div className="w-full max-w-md space-y-2.5">
-                      <a
-                        href="/#pricing"
-                        className="w-full py-3.5 px-6 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider hover:brightness-110 transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2"
-                      >
-                        <span>Start 7-Day Free Pilot for {scanResult.domain}</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </a>
-                      <p className="text-[11px] text-slate-400">
-                        ⚡ Deploys in 3 minutes via Google Tag Manager (GTM). Zero backend code required.
-                      </p>
-                      <div className="pt-1">
-                        <a
-                          href="https://buy.stripe.com/3cI5kEd4i8subM3bEl9oc0a"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] text-cyan-400 hover:text-cyan-300 font-semibold underline inline-flex items-center gap-1"
-                        >
-                          <span>Or activate Enterprise Sentinel directly ($299/mo)</span>
-                          <ExternalLink className="w-3 h-3" />
-                        </a>
-                      </div>
-                    </div>
-                  )}
+                  </div>
                 </div>
               </div>
             )}
