@@ -815,6 +815,78 @@ export default function Audit() {
                 </p>
               </div>
             </div>
+
+            {/* Health Grade Rubric & Scoring Legend for the Inquirer */}
+            <div className="mt-6 pt-5 border-t border-slate-800/80">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                <div className="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
+                  <span>📊 How Your Storefront Health Grade ({scanResult.grade}) Is Calculated</span>
+                </div>
+                <div className="text-[11px] text-slate-400">
+                  <strong className="text-emerald-400">(+)</strong> Fast &lt;150ms Edge CDN &amp; SSL • <strong className="text-slate-200">(Base)</strong> Standard Routing • <strong className="text-amber-400">(-)</strong> High SKU Turnover / Redirect Chains
+                </div>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5 text-[11px]">
+                {[
+                  {
+                    letter: 'A',
+                    range: 'A+ / A / A-',
+                    title: 'Protected Shield',
+                    desc: '0 unhandled 404s. Autonomous <15ms edge healing & 100% UTM/gclid preservation active.',
+                    color: 'border-emerald-500/40 bg-emerald-950/20 text-emerald-300'
+                  },
+                  {
+                    letter: 'B',
+                    range: 'B+ / B / B-',
+                    title: 'Low-Moderate Risk',
+                    desc: '1–3 minor dead routes (<1.5% catalog). Low daily SKU churn; occasional promo link decay.',
+                    color: 'border-amber-500/30 bg-amber-950/15 text-amber-300'
+                  },
+                  {
+                    letter: 'C',
+                    range: 'C+ / C / C-',
+                    title: 'Elevated Ad Bleed',
+                    desc: 'Active SKU supersessions or seasonal flash-sale drops causing paid search & CRM 404 bounces.',
+                    color: 'border-orange-500/40 bg-orange-950/20 text-orange-300'
+                  },
+                  {
+                    letter: 'D',
+                    range: 'D+ / D / D-',
+                    title: 'High Revenue Risk',
+                    desc: 'Severe catalog/fitment 404 exposure & stripped ad parameters (gclid/fbclid) degrading ROAS.',
+                    color: 'border-red-500/40 bg-red-950/20 text-red-300'
+                  },
+                  {
+                    letter: 'F',
+                    range: 'F (Critical)',
+                    title: 'Critical Failure',
+                    desc: 'Broken primary navigation, expired SSL handshake, or >10% of paid landing pages failing.',
+                    color: 'border-rose-600/50 bg-rose-950/30 text-rose-300 col-span-2 sm:col-span-1'
+                  }
+                ].map((tier) => {
+                  const isCurrent = scanResult.grade?.startsWith(tier.letter);
+                  return (
+                    <div
+                      key={tier.letter}
+                      className={`p-3 rounded-xl border transition-all ${tier.color} ${
+                        isCurrent ? 'ring-2 ring-white/80 shadow-lg scale-[1.02]' : 'opacity-65'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between font-black mb-1">
+                        <span>{tier.range}</span>
+                        {isCurrent && (
+                          <span className="px-1.5 py-0.5 rounded bg-white text-slate-950 text-[9px] font-black uppercase">
+                            Current: {scanResult.grade}
+                          </span>
+                        )}
+                      </div>
+                      <div className="font-bold text-white text-[11px] mb-0.5">{tier.title}</div>
+                      <p className="text-[10px] text-slate-300 leading-snug">{tier.desc}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
 
           {/* Target Demographic & Audience Intelligence Card */}
