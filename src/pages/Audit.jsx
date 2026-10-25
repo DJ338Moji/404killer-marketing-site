@@ -323,7 +323,7 @@ export default function Audit() {
               income: 'Commercial Shop & Fleet Procurement ($85,000 – $750,000+/yr Parts Spend)',
               motivations: 'Genuine Parts Company (GPC) distribution reliability, rapid DC/store delivery, NAPA line-code & OEM cross-reference accuracy, 24-Month/24,000-Mile Peace of Mind Warranty.',
               channels: 'Direct NAPA Line-Code & Part-Number Search, NAPA PROLink / Mitchell1 / Tekmetric Cross-Links, Google & Bing Paid Search.',
-              leakageRisk: 'When a NAPA three-letter line code or vendor part number is superseded in SAP Commerce, service writers with a customer vehicle on the lift who hit a 404 dead end immediately source the part from O\'Reilly, AutoZone, or Worldpac.'
+              leakageRisk: 'When a NAPA three-letter line code or vendor part number is superseded in SAP Commerce, service writers with a customer vehicle on the lift who hit a 404 dead end immediately abandon the session and source the part from competing commercial distributors.'
             },
             secondary: {
               cohort: 'High-Urgency DIY Vehicle Owners & \'NAPA Know How\' Enthusiasts',
@@ -333,7 +333,7 @@ export default function Audit() {
               income: '$60,000 – $135,000 HHI (Multi-Vehicle & Truck/SUV Households)',
               motivations: 'Guaranteed Year/Make/Model/Engine fitment, 30-minute Buy Online Pick Up In Store, trusted NAPA brands (NAPA Legend Batteries, Adaptive One Brakes, Carlyle Tools).',
               channels: 'Google Local Inventory Ads (LIA), Paid Search (Year-Make-Model + Part Number), YouTube Repair Tutorials, NAPA Mobile App.',
-              leakageRisk: 'High-intent DIY drivers clicking a Google Local Inventory Ad (\'In Stock at NAPA\') for a superseded SKU suffix hit a 404 page and defect within seconds to AutoZone, O\'Reilly, or RockAuto.'
+              leakageRisk: 'High-intent DIY drivers clicking a Google Local Inventory Ad (\'In Stock at NAPA\') for a superseded SKU suffix hit a 404 page and bounce back to search results within seconds instead of being routed to the active NAPA replacement SKU.'
             },
             tertiary: {
               cohort: 'Heavy-Duty Truck (NAPA Traction), Ag/Industrial & NAPA Rewards Drivers',
@@ -356,7 +356,7 @@ export default function Audit() {
               income: '$55,000 – $125,000 HHI (Multi-Vehicle Households)',
               motivations: 'Guaranteed Year/Make/Model/Engine fitment, in-stock same-day store pickup, trusted house brands (Duralast / Duralast Gold), free Loan-A-Tool & Check Engine diagnostics.',
               channels: 'Google Local Inventory Ads (LIA), Paid Search (Year-Make-Model + Part Number), YouTube DIY Repair Guides, AutoZone Mobile App.',
-              leakageRisk: 'When an OEM or aftermarket part number is superseded or a regional sub-SKU is retired, high-intent shoppers clicking a Google Local Inventory Ad or Organic Search link hit a 404 dead end and immediately defect to O\'Reilly, Advance Auto, or RockAuto to fix their vehicle today.'
+              leakageRisk: 'When an OEM or aftermarket part number is superseded or a regional sub-SKU is retired, high-intent shoppers clicking a Google Local Inventory Ad or Organic Search link hit a 404 dead end and bounce back to search results instead of being routed to the active in-stock replacement part.'
             },
             secondary: {
               cohort: 'DIFM Commercial Repair Shops, Mechanics & Fleet Buyers (AutoZone Pro)',
