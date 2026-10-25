@@ -84,7 +84,7 @@ When our merchandising team archives out-of-stock SKUs or updates seasonal colle
 - Estimated Net Annual EBITDA Drag: -$${annualEbitdaRecovery.toLocaleString()}/yr
 
 3. PROPOSED REMEDIATION:
-Deploy 404 Killer App (Revenue Shield) (https://404killer.com), an autonomous Shopify & Enterprise edge utility that intercepts broken catalog routes in <50ms and dynamically routes paid shoppers to live in-stock alternatives via native Shopify GraphQL or GTM Universal Edge Tag.
+Deploy 404 Killer App (Revenue Shield) (https://404killer.com), an autonomous enterprise edge utility that intercepts broken catalog routes in <50ms and dynamically routes paid shoppers to live in-stock alternatives via Universal GTM Edge Tag or native platform rewrites.
 
 4. GOVERNANCE, RISK & ROI ECONOMICS:
 - Software OpEx: $299/month or $2,999/year (Instant Enterprise & Agency Sentinel Activation)
@@ -404,7 +404,7 @@ Approval to activate the subscription at https://404killer.com/cfo`;
             Sample Forensic Ledger: Real Storefront Ad Leakage
           </h2>
           <p className="text-sm text-slate-400 mt-2">
-            Excerpt from live diagnostic crawls across high-velocity apparel, home & fitness Shopify Plus storefronts (benchmarked on accounts such as Fashion Nova & Gymshark):
+            Excerpt from live diagnostic crawls across high-velocity B2B electrical, apparel & home enterprise storefronts (benchmarked on accounts such as BulbsDepot, Fashion Nova & Gymshark):
           </p>
         </div>
 
@@ -538,21 +538,21 @@ Approval to activate the subscription at https://404killer.com/cfo`;
               <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
               <div>
                 <div className="font-bold text-white">&lt;50ms Edge Execution (Zero Speed Drag)</div>
-                <div className="text-slate-400 text-xs">Injects native 301 redirects via official Shopify Admin GraphQL. Zero bulky client-side JS bloat.</div>
+                <div className="text-slate-400 text-xs">Injects intelligent 301 redirects at browser edge (&lt;50ms). Zero bulky client-side JS bloat.</div>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
               <div>
                 <div className="font-bold text-white">$0 Implementation CapEx</div>
-                <div className="text-slate-400 text-xs">2-minute plug-and-play installation. Requires zero developer sprints or agency engineering retainers.</div>
+                <div className="text-slate-400 text-xs">3-minute Universal GTM Tag setup. Requires zero developer sprints or agency engineering retainers.</div>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
               <div>
                 <div className="font-bold text-white">Zero Vendor Lock-In</div>
-                <div className="text-slate-400 text-xs">All healed 301 redirects are written permanently into your native Shopify routing table.</div>
+                <div className="text-slate-400 text-xs">All healed 301 redirects are written permanently into your storefront routing tables and analytics.</div>
               </div>
             </div>
           </div>

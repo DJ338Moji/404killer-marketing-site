@@ -27,8 +27,7 @@ export default function Agencies() {
   const [contactName, setContactName] = useState('');
   const [email, setEmail] = useState('');
   const [website, setWebsite] = useState('');
-  const [clientTier, setClientTier] = useState('16-50');
-  const [platformFocus, setPlatformFocus] = useState('Shopify');
+  const [platformFocus, setPlatformFocus] = useState('Multi-Platform');
 
   // Calculator (Growth Sentinel: $99.00/mo * 25% = $24.75/mo per store)
   const monthlyEarnings = Math.round(storeCount * 99 * 0.25 * 100) / 100;
@@ -46,7 +45,6 @@ export default function Agencies() {
         contactName,
         email,
         website,
-        clientTier,
         platformFocus,
         createdAt: new Date().toISOString()
       });

@@ -17,7 +17,7 @@ const DEPARTMENTS = [
     name: 'Technical Support & Auto-Healer',
     email: 'support@404killer.com',
     icon: '🛠️',
-    description: 'Shopify app setup, 301 auto-healing, broken redirect chains & crawler diagnostic questions.'
+    description: 'Universal GTM tag setup, 301 edge auto-healing, broken redirect chains & crawler diagnostic questions.'
   },
   {
     id: 'ORDERS',

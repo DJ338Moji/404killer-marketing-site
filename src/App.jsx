@@ -150,27 +150,27 @@ function Home() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 backdrop-blur-sm shadow-xl text-xs md:text-sm font-bold text-emerald-400 mb-2">
             <ShieldCheckIcon className="w-4 h-4 text-emerald-400" />
-            <span>Never Lose Another Sale to a Dead Link • 7-Day Free Trial</span>
+            <span>Autonomous Edge Yield & Signal Recovery • Sentinel Included 100% Free</span>
           </div>
 
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.05] drop-shadow-2xl">
-            <span className="block text-theme">STOP LOSING SALES & AD DOLLARS TO</span>
+            <span className="block text-theme">RECOVER 30%–50% OF LOST REVENUE BLEEDING TO</span>
             <span className="block bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 py-1">
-              DEAD 404 LINKS
+              AD BLOCKERS & DEAD 404 LINKS
             </span>
             <span className="block text-theme">ACROSS ANY PLATFORM.</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-lg md:text-2xl text-theme-muted max-w-3xl mx-auto leading-relaxed font-medium">
-            <strong className="text-theme">404 Killer: The Autonomous Revenue Shield</strong> detects and heals 404 broken URLs, monitors SSL & domain handshakes, protects paid Google & Meta ad spend, and optimizes your catalog for AI search engines—on Magento, WooCommerce, BigCommerce, Shopify, or any custom storefront.
+            <strong className="text-theme">404 Killer & Ad Un-Blocker</strong> is the enterprise edge yield and reliability layer. We unblock client-side programmatic display & video ads, restore Safari ITP and Meta CAPI conversion signals, and auto-heal broken URLs. <strong className="text-emerald-400">404 Killer Sentinel is included 100% complimentary</strong> under our 15% performance recovery model.
           </p>
 
           {/* Price Anchor Callout */}
           <div className="inline-block bg-white/5 border border-white/10 rounded-2xl px-6 py-2.5 backdrop-blur-md">
             <span className="text-xs md:text-sm font-semibold text-theme-muted">
-              🛡️ Starter Shield from <strong className="text-emerald-400 text-base font-black">$29/mo</strong> • Growth Sentinel at <strong className="text-cyan-400 text-base font-black">$99/mo</strong> • Enterprise & High-SKU B2B at <strong className="text-blue-400 text-base font-black">$299/mo</strong> • 7-Day Free Trial
+              ⭐ Performance Partner: <strong className="text-emerald-400 text-base font-black">$0 Setup + 15% Rev-Share</strong> (Sentinel Included Free) • Fixed Sentinel Enterprise: <strong className="text-cyan-400 text-base font-black">$299/mo</strong> • Sentinel Core: <strong className="text-theme text-base font-black">$29/mo</strong>
             </span>
           </div>
 
@@ -431,18 +431,18 @@ function Home() {
         </div>
       </section>
 
-      {/* Pricing Section (3 Tiers) */}
+      {/* Pricing Section (3 Tiers: Core, Enterprise Sentinel, and Performance Yield Recovery) */}
       <section id="pricing" className="py-20 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-black uppercase tracking-widest mb-3">
-              Transparent Founder Pricing
+              Transparent Performance & License Pricing
             </div>
             <h2 className="text-3xl md:text-5xl font-black text-theme tracking-tight mb-4">
-              Three Powerful Tiers. Total Revenue Protection.
+              Two Predictable Licenses. One Zero-Risk Performance Partner.
             </h2>
             <p className="text-theme-muted text-lg max-w-2xl mx-auto">
-              Rescuing just one single customer from a dead link or out-of-stock bounce pays for months of your subscription.
+              Choose fixed OPEX licensing for URL reliability, or activate our <strong className="text-emerald-400">15% Performance Recovery model</strong> to unblock ad revenue with Sentinel included 100% free.
             </p>
 
             {/* Monthly / Annual Billing Toggle */}
@@ -478,16 +478,16 @@ function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
-            {/* Tier 1: Starter Shield */}
+            {/* Tier 1: Sentinel Core (Self-Serve) */}
             <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-3xl p-8 flex flex-col justify-between backdrop-blur-sm hover:border-emerald-500/30 transition-all">
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <div className="text-xs uppercase font-bold text-emerald-400 tracking-wider">Starter Shield</div>
+                  <div className="text-xs uppercase font-bold text-emerald-400 tracking-wider">Self-Serve Core</div>
                   <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-white/10 text-theme">7-Day Free Trial</span>
                 </div>
-                <h3 className="text-2xl font-black text-theme mb-3">Essential Auto-Healer</h3>
+                <h3 className="text-2xl font-black text-theme mb-3">Sentinel Core</h3>
                 <p className="text-sm text-theme-muted mb-6">
-                  Perfect for emerging stores (up to 500 SKUs) wanting automated broken URL healing and paid ad UTM protection without complexity.
+                  Perfect for emerging e-commerce stores (up to 1,000 SKUs) wanting automated broken URL healing and paid ad UTM protection without complexity.
                 </p>
 
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-4 mb-6">
@@ -509,7 +509,7 @@ function Home() {
                 </div>
 
                 <ul className="space-y-3.5 text-xs text-theme-muted mb-8">
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> Autonomous 24/7 404 broken URL crawl & healing (Up to 500 SKUs)</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> Autonomous 24/7 404 broken URL crawl & healing (Up to 1,000 SKUs)</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>SSL Certificate & Domain Sentinel:</strong> 24/7 TLS check & expiry alerts</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> Meta, Google & TikTok ad spend UTM link protector</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> Instant 301 redirects to closest active categories</li>
@@ -533,79 +533,18 @@ function Home() {
               </div>
             </div>
 
-            {/* Tier 2: Growth Sentinel */}
-            <div className="bg-gradient-to-b from-emerald-950/40 via-[var(--card-bg)] to-[var(--card-bg)] border-2 border-emerald-500/60 rounded-3xl p-8 flex flex-col justify-between backdrop-blur-md relative shadow-2xl">
-              <div className="absolute -top-3.5 right-6 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black text-[11px] px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">
-                ⭐ Most Popular
-              </div>
+            {/* Tier 2: Sentinel Enterprise (Fixed License) */}
+            <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-3xl p-8 flex flex-col justify-between backdrop-blur-sm hover:border-cyan-500/40 transition-all">
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <div className="text-xs uppercase font-bold text-cyan-400 tracking-wider">Growth Sentinel</div>
-                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                    {billingCycle === 'annual' ? 'Save $198/yr' : 'Save $198 on Annual'}
+                  <div className="text-xs uppercase font-bold text-cyan-400 tracking-wider">Fixed Enterprise License</div>
+                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                    Save $589 on Annual
                   </span>
                 </div>
-                <h3 className="text-2xl font-black text-theme mb-3">Storefront Sentinel</h3>
+                <h3 className="text-2xl font-black text-theme mb-3">Sentinel Enterprise</h3>
                 <p className="text-sm text-theme-muted mb-6">
-                  Complete site reliability, out-of-stock ad salvage, and redirect loop compression for high-growth brands (up to 5,000 SKUs).
-                </p>
-
-                <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-4 mb-6">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-black text-theme">
-                      {billingCycle === 'annual' ? '$990.00' : '$99.00'}
-                    </span>
-                    <span className="text-theme-muted text-sm font-semibold">
-                      {billingCycle === 'annual' ? '/ year' : '/ month'}
-                    </span>
-                  </div>
-                  <div className="text-theme-muted text-xs mt-1">
-                    {billingCycle === 'annual' ? (
-                      <>Billed annually (<strong className="text-cyan-400">$82.50/mo</strong>) • Save $198/yr</>
-                    ) : (
-                      <>or <strong className="text-cyan-400">$990.00/year</strong> ($82.50/mo) • Cancel anytime</>
-                    )}
-                  </div>
-                </div>
-
-                <ul className="space-y-3.5 text-xs text-theme-muted mb-8">
-                  <li className="flex items-center gap-2 text-theme font-semibold"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Everything in Starter, PLUS:</strong></li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Up to 5,000 Active SKUs & Collections</strong></li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Out-of-Stock (OOS) Ad Guard:</strong> Reroute sold-out clicks to active items</li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Loop & Chain Compressor:</strong> Fix infinite 301 loops in &lt;50ms</li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Broken Media Guard:</strong> Scans for missing CDN photos</li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Zombie Script Hunter:</strong> Cleans up leftover uninstalled app code</li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Storewide Deep Crawler:</strong> Hourly audit of menus & footers</li>
-                </ul>
-              </div>
-              <div>
-                <a
-                  href={billingCycle === 'annual' ? STRIPE_PAYMENT_LINKS.growth.annual : STRIPE_PAYMENT_LINKS.growth.monthly}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 hover:brightness-110 text-slate-950 font-black text-center transition-all block shadow-lg text-sm cursor-pointer"
-                >
-                  {billingCycle === 'annual' ? 'Start Growth Trial ($990/yr)' : 'Start Growth Trial ($99/mo)'}
-                </a>
-                <div className="text-center text-[11px] text-theme-muted mt-2.5 font-medium">
-                  ⚡ 3-Min GTM Tag • 7-Day Free Trial
-                </div>
-              </div>
-            </div>
-
-            {/* Tier 3: Enterprise & High-SKU Sentinel */}
-            <div className="bg-gradient-to-b from-cyan-950/40 via-[var(--card-bg)] to-[var(--card-bg)] border-2 border-cyan-500/60 rounded-3xl p-8 flex flex-col justify-between backdrop-blur-md relative shadow-2xl">
-              <div className="absolute -top-3.5 right-6 bg-gradient-to-r from-cyan-500 to-blue-500 text-slate-950 font-black text-[11px] px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">
-                🛡️ Enterprise & High-SKU B2B
-              </div>
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <div className="text-xs uppercase font-bold text-cyan-400 tracking-wider">Enterprise Sentinel</div>
-                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">Save $589 on Annual</span>
-                </div>
-                <h3 className="text-2xl font-black text-theme mb-3">High-SKU & Agency Portal</h3>
-                <p className="text-sm text-theme-muted mb-6">
-                  Engineered for 10,000+ SKU catalogs (Lighting & Electrical, Auto Parts, Industrial Wholesale) & Multi-Brand Agencies. Pre-flight email QA, ad sentinels, immutable client ROI reports & CSV exports.
+                  Designed for mid-market brands, high-SKU catalogs, and retailers with strict procurement requiring a predictable annual PO.
                 </p>
 
                 <div className="bg-cyan-500/10 border border-cyan-500/30 rounded-2xl p-4 mb-6">
@@ -627,20 +566,19 @@ function Home() {
                   <div className="mt-2.5 pt-2 border-t border-cyan-500/20 flex flex-col gap-1">
                     <span className="text-[11px] text-cyan-300 font-bold">Includes up to 25,000+ SKUs or 5 client brands/stores</span>
                     <span className="text-[11px] text-emerald-400 font-bold flex items-center gap-1.5">
-                      <span>🛡️</span> 30-Day Risk-Free Money-Back Guarantee
+                      <span>🛡️</span> 30-Day Risk-Free Guarantee
                     </span>
                   </div>
                 </div>
 
                 <ul className="space-y-3.5 text-xs text-theme-muted mb-8">
                   <li className="flex items-center gap-2 text-theme font-semibold"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Up to 25,000+ Active SKUs or 5 Client Brands Included</strong></li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Universal GTM Tag:</strong> 3-min deploy on Magento, BigCommerce, or Custom</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Universal GTM Tag:</strong> 3-min deploy on Magento, BigCommerce, Shopify, Custom</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Email Pre-Flight QA:</strong> Klaviyo / ESP test send auditor</li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Ad Landing Page Sentinel:</strong> Polling of Google Shopping, Bing & Meta URLs</li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Multi-Store Agency Portal:</strong> Single dashboard for all clients/warehouses</li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Immutable Client Reports:</strong> Permanent, audit-grade proof-of-work</li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Ad & Affiliate Shield (Optional Add-on):</strong> 1st-party edge proxy & fallback recovery</li>
-                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>1-Click CSV Exporter:</strong> Client-side raw telemetry downloads</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Ad Landing Page Sentinel:</strong> Real-time monitoring of Google Shopping & Meta URLs</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Multi-Store Agency Portal:</strong> Single dashboard for all warehouses & domains</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Immutable Client Reports:</strong> Audit-grade proof-of-work CSV exports</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-cyan-400 shrink-0" /> <strong>Optional Ad Recovery Rider:</strong> Upgrade to Ad Yield Recovery at any time</li>
                 </ul>
               </div>
               <div>
@@ -653,11 +591,80 @@ function Home() {
                   {billingCycle === 'annual' ? 'Activate Enterprise Sentinel ($2,999/yr)' : 'Activate Enterprise Sentinel ($299/mo)'}
                 </a>
                 <div className="flex items-center justify-center gap-2 text-center text-[11px] text-theme-muted mt-2 font-medium">
-                  <span>Instant Provisioning</span>
+                  <span>Fixed Annual PO Available</span>
                   <span>•</span>
                   <Link to="/agencies" className="text-cyan-400 hover:underline">
                     Agency Partner Program &rarr;
                   </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Tier 3: Yield & Ad Recovery (Featured / Performance Partner) */}
+            <div className="bg-gradient-to-b from-emerald-950/50 via-[var(--card-bg)] to-[var(--card-bg)] border-2 border-emerald-500 rounded-3xl p-8 flex flex-col justify-between backdrop-blur-md relative shadow-[0_0_50px_-10px_rgba(16,185,129,0.3)]">
+              <div className="absolute -top-3.5 right-6 bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black text-[11px] px-3.5 py-1 rounded-full uppercase tracking-wider shadow-lg">
+                ⭐ Performance Partner
+              </div>
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="text-xs uppercase font-bold text-emerald-400 tracking-wider">Zero-Risk Performance</div>
+                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    Sentinel Free ($3.6K Value)
+                  </span>
+                </div>
+                <h3 className="text-2xl font-black text-theme mb-3">Ad Yield & Signal Recovery</h3>
+                <p className="text-sm text-theme-muted mb-6">
+                  Engineered for high-traffic media, Retail Media Networks, and top DTC brands losing 30%–50% of revenue to uBlock Origin, Brave Shields, and Safari ITP.
+                </p>
+
+                <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-4 mb-6">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-black text-theme">
+                      $0.00
+                    </span>
+                    <span className="text-emerald-400 text-sm font-black uppercase tracking-wider">
+                      Upfront Setup
+                    </span>
+                  </div>
+                  <div className="text-theme-muted text-xs mt-1.5 leading-relaxed">
+                    <strong className="text-emerald-400 font-bold">15% Fee on Verified Recovered Revenue</strong>
+                    <div className="text-[11px] text-theme-muted mt-0.5">
+                      Subject to qualification (100K+ monthly visits or $250/mo minimum floor)
+                    </div>
+                  </div>
+                  <div className="mt-2.5 pt-2 border-t border-emerald-500/20 flex flex-col gap-1">
+                    <span className="text-[11px] text-emerald-300 font-bold flex items-center gap-1">
+                      <span>✓</span> 404 Killer Sentinel ($299/mo) Included 100% Free
+                    </span>
+                    <span className="text-[11px] text-cyan-300 font-bold flex items-center gap-1">
+                      <span>✓</span> Zero Out-Of-Pocket Risk: We only earn when you get paid
+                    </span>
+                  </div>
+                </div>
+
+                <ul className="space-y-3.5 text-xs text-theme-muted mb-8">
+                  <li className="flex items-center gap-2 text-theme font-semibold"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>404 Killer Sentinel INCLUDED FREE:</strong> 24/7 broken link auto-healer</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>1st-Party Edge Prebid & GAM Proxy:</strong> Unblocks 25%–40% lost display/video RPMs</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Affiliate Link Shield:</strong> Rescues blocked Impact, CJ, Rakuten & Skimlinks hops</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Closed-Loop DSP Attribution:</strong> Restores Meta CAPI, TikTok & Google PMax beacons</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Certified Dual-Ledger Affidavit:</strong> Reconciled directly in your GAM/Impact portal</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>5% Synthetic Holdout Proof:</strong> Mathematical verification of 100% incremental lift</li>
+                  <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Dedicated Edge Node:</strong> Sub-15ms global reverse proxy on Cloudflare/Fastly</li>
+                </ul>
+              </div>
+              <div>
+                <Link
+                  to="/audit"
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 hover:brightness-110 text-slate-950 font-black text-center transition-all block shadow-lg text-sm cursor-pointer"
+                >
+                  Run Free Bleed Audit & Activate ($0 Setup)
+                </Link>
+                <div className="flex items-center justify-center gap-2 text-center text-[11px] text-theme-muted mt-2 font-medium">
+                  <span>No Credit Card Required</span>
+                  <span>•</span>
+                  <a href="mailto:djohnson@404killer.com?subject=Performance%20Recovery%20Partner%20Inquiry" className="text-emerald-400 hover:underline">
+                    Executive Briefing &rarr;
+                  </a>
                 </div>
               </div>
             </div>
