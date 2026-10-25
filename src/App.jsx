@@ -797,7 +797,7 @@ function App() {
             >
               Pricing
             </a>
-            <Link to="/agencies" className="hover:text-theme transition-colors font-medium whitespace-nowrap hidden xl:inline-block">Agencies (25% Cut)</Link>
+            <Link to="/agencies" className="hover:text-theme transition-colors font-medium whitespace-nowrap hidden xl:inline-block">Agencies (20% Cut)</Link>
             <Link to="/cfo" className="text-cyan-400 hover:text-cyan-300 transition-colors font-bold whitespace-nowrap hidden xl:inline-block">CFO Playbook</Link>
             <Link to="/resources" className="hover:text-theme transition-colors whitespace-nowrap hidden 2xl:inline-block">Guides & Docs</Link>
             <button
@@ -876,7 +876,7 @@ function App() {
           </Link>
           <Link to="/setup" className="text-emerald-400 hover:text-emerald-300 transition-colors font-bold">🛠️ Tag Setup &amp; Verifier</Link>
           <Link to="/cfo" className="text-cyan-400 hover:text-cyan-300 transition-colors font-bold">🏛️ CFO Playbook &amp; P&amp;L Model</Link>
-          <Link to="/agencies" className="text-theme-muted hover:text-theme transition-colors font-semibold">Agency Partners (25%)</Link>
+          <Link to="/agencies" className="text-theme-muted hover:text-theme transition-colors font-semibold">Agency Partners (20%)</Link>
           <Link to="/support" className="text-theme-muted hover:text-theme transition-colors font-bold">Support</Link>
           <Link to="/privacy" className="text-theme-muted hover:text-theme transition-colors">Privacy Policy</Link>
           <Link to="/terms" className="text-theme-muted hover:text-theme transition-colors">Terms of Service</Link>
