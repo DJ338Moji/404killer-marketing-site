@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Killer & Ad Un-Blocker | Investor Pitch Deck (DevRevIQ, LLC)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #030712;
+      color: #f8fafc;
+      overflow: hidden;
+    }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .slide {
+      display: none;
+      height: 100vh;
+      width: 100vw;
+      padding: 3rem 4rem;
+      overflow-y: auto;
+    }
+    .slide.active {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #34d399 0%, #22d3ee 50%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .card-glass {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(16px);
+    }
+    .card-glow-emerald {
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      box-shadow: 0 0 30px -10px rgba(16, 185, 129, 0.25);
+    }
+    .card-glow-cyan {
+      border: 1px solid rgba(6, 182, 212, 0.35);
+      box-shadow: 0 0 30px -10px rgba(6, 182, 212, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased select-none">
+
+  <!-- Header / Navigation HUD -->
+  <header class="fixed top-0 left-0 right-0 z-50 px-8 py-4 flex items-center justify-between border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center font-black text-slate-950 text-base shadow-lg">
+        404
+      </div>
+      <div>
+        <span class="font-extrabold tracking-tight text-white text-base">404 Killer</span>
+        <span class="text-xs font-semibold text-emerald-400 ml-1.5 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">DevRevIQ, LLC (100% Owned)</span>
+      </div>
+    </div>
+    
+    <div class="flex items-center gap-6">
+      <div class="text-xs font-semibold text-slate-400">
+        Slide <span id="current-slide" class="text-emerald-400 font-bold">1</span> of <span id="total-slides" class="text-white font-bold">10</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="prevSlide()" class="px-3.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold text-slate-300 transition-all cursor-pointer">
+          &larr; Prev
+        </button>
+        <button onclick="nextSlide()" class="px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 hover:brightness-110 text-slate-950 text-xs font-black transition-all cursor-pointer shadow-md">
+          Next &rarr;
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Progress Bar -->
+  <div class="fixed top-[57px] left-0 right-0 h-1 bg-white/5 z-50">
+    <div id="progress-bar" class="h-full bg-gradient-to-r from-emerald-500 via-cyan-400 to-blue-500 transition-all duration-300" style="width: 10%;"></div>
+  </div>
+
+  <!-- Main Slide Container -->
+  <main class="pt-16 h-screen w-screen overflow-hidden">
+
+    <!-- SLIDE 1: Title & Executive Summary -->
+    <section class="slide active">
+      <div class="max-w-5xl mx-auto my-auto text-center space-y-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest shadow-xl">
+          <span>Enterprise Asset Presentation</span> • <span>Confidential</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-[1.08]">
+          <span class="block text-white">404 KILLER & AD UN-BLOCKER</span>
+          <span class="block gradient-text mt-1">THE AUTONOMOUS EDGE YIELD LAYER</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-medium">
+          Recovering the <strong class="text-white">30% to 50% of digital revenue</strong> lost to client-side ad blockers, browser privacy shields (Safari ITP), and broken 404 links.
+        </p>
+
+        <div class="pt-6 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto text-left">
+          <div class="card-glass p-5 rounded-2xl border border-emerald-500/30">
+            <div class="text-xs uppercase font-bold text-emerald-400 mb-1">Corporate Ownership</div>
+            <div class="text-lg font-black text-white">DevRevIQ, LLC</div>
+            <div class="text-xs text-slate-400 mt-1">100% Wholly Owned • Dale Johnson, Founder</div>
+          </div>
+          <div class="card-glass p-5 rounded-2xl border border-cyan-500/30">
+            <div class="text-xs uppercase font-bold text-cyan-400 mb-1">Monetization Engine</div>
+            <div class="text-lg font-black text-white">15% Performance Rev-Share</div>
+            <div class="text-xs text-slate-400 mt-1">Zero risk to clients • Sentinel free bundle</div>
+          </div>
+          <div class="card-glass p-5 rounded-2xl border border-blue-500/30">
+            <div class="text-xs uppercase font-bold text-blue-400 mb-1">Target Addressable Pool</div>
+            <div class="text-lg font-black text-white">$3.72 Billion Bleed</div>
+            <div class="text-xs text-slate-400 mt-1">Across Top 500 Verified Web Targets</div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-xs text-slate-500 pb-4">
+        Press <span class="text-slate-300 font-bold">Space</span> or <span class="text-slate-300 font-bold">&rarr;</span> to advance slides
+      </div>
+    </section>
+
+    <!-- SLIDE 2: The $3.7B Problem -->
+    <section class="slide">
+      <div class="max-w-6xl mx-auto my-auto w-full space-y-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-rose-400">The Market Problem</span>
+          <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight mt-1">
+            The Internet's Plumbing is Leaking $3.7B+ Annually.
+          </h2>
+          <p class="text-slate-400 text-sm md:text-base mt-2">
+            Every day, digital publishers, retail media networks, and e-commerce stores bleed revenue across three browser-level friction points:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="card-glass p-6 rounded-3xl border-l-4 border-l-rose-500">
+            <div class="text-3xl mb-3">🛡️</div>
+            <h3 class="text-xl font-black text-white mb-2">Ad Blocker Suppression</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              uBlock Origin and Brave Shields strip client Prebid.js, Google Ad Manager (gpt.js), and video players before an auction starts.
+            </p>
+            <div class="bg-rose-500/10 border border-rose-500/20 rounded-xl p-3 text-xs text-rose-300 font-bold">
+              36% to 68% of desktop gaming & tech ad RPMs wiped out.
+            </div>
+          </div>
+
+          <div class="card-glass p-6 rounded-3xl border-l-4 border-l-amber-500">
+            <div class="text-3xl mb-3">👁️</div>
+            <h3 class="text-xl font-black text-white mb-2">Safari ITP Blindness</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Apple Safari ITP and Firefox ETP purge attribution cookies after 24 hours, severing Meta CAPI and Google PMax conversion pings.
+            </p>
+            <div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-3 text-xs text-amber-300 font-bold">
+              Merchants suffer 25%–35% artificial CAC inflation.
+            </div>
+          </div>
+
+          <div class="card-glass p-6 rounded-3xl border-l-4 border-l-purple-500">
+            <div class="text-3xl mb-3">🚫</div>
+            <h3 class="text-xl font-black text-white mb-2">The 404 Black Hole</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              E-commerce stores archive out-of-stock SKUs, leaving live paid ads, influencer posts, and affiliate links landing on dead 404 pages.
+            </p>
+            <div class="bg-purple-500/10 border border-purple-500/20 rounded-xl p-3 text-xs text-purple-300 font-bold">
+              100% of paid ad click spend burned with zero sales.
+            </div>
+          </div>
+        </div>
+
+        <div class="card-glass p-4 rounded-2xl flex items-center justify-between border border-white/10 text-xs">
+          <span class="text-slate-300 font-semibold">Verified Bleed in Database: <strong class="text-emerald-400">150 Publishers ($560M)</strong> • <strong class="text-cyan-400">100 Retail Media Networks ($741M)</strong> • <strong class="text-blue-400">60 Affiliate Portals ($305M)</strong></span>
+          <span class="mono text-emerald-400 font-bold">TOTAL: $3,722,390,000 / YR</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: The Solution -->
+    <section class="slide">
+      <div class="max-w-6xl mx-auto my-auto w-full space-y-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">The Architecture</span>
+          <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight mt-1">
+            Dual-Action Autonomous Edge Engine.
+          </h2>
+          <p class="text-slate-400 text-sm md:text-base mt-2">
+            One single &lt;15ms serverless edge worker on Cloudflare / Fastly running at the root DNS layer:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="card-glass p-8 rounded-3xl card-glow-emerald">
+            <div class="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-black uppercase mb-3">
+              Engine 1: Sentinel Reliability
+            </div>
+            <h3 class="text-2xl font-black text-white mb-3">404 Killer Sentinel</h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-5">
+              Autonomous 24/7 route interceptor. When a buyer or crawler hits a dead SKU, expired campaign URL, or deleted category, Sentinel heals it to the closest active match in &lt;50ms.
+            </p>
+            <ul class="space-y-2 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Zero manual CSV redirect management</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Out-of-Stock Ad Salvage with UTM preservation</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> Native Shopify Admin GraphQL + Universal GTM Tag</li>
+            </ul>
+          </div>
+
+          <div class="card-glass p-8 rounded-3xl card-glow-cyan">
+            <div class="inline-block px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-400 text-xs font-black uppercase mb-3">
+              Engine 2: Yield Recovery
+            </div>
+            <h3 class="text-2xl font-black text-white mb-3">Ad Un-Blocker Edge Proxy</h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-5">
+              First-party reverse-proxy executing Prebid client auctions and conversion telemetry server-to-server. Completely immune to uBlock Origin, Brave Shields, and Safari ITP.
+            </p>
+            <ul class="space-y-2 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><span class="text-cyan-400 font-bold">✓</span> +25% to +40% immediate expansion in Prebid ad requests</li>
+              <li class="flex items-center gap-2"><span class="text-cyan-400 font-bold">✓</span> Rescues severed affiliate hops (Impact, CJ, Skimlinks)</li>
+              <li class="flex items-center gap-2"><span class="text-cyan-400 font-bold">✓</span> Direct S2S sync into The Trade Desk UID2 & Meta CAPI</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="text-center text-xs text-slate-400">
+          <strong class="text-emerald-400">The Symbiosis:</strong> Sentinel ensures unblocked traffic lands on live products; Ad Un-Blocker ensures ad auctions actually take place.
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: Technology & Moat -->
+    <section class="slide">
+      <div class="max-w-6xl mx-auto my-auto w-full space-y-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-cyan-400">Defensive Moat</span>
+          <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight mt-1">
+            Why uBlock Origin & Brave Cannot Block Us.
+          </h2>
+          <p class="text-slate-400 text-sm md:text-base mt-2">
+            Ad blockers rely on static URL regex filters and DOM element-hiding rules. Our architecture makes filter lists obsolete:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div class="card-glass p-5 rounded-2xl">
+            <div class="text-emerald-400 font-black text-sm mb-1">1. Same-Origin Edge</div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              No CNAME cloaking tricks. Requests execute on the root domain (<code class="text-emerald-400">store.com/_edge</code>). Blocking it breaks the site.
+            </p>
+          </div>
+          <div class="card-glass p-5 rounded-2xl">
+            <div class="text-cyan-400 font-black text-sm mb-1">2. Zero 3rd-Party Calls</div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Browser never connects to an ad server. 100% of OpenRTB bidding is executed server-to-server out-of-band.
+            </p>
+          </div>
+          <div class="card-glass p-5 rounded-2xl">
+            <div class="text-blue-400 font-black text-sm mb-1">3. Polymorphic Paths</div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Zero ad-related keywords. Files are named <code class="text-blue-400">site-sentinel.js</code> bypassing EasyList pattern matching.
+            </p>
+          </div>
+          <div class="card-glass p-5 rounded-2xl">
+            <div class="text-purple-400 font-black text-sm mb-1">4. DOM Neutrality</div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Renders native semantic HTML tags (<code class="text-purple-400">&lt;article&gt;</code>) immune to cosmetic CSS display:none injection.
+            </p>
+          </div>
+        </div>
+
+        <div class="card-glass p-5 rounded-2xl border border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div>
+            <div class="text-xs font-bold uppercase text-emerald-400">Intellectual Property Strategy</div>
+            <div class="text-sm font-bold text-white mt-0.5">Provisional Patent Filings + DTSA Trade Secret Protection</div>
+            <div class="text-xs text-slate-400 mt-0.5">Patenting edge auction orchestration while keeping evasion heuristics strictly proprietary.</div>
+          </div>
+          <div class="px-4 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-black shrink-0">
+            Patent Pending Portfolio
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: Business Model -->
+    <section class="slide">
+      <div class="max-w-6xl mx-auto my-auto w-full space-y-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Commercial Packaging</span>
+          <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight mt-1">
+            The "Godfather" Business Model.
+          </h2>
+          <p class="text-slate-400 text-sm md:text-base mt-2">
+            Eliminating all sales resistance by aligning our fee strictly with physical cash deposited into client accounts:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Card 1: Core -->
+          <div class="card-glass p-6 rounded-3xl">
+            <div class="text-xs uppercase font-bold text-slate-400 mb-1">Self-Serve SaaS</div>
+            <h3 class="text-2xl font-black text-white mb-2">Sentinel Core</h3>
+            <div class="text-3xl font-black text-white mb-4">$29<span class="text-sm text-slate-400 font-normal">/mo</span></div>
+            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+              Emerging Shopify stores (&lt;1,000 SKUs) via 1-click App Store install. Automated 404 healing & UTM protector.
+            </p>
+            <div class="text-xs text-emerald-400 font-bold">Self-serve App Store volume engine</div>
+          </div>
+
+          <!-- Card 2: Enterprise Fixed -->
+          <div class="card-glass p-6 rounded-3xl border border-cyan-500/40">
+            <div class="text-xs uppercase font-bold text-cyan-400 mb-1">Fixed Annual License</div>
+            <h3 class="text-2xl font-black text-white mb-2">Sentinel Enterprise</h3>
+            <div class="text-3xl font-black text-white mb-4">$299<span class="text-sm text-slate-400 font-normal">/mo</span></div>
+            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+              Designed for enterprise retailers with strict fixed OPEX procurement rules. Unlimited SKUs, multi-domain agency portal.
+            </p>
+            <div class="text-xs text-cyan-400 font-bold">Fast-track procurement sign-off</div>
+          </div>
+
+          <!-- Card 3: Performance Partner -->
+          <div class="card-glass p-6 rounded-3xl card-glow-emerald relative">
+            <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black text-[10px] uppercase">
+              ⭐ Whale Model
+            </div>
+            <div class="text-xs uppercase font-bold text-emerald-400 mb-1">Zero-Risk Performance</div>
+            <h3 class="text-2xl font-black text-white mb-2">Yield Recovery Partner</h3>
+            <div class="text-3xl font-black text-emerald-400 mb-4">$0 Upfront <span class="text-sm text-white font-bold">+ 15% Fee</span></div>
+            <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+              <strong class="text-white">Sentinel Enterprise INCLUDED 100% FREE.</strong> 15% fee on verified recovered ad/affiliate yield. Min. 100K visits or $250/mo floor.
+            </p>
+            <div class="text-xs text-emerald-400 font-black">Zero out-of-pocket downside for client</div>
+          </div>
+        </div>
+
+        <div class="card-glass p-4 rounded-2xl flex items-center justify-between text-xs text-slate-300">
+          <span><strong>Tamper-Proof Audit:</strong> Dual-ledger reconciliation verified directly inside client's Google Ad Manager, Impact, or Shopify admin.</span>
+          <span class="text-emerald-400 font-bold">5% Synthetic Control Group Proof</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: Go-To-Market -->
+    <section class="slide">
+      <div class="max-w-6xl mx-auto my-auto w-full space-y-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-cyan-400">Distribution Strategy</span>
+          <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight mt-1">
+            The Dual-Track Go-To-Market Engine.
+          </h2>
+          <p class="text-slate-400 text-sm md:text-base mt-2">
+            Balancing immediate high-velocity cash flow with high-leverage enterprise whale hunting:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="card-glass p-6 rounded-3xl">
+            <div class="inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold mb-3">
+              TRACK 1 (Days 1–30): First $1,000 MRR
+            </div>
+            <h3 class="text-xl font-black text-white mb-3">The Shopify App Store & CFO Blitz</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Immediate customer validation and cash generation:
+            </p>
+            <ul class="space-y-2.5 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><strong class="text-white">52 Warm Executive Leads:</strong> Active pipeline of Brand CFOs & Agency Leaders.</li>
+              <li class="flex items-center gap-2"><strong class="text-white">The Closing Math:</strong> Just 4 enterprise accounts at $299/mo = $1,196 MRR.</li>
+              <li class="flex items-center gap-2"><strong class="text-white">Shopify App Store:</strong> Re-submitted with all review items cleared for 1-click organic install.</li>
+            </ul>
+          </div>
+
+          <div class="card-glass p-6 rounded-3xl border border-cyan-500/30">
+            <div class="inline-block px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-bold mb-3">
+              TRACK 2 (Months 1–3): The Whale Hunt
+            </div>
+            <h3 class="text-xl font-black text-white mb-3">Publisher Wrapper Partnerships</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              High-leverage enterprise wholesale distribution:
+            </p>
+            <ul class="space-y-2.5 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><strong class="text-white">Target Partners:</strong> Freestar, Raptive, Mediavine, Playwire.</li>
+              <li class="flex items-center gap-2"><strong class="text-white">The Leverage:</strong> 1 wrapper script integration deploys to 10,000+ publishers simultaneously.</li>
+              <li class="flex items-center gap-2"><strong class="text-white">Q4 Holiday Ad Surge:</strong> December Canary testing during peak ad CPMs proves multi-million dollar lift.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card-glass p-4 rounded-2xl text-center text-xs text-slate-400">
+          <strong class="text-cyan-400">Agency Network Multiplier:</strong> 50 top performance agencies (Tinuiti, Wpromote, CTC) earn 25% recurring rev-share for deploying 404 Killer across client rosters.
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: Financials -->
+    <section class="slide">
+      <div class="max-w-6xl mx-auto my-auto w-full space-y-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Financial Execution</span>
+          <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight mt-1">
+            18-Month Operational Ramp & Unit Economics.
+          </h2>
+          <p class="text-slate-400 text-sm md:text-base mt-2">
+            Pure software leverage: serverless edge workers cost &lt;5% of revenue, delivering 90%+ gross margins:
+          </p>
+        </div>
+
+        <div class="card-glass rounded-3xl overflow-hidden border border-white/10">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-white/5 border-b border-white/10 text-slate-400 uppercase text-[10px] tracking-wider">
+              <tr>
+                <th class="py-3 px-4">Metric</th>
+                <th class="py-3 px-4">Month 6</th>
+                <th class="py-3 px-4">Month 12</th>
+                <th class="py-3 px-4">Month 18</th>
+                <th class="py-3 px-4 text-emerald-400">Month 24</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5 text-slate-300">
+              <tr>
+                <td class="py-3 px-4 font-bold text-white">Active Target Websites</td>
+                <td class="py-3 px-4">35 sites</td>
+                <td class="py-3 px-4">90 sites</td>
+                <td class="py-3 px-4 font-bold text-white">210 sites</td>
+                <td class="py-3 px-4 font-bold text-emerald-400">450 sites</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-white">Major Ad-Wrapper Partners</td>
+                <td class="py-3 px-4">0 (Pilots)</td>
+                <td class="py-3 px-4">1 Partner</td>
+                <td class="py-3 px-4 font-bold text-white">2 Partners</td>
+                <td class="py-3 px-4 font-bold text-emerald-400">4 Partners</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-white">Monthly Revenue (MRR)</td>
+                <td class="py-3 px-4">$150,000</td>
+                <td class="py-3 px-4">$650,000</td>
+                <td class="py-3 px-4 font-bold text-white">$1,250,000</td>
+                <td class="py-3 px-4 font-bold text-emerald-400">$2,850,000</td>
+              </tr>
+              <tr class="bg-emerald-500/5">
+                <td class="py-3 px-4 font-black text-emerald-400">Annual Run-Rate (ARR)</td>
+                <td class="py-3 px-4 font-bold">$1.8M ARR</td>
+                <td class="py-3 px-4 font-bold">$7.8M ARR</td>
+                <td class="py-3 px-4 font-black text-white">$15.0M ARR</td>
+                <td class="py-3 px-4 font-black text-emerald-400">$34.2M ARR</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-white">Software Gross Margin (%)</td>
+                <td class="py-3 px-4">92.5%</td>
+                <td class="py-3 px-4">93.8%</td>
+                <td class="py-3 px-4">94.2%</td>
+                <td class="py-3 px-4 text-emerald-400">94.5%</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-white">Net Revenue Retention (NRR)</td>
+                <td class="py-3 px-4">125%</td>
+                <td class="py-3 px-4">132%</td>
+                <td class="py-3 px-4 font-bold text-white">138%</td>
+                <td class="py-3 px-4 text-emerald-400">142%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          <div class="card-glass p-4 rounded-xl">
+            <strong class="text-white">Natural Negative Churn:</strong> Revenue expands automatically during Q4 as holiday ad traffic and publisher CPMs spike 2x–3x.
+          </div>
+          <div class="card-glass p-4 rounded-xl">
+            <strong class="text-white">Unbreakable Retention:</strong> Ripping out Sentinel breaks thousands of customer links; ripping out Ad Un-Blocker drops ad revenue by 30%. Churn is near 0%.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 8: Valuation Matrix -->
+    <section class="slide">
+      <div class="max-w-6xl mx-auto my-auto w-full space-y-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Investment Return</span>
+          <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight mt-1">
+            Valuation Matrix at 18 Months.
+          </h2>
+          <p class="text-slate-400 text-sm md:text-base mt-2">
+            Benchmarked against public and private edge infrastructure & ad tech multiples (6x to 12x ARR):
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Conservative -->
+          <div class="card-glass p-6 rounded-3xl border border-white/10">
+            <div class="text-xs uppercase font-bold text-slate-400 mb-1">Ultra-Conservative (Base)</div>
+            <h3 class="text-2xl font-black text-white mb-2">3.2% Target Capture</h3>
+            <div class="mono text-3xl font-black text-white mb-1">$9.0M ARR</div>
+            <div class="text-xs text-slate-400 mb-5">Just 15 media pubs + 40 DTC brands</div>
+            
+            <div class="space-y-2.5 pt-4 border-t border-white/10 text-xs">
+              <div class="flex justify-between">
+                <span class="text-slate-400">Multiple:</span>
+                <span class="font-bold text-white">6.0x – 8.0x ARR</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-400">Enterprise Valuation:</span>
+                <span class="font-black text-emerald-400">$54M – $72M</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Realistic Target -->
+          <div class="card-glass p-6 rounded-3xl card-glow-emerald relative">
+            <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-emerald-500 text-slate-950 font-black text-[10px] uppercase">
+              Target Case
+            </div>
+            <div class="text-xs uppercase font-bold text-emerald-400 mb-1">Realistic Target (1 Wrapper)</div>
+            <h3 class="text-2xl font-black text-white mb-2">5.4% Target Capture</h3>
+            <div class="mono text-3xl font-black text-emerald-400 mb-1">$15.0M ARR</div>
+            <div class="text-xs text-slate-400 mb-5">1 Publisher Wrapper + 60 DTC/RMN</div>
+            
+            <div class="space-y-2.5 pt-4 border-t border-white/10 text-xs">
+              <div class="flex justify-between">
+                <span class="text-slate-400">Multiple:</span>
+                <span class="font-bold text-white">8.0x – 10.0x ARR</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-400">Enterprise Valuation:</span>
+                <span class="font-black text-emerald-400">$120M – $150M</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Moonshot -->
+          <div class="card-glass p-6 rounded-3xl border border-cyan-500/40">
+            <div class="text-xs uppercase font-bold text-cyan-400 mb-1">Moonshot Scale (2 Wrappers)</div>
+            <h3 class="text-2xl font-black text-white mb-2">12.0% Target Capture</h3>
+            <div class="mono text-3xl font-black text-cyan-400 mb-1">$33.5M ARR</div>
+            <div class="text-xs text-slate-400 mb-5">Freestar + Raptive network rollouts</div>
+            
+            <div class="space-y-2.5 pt-4 border-t border-white/10 text-xs">
+              <div class="flex justify-between">
+                <span class="text-slate-400">Multiple:</span>
+                <span class="font-bold text-white">10.0x – 12.0x ARR</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-400">Enterprise Valuation:</span>
+                <span class="font-black text-cyan-400">$335M – $400M+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center text-xs text-slate-400">
+          Even in the baseline scenario, investors achieve a <strong class="text-emerald-400">30x to 45x multiple on invested capital</strong> from the seed valuation.
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 9: Strategic Acquisition -->
+    <section class="slide">
+      <div class="max-w-6xl mx-auto my-auto w-full space-y-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-cyan-400">Liquidity Horizons</span>
+          <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight mt-1">
+            Strategic Buyout Landscape.
+          </h2>
+          <p class="text-slate-400 text-sm md:text-base mt-2">
+            At $15M–$30M ARR, 404 Killer sits in the sweet spot for strategic enterprise M&A:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="card-glass p-6 rounded-3xl">
+            <div class="text-xs font-bold uppercase text-emerald-400 mb-2">Edge Cloud Giants</div>
+            <h3 class="text-xl font-black text-white mb-2">Cloudflare / Fastly / Akamai</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              They want to monetize business logic at the edge. Packaging 404 Killer as a native enterprise capability turns their CDN pipes into a high-margin yield center for media clients.
+            </p>
+            <div class="text-[11px] text-slate-400 font-semibold">Multiple: 12x–16x ARR</div>
+          </div>
+
+          <div class="card-glass p-6 rounded-3xl border border-cyan-500/30">
+            <div class="text-xs font-bold uppercase text-cyan-400 mb-2">Ad Tech Platforms</div>
+            <h3 class="text-xl font-black text-white mb-2">The Trade Desk / Magnite</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              The Trade Desk needs closed-loop attribution to prove open-web ROAS beats Google/Meta walled gardens. Magnite needs un-blockable Prebid pipelines into publishers.
+            </p>
+            <div class="text-[11px] text-slate-400 font-semibold">Multiple: 10x–14x ARR</div>
+          </div>
+
+          <div class="card-glass p-6 rounded-3xl">
+            <div class="text-xs font-bold uppercase text-blue-400 mb-2">Media Consolidators</div>
+            <h3 class="text-xl font-black text-white mb-2">Dotdash / Future / Valnet</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Acquiring 404 Killer pays for itself within 12 months by recovering $30M+ in lost display and affiliate margins across their own media properties.
+            </p>
+            <div class="text-[11px] text-slate-400 font-semibold">Multiple: Strategic EBITDA Payback</div>
+          </div>
+        </div>
+
+        <div class="card-glass p-4 rounded-2xl text-xs text-slate-300 flex items-center justify-between">
+          <span>Comparable Transactions: SpotX ($1.1B), SpringServe ($310M), Moat ($850M), Integral Ad Science ($825M).</span>
+          <span class="text-emerald-400 font-bold">Optimal Target Horizon: 24–36 Months</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 10: The Ask & Governance -->
+    <section class="slide">
+      <div class="max-w-5xl mx-auto my-auto w-full text-center space-y-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">The Capital Round</span>
+          <h2 class="text-4xl md:text-6xl font-black text-white tracking-tight mt-1">
+            $1.5M Seed Acceleration Round.
+          </h2>
+          <p class="text-slate-300 text-base max-w-2xl mx-auto mt-2">
+            Accelerating enterprise ad-wrapper partnerships, expanding patent filings, and scaling ARR past $15.0M.
+          </p>
+        </div>
+
+        <div class="card-glass p-8 rounded-3xl max-w-3xl mx-auto card-glow-emerald text-left">
+          <div class="grid grid-cols-2 gap-6 pb-6 border-b border-white/10">
+            <div>
+              <div class="text-xs uppercase font-bold text-slate-400">Corporate Entity</div>
+              <div class="text-xl font-black text-white mt-1">DevRevIQ, LLC</div>
+              <div class="text-xs text-emerald-400 mt-0.5">100% Wholly Owned • Clean Cap Table</div>
+            </div>
+            <div>
+              <div class="text-xs uppercase font-bold text-slate-400">Round Terms</div>
+              <div class="text-xl font-black text-white mt-1">$1.5M for 10%–15% Equity</div>
+              <div class="text-xs text-slate-400 mt-0.5">Priced Seed Equity or SAFE Note</div>
+            </div>
+          </div>
+
+          <div class="pt-6">
+            <div class="text-xs uppercase font-bold text-slate-400 mb-3">Capital Allocation</div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+              <div class="bg-white/5 p-3 rounded-xl border border-white/5">
+                <div class="font-black text-emerald-400 text-lg">40%</div>
+                <div class="text-slate-300 font-bold mt-1">Whale Sales & BD</div>
+                <div class="text-[10px] text-slate-400">Ad-wrappers & SSP deals</div>
+              </div>
+              <div class="bg-white/5 p-3 rounded-xl border border-white/5">
+                <div class="font-black text-cyan-400 text-lg">35%</div>
+                <div class="text-slate-300 font-bold mt-1">Edge Engineering</div>
+                <div class="text-[10px] text-slate-400">Patents & S2S scale</div>
+              </div>
+              <div class="bg-white/5 p-3 rounded-xl border border-white/5">
+                <div class="font-black text-blue-400 text-lg">15%</div>
+                <div class="text-slate-300 font-bold mt-1">Agency Channel</div>
+                <div class="text-[10px] text-slate-400">Rev-share co-ops</div>
+              </div>
+              <div class="bg-white/5 p-3 rounded-xl border border-white/5">
+                <div class="font-black text-purple-400 text-lg">10%</div>
+                <div class="text-slate-300 font-bold mt-1">Working Capital</div>
+                <div class="text-[10px] text-slate-400">Legal & governance</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <div class="text-sm font-bold text-white">DevRevIQ, LLC • Dale Johnson, Founder</div>
+          <div class="text-xs text-slate-400 mt-1">
+            <a href="mailto:djohnson@404killer.com" class="text-emerald-400 hover:underline">djohnson@404killer.com</a> • 
+            <a href="https://404killer.com" target="_blank" class="text-cyan-400 hover:underline ml-2">404killer.com</a> • 
+            <a href="https://app.404killer.com" target="_blank" class="text-blue-400 hover:underline ml-2">app.404killer.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const currentSlideEl = document.getElementById('current-slide');
+    const totalSlidesEl = document.getElementById('total-slides');
+    const progressBar = document.getElementById('progress-bar');
+
+    totalSlidesEl.textContent = totalSlides;
+
+    function updateSlide() {
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle('active', idx === currentSlide);
+      });
+      currentSlideEl.textContent = currentSlide + 1;
+      const progress = ((currentSlide + 1) / totalSlides) * 100;
+      progressBar.style.width = progress + '%';
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevSlide();
+      }
+    });
+  </script>
+</body>
+</html>
