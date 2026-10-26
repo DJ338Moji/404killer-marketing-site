@@ -164,7 +164,7 @@ function Home() {
 
           {/* Subtitle */}
           <p className="text-lg md:text-2xl text-theme-muted max-w-3xl mx-auto leading-relaxed font-medium">
-            <strong className="text-theme">404 Killer & Ad Un-Blocker</strong> is the enterprise edge yield and reliability layer. We unblock client-side programmatic display & video ads, restore Safari ITP and Meta CAPI conversion signals, and auto-heal broken URLs. <strong className="text-emerald-400">404 Killer Sentinel is included 100% complimentary</strong> under our 15% performance recovery model.
+            <strong className="text-theme">404 Killer™ & AdSentinel™</strong> is the enterprise edge yield and reliability layer. We unblock client-side programmatic display & video ads, restore Safari ITP and Meta CAPI conversion signals, and auto-heal broken URLs. <strong className="text-emerald-400">404 Killer™ Sentinel is included 100% complimentary</strong> under our 15% performance recovery model.
           </p>
 
           {/* Price Anchor Callout */}
@@ -405,10 +405,10 @@ function Home() {
                 🚀 Coming Soon • Subscriber Exclusive
               </div>
               <h3 className="text-2xl md:text-3xl font-black text-theme tracking-tight">
-                The 404 Killer Cross-Store Network (Beta Waitlist)
+                The 404 Killer™ Cross-Store Network (Beta Waitlist)
               </h3>
               <p className="text-theme-muted text-sm md:text-base leading-relaxed">
-                What happens when a customer lands on an out-of-stock item? Instead of a dead end, 404 Killer subscribers will get priority access to our <strong>Zero-Ad-Spend Co-Marketing Network</strong>: monetize dead inventory by cross-recommending verified partner brand products for <strong>15–20% affiliate commissions</strong>.
+                What happens when a customer lands on an out-of-stock item? Instead of a dead end, 404 Killer™ subscribers will get priority access to our <strong>Zero-Ad-Spend Co-Marketing Network</strong>: monetize dead inventory by cross-recommending verified partner brand products for <strong>15–20% affiliate commissions</strong>.
               </p>
               <div className="flex items-center gap-4 text-xs font-bold text-slate-300">
                 <span>✓ Zero inventory risk</span>
@@ -419,7 +419,7 @@ function Home() {
 
             <div className="shrink-0 text-center lg:text-right">
               <div className="text-xs uppercase tracking-widest text-emerald-400 font-bold mb-2">Priority Beta Access</div>
-              <div className="text-sm font-semibold text-theme-muted mb-4">Included free for all 404 Killer subscribers</div>
+              <div className="text-sm font-semibold text-theme-muted mb-4">Included free for all 404 Killer™ subscribers</div>
               <a
                 href="#pricing"
                 className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl text-sm transition-all inline-flex items-center gap-2"
@@ -612,7 +612,7 @@ function Home() {
                     Sentinel Free ($3.6K Value)
                   </span>
                 </div>
-                <h3 className="text-2xl font-black text-theme mb-3">Ad Yield & Signal Recovery</h3>
+                <h3 className="text-2xl font-black text-theme mb-3">AdSentinel™ Yield & Signal Recovery</h3>
                 <p className="text-sm text-theme-muted mb-6">
                   Engineered for high-traffic media, Retail Media Networks, and top DTC brands losing 30%–50% of revenue to uBlock Origin, Brave Shields, and Safari ITP.
                 </p>
@@ -634,7 +634,7 @@ function Home() {
                   </div>
                   <div className="mt-2.5 pt-2 border-t border-emerald-500/20 flex flex-col gap-1">
                     <span className="text-[11px] text-emerald-300 font-bold flex items-center gap-1">
-                      <span>✓</span> 404 Killer Sentinel ($299/mo) Included 100% Free
+                      <span>✓</span> 404 Killer™ Sentinel ($299/mo) Included 100% Free
                     </span>
                     <span className="text-[11px] text-cyan-300 font-bold flex items-center gap-1">
                       <span>✓</span> Zero Out-Of-Pocket Risk: We only earn when you get paid
@@ -643,7 +643,7 @@ function Home() {
                 </div>
 
                 <ul className="space-y-3.5 text-xs text-theme-muted mb-8">
-                  <li className="flex items-center gap-2 text-theme font-semibold"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>404 Killer Sentinel INCLUDED FREE:</strong> 24/7 broken link auto-healer</li>
+                  <li className="flex items-center gap-2 text-theme font-semibold"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>404 Killer™ Sentinel INCLUDED FREE:</strong> 24/7 broken link auto-healer</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>1st-Party Edge Prebid & GAM Proxy:</strong> Unblocks 25%–40% lost display/video RPMs</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Affiliate Link Shield:</strong> Rescues blocked Impact, CJ, Rakuten & Skimlinks hops</li>
                   <li className="flex items-center gap-2 text-theme font-medium"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> <strong>Closed-Loop DSP Attribution:</strong> Restores Meta CAPI, TikTok & Google PMax beacons</li>
@@ -673,7 +673,7 @@ function Home() {
           {/* Legal Acceptance Notice */}
           <div className="mt-12 text-center max-w-3xl mx-auto px-4">
             <p className="text-xs text-theme-muted leading-relaxed">
-              By activating 404 Killer App, you agree to our{' '}
+              By activating 404 Killer™ App, you agree to our{' '}
               <Link to="/terms" className="text-emerald-400 underline font-semibold hover:text-emerald-300">
                 Master Customer Agreement & Terms of Service
               </Link>{' '}
@@ -710,7 +710,7 @@ function WalkthroughPage() {
     <div className="max-w-5xl mx-auto px-4 py-12">
       <div className="mb-6 flex items-center justify-between">
         <Link to="/" className="text-sm font-semibold text-emerald-400 hover:underline flex items-center gap-2">
-          &larr; Back to 404 Killer App Home
+          &larr; Back to 404 Killer™ App Home
         </Link>
       </div>
       <div className="rounded-3xl overflow-hidden border border-[var(--card-border)] bg-[var(--card-bg)] shadow-2xl p-6">
@@ -868,7 +868,8 @@ function App() {
             <Logo className="h-10" showText={false} theme={theme} />
           </Link>
         </div>
-        <p className="mb-4 text-theme-muted">© 2026 404 Killer App: Revenue Shield. Never Lose Another Sale to a Dead Link.</p>
+        <p className="mb-2 text-theme-muted">© 2026 404 Killer™ App: Revenue Shield. A DevRevIQ, LLC Enterprise Asset. All Rights Reserved.</p>
+        <p className="mb-4 text-xs text-theme-muted/70">404 Killer™ and AdSentinel™ are trademarks of DevRevIQ, LLC.</p>
         <div className="flex justify-center gap-6 flex-wrap">
           <Link 
             to="/audit" 

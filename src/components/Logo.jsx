@@ -14,6 +14,7 @@ export default function Logo({ className = "h-10 md:h-12", showText = true, text
           <div className="flex items-center gap-1.5 leading-none font-black text-xl md:text-2xl tracking-tighter whitespace-nowrap">
             <span className="text-white">404</span>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400">KILLER</span>
+            <sup className="text-[10px] text-emerald-400 font-black -ml-1 -top-2 select-none">™</sup>
             <span className="text-cyan-400">APP</span>
           </div>
           <span className="text-[9px] font-black uppercase tracking-[0.22em] text-emerald-400/90 leading-tight mt-0.5 whitespace-nowrap">

@@ -101,7 +101,7 @@ export default function Terms({ theme }) {
 
             <div className="pt-12 border-t border-[var(--card-border)]">
               <p className="text-sm text-theme-muted">DevRevIQ, LLC • 404 Killer App: Revenue Shield • Legal Inquiries: <span className="text-emerald-400 font-bold">legal@404killer.com</span></p>
-              <p className="text-xs text-theme-muted mt-4 opacity-50 italic">© 2026 DevRevIQ, LLC. All rights reserved. 404 Killer App and Revenue Shield are trademarks of DevRevIQ, LLC.</p>
+              <p className="text-xs text-theme-muted mt-4 opacity-50 italic">© 2026 DevRevIQ, LLC. All rights reserved. 404 Killer™, AdSentinel™, and Revenue Shield™ are trademarks of DevRevIQ, LLC.</p>
             </div>
           </section>
         </div>
