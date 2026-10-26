@@ -123,6 +123,7 @@ const openPortal = (subdomain) => {
 function Home() {
   const [showMerchantVideo, setShowMerchantVideo] = React.useState(false);
   const [billingCycle, setBillingCycle] = React.useState('monthly');
+  const [activeRole, setActiveRole] = React.useState('dtc'); // 'dtc', 'agency', 'cfo', 'publisher'
 
   React.useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -146,63 +147,233 @@ function Home() {
       <section className="pt-36 md:pt-44 pb-20 px-6 relative">
         <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-to-br from-emerald-500/20 via-cyan-500/10 to-transparent blur-[120px] rounded-full pointer-events-none -z-10"></div>
 
-        <div className="max-w-5xl mx-auto text-center space-y-8">
+        <div className="max-w-5xl mx-auto text-center space-y-6">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 backdrop-blur-sm shadow-xl text-xs md:text-sm font-bold text-emerald-400 mb-2">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 backdrop-blur-sm shadow-xl text-xs md:text-sm font-bold text-emerald-400 mb-1">
             <ShieldCheckIcon className="w-4 h-4 text-emerald-400" />
-            <span>Autonomous Edge Yield & Signal Recovery • Sentinel Included 100% Free</span>
+            <span>Autonomous Edge Yield &amp; Signal Recovery • Sentinel Included 100% Free</span>
           </div>
 
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.05] drop-shadow-2xl">
             <span className="block text-theme">RECOVER 30%–50% OF LOST REVENUE BLEEDING TO</span>
             <span className="block bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 py-1">
-              AD BLOCKERS & DEAD 404 LINKS
+              AD BLOCKERS &amp; DEAD 404 LINKS
             </span>
             <span className="block text-theme">ACROSS ANY PLATFORM.</span>
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-lg md:text-2xl text-theme-muted max-w-3xl mx-auto leading-relaxed font-medium">
-            <strong className="text-theme">404 Killer™ & AdSentinel™</strong> is the enterprise edge yield and reliability layer. We unblock client-side programmatic display & video ads, restore Safari ITP and Meta CAPI conversion signals, and auto-heal broken URLs. <strong className="text-emerald-400">404 Killer™ Sentinel is included 100% complimentary</strong> under our 15% performance recovery model.
-          </p>
-
-          {/* Price Anchor Callout */}
-          <div className="inline-block bg-white/5 border border-white/10 rounded-2xl px-6 py-2.5 backdrop-blur-md">
-            <span className="text-xs md:text-sm font-semibold text-theme-muted">
-              ⭐ Performance Partner: <strong className="text-emerald-400 text-base font-black">$0 Setup + 15% Rev-Share</strong> (Sentinel Included Free) • Fixed Sentinel Enterprise: <strong className="text-cyan-400 text-base font-black">$299/mo</strong> • Sentinel Core: <strong className="text-theme text-base font-black">$29/mo</strong>
-            </span>
+          {/* Interactive Role / Persona Selector */}
+          <div className="pt-2 max-w-4xl mx-auto">
+            <div className="text-[11px] font-black uppercase tracking-widest text-theme-muted mb-2.5 flex items-center justify-center gap-2">
+              <span>🎯</span>
+              <span>SELECT YOUR PERSPECTIVE:</span>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 p-1.5 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md">
+              <button
+                type="button"
+                onClick={() => setActiveRole('dtc')}
+                className={`px-3 py-2.5 rounded-xl text-xs md:text-sm font-black transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+                  activeRole === 'dtc'
+                    ? 'bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 shadow-lg scale-[1.02]'
+                    : 'text-theme-muted hover:text-theme hover:bg-white/5'
+                }`}
+              >
+                <span>🛍️</span>
+                <span>DTC Brands</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveRole('agency')}
+                className={`px-3 py-2.5 rounded-xl text-xs md:text-sm font-black transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+                  activeRole === 'agency'
+                    ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-slate-950 shadow-lg scale-[1.02]'
+                    : 'text-theme-muted hover:text-theme hover:bg-white/5'
+                }`}
+              >
+                <span>🤝</span>
+                <span>Agency Resellers</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveRole('cfo')}
+                className={`px-3 py-2.5 rounded-xl text-xs md:text-sm font-black transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+                  activeRole === 'cfo'
+                    ? 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white shadow-lg scale-[1.02]'
+                    : 'text-theme-muted hover:text-theme hover:bg-white/5'
+                }`}
+              >
+                <span>🏛️</span>
+                <span>Brand CFOs</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveRole('publisher')}
+                className={`px-3 py-2.5 rounded-xl text-xs md:text-sm font-black transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+                  activeRole === 'publisher'
+                    ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 shadow-lg scale-[1.02]'
+                    : 'text-theme-muted hover:text-theme hover:bg-white/5'
+                }`}
+              >
+                <span>📰</span>
+                <span>Publishers</span>
+              </button>
+            </div>
           </div>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-            <a
-              href="#pricing"
-              className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:brightness-110 text-slate-950 rounded-full font-black text-lg shadow-[0_0_40px_-10px_rgba(16,185,129,0.5)] transition-all transform hover:scale-105 flex items-center justify-center gap-2 cursor-pointer"
-            >
-              Start Free 7-Day Trial <ArrowRightIcon className="w-5 h-5 stroke-[2.5]" />
-            </a>
-            <Link
-              to="/audit"
-              state={{ resetTime: Date.now() }}
-              onClick={() => {
-                window.dispatchEvent(new CustomEvent('reset-audit-scan'));
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              className="w-full sm:w-auto px-7 py-4 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:border-emerald-400"
-            >
-              ⚡ Run Free Store Audit
-            </Link>
-            <button
-              type="button"
-              onClick={() => setShowMerchantVideo(true)}
-              className="w-full sm:w-auto px-7 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-theme rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2 text-emerald-400 cursor-pointer shadow-lg hover:border-emerald-500/30"
-            >
-              <span>▶</span> Watch Video
-            </button>
+          {/* Dynamic Role Card */}
+          <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-3xl p-6 md:p-8 max-w-4xl mx-auto shadow-2xl backdrop-blur-xl transition-all text-left">
+            {activeRole === 'dtc' && (
+              <div className="space-y-4">
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-3">
+                  <div className="flex items-center gap-2 text-xs font-bold text-emerald-400 uppercase tracking-wider">
+                    <span>🛍️</span>
+                    <span>For On-Line DTC Merchants &amp; E-Commerce Brands</span>
+                  </div>
+                  <span className="text-[11px] font-semibold text-slate-400">
+                    Works with Shopify, BigCommerce, Magento, WooCommerce &amp; Custom Headless
+                  </span>
+                </div>
+                <p className="text-base md:text-lg text-theme leading-relaxed">
+                  Never lose another customer or paid ad click to a dead URL or sold-out item. <strong className="text-emerald-400">404 Killer™ Sentinel</strong> intercepts broken links in &lt;50ms, auto-redirects buyers to the closest matching in-stock SKU, and keeps Meta/TikTok UTM attribution 100% intact.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-theme-muted">
+                  <span className="flex items-center gap-1.5"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> Zero manual CSV redirects</span>
+                  <span className="flex items-center gap-1.5"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> Out-of-Stock ad salvage</span>
+                  <span className="flex items-center gap-1.5"><CheckBadgeIcon className="w-4 h-4 text-emerald-400 shrink-0" /> 1-Click install (3 mins)</span>
+                </div>
+                <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+                  <a
+                    href="#pricing"
+                    className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:brightness-110 text-slate-950 rounded-full font-black text-sm shadow-lg transition-all flex items-center justify-center gap-2"
+                  >
+                    Start Free 7-Day Trial ($29/mo) <ArrowRightIcon className="w-4 h-4" />
+                  </a>
+                  <Link
+                    to="/audit"
+                    className="w-full sm:w-auto px-6 py-3.5 bg-white/5 hover:bg-white/10 border border-white/10 text-theme rounded-full font-bold text-sm transition-all flex items-center justify-center gap-2"
+                  >
+                    ⚡ Run Free Storefront Audit
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => setShowMerchantVideo(true)}
+                    className="w-full sm:w-auto px-5 py-3.5 text-xs text-emerald-400 font-bold hover:underline flex items-center justify-center gap-1"
+                  >
+                    <span>▶</span> Watch Interactive Video Tour
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {activeRole === 'agency' && (
+              <div className="space-y-4">
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-3">
+                  <div className="flex items-center gap-2 text-xs font-bold text-cyan-400 uppercase tracking-wider">
+                    <span>🤝</span>
+                    <span>Authorized Wholesale Reseller Partner Program</span>
+                  </div>
+                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                    20% Wholesale Margin
+                  </span>
+                </div>
+                <p className="text-base md:text-lg text-theme leading-relaxed">
+                  Protect your clients' ROAS against dead landing pages and Safari ITP attribution loss. Authorized agencies receive a <strong className="text-cyan-400">20% wholesale discount off MSRP</strong> on all fixed subscription licenses (<strong className="text-white">$239.20/mo</strong> vs $299/mo MSRP) to bundle directly into your monthly client management retainers.
+                </p>
+                <div className="bg-cyan-500/5 border border-cyan-500/20 rounded-xl p-3 text-[11px] text-slate-300">
+                  <strong className="text-cyan-400">Partner Policy:</strong> Wholesale 20% discount applies strictly to fixed SaaS subscription licensing. Agencies register their agency and client domains in the Partner Portal. Performance ad-block yield recovery is managed enterprise-direct.
+                </div>
+                <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+                  <Link
+                    to="/agencies"
+                    className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-500 hover:brightness-110 text-slate-950 rounded-full font-black text-sm shadow-lg transition-all flex items-center justify-center gap-2"
+                  >
+                    Open Agency Reseller Portal &rarr;
+                  </Link>
+                  <Link
+                    to="/audit"
+                    className="w-full sm:w-auto px-6 py-3.5 bg-white/5 hover:bg-white/10 border border-white/10 text-theme rounded-full font-bold text-sm transition-all flex items-center justify-center gap-2"
+                  >
+                    Co-Branded Client Audit Scanner
+                  </Link>
+                </div>
+              </div>
+            )}
+
+            {activeRole === 'cfo' && (
+              <div className="space-y-4">
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-3">
+                  <div className="flex items-center gap-2 text-xs font-bold text-purple-400 uppercase tracking-wider">
+                    <span>🏛️</span>
+                    <span>Chief Financial Officers &amp; Finance Leaders</span>
+                  </div>
+                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/30">
+                    Fiduciary P&amp;L Recovery
+                  </span>
+                </div>
+                <p className="text-base md:text-lg text-theme leading-relaxed">
+                  Stop the silent 15%–30% post-click revenue bleed on paid Meta, Google, and TikTok acquisition spend. <strong className="text-purple-400">DevRevIQ operates with strict fiduciary governance:</strong> zero PII collection, strict PCI-DSS `/checkout` exclusion, transparent enterprise terms, and zero undisclosed fees.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-theme-muted">
+                  <span className="flex items-center gap-1.5"><CheckBadgeIcon className="w-4 h-4 text-purple-400 shrink-0" /> Mathematical dual-ledger audit</span>
+                  <span className="flex items-center gap-1.5"><CheckBadgeIcon className="w-4 h-4 text-purple-400 shrink-0" /> 30-Day risk-free guarantee</span>
+                  <span className="flex items-center gap-1.5"><CheckBadgeIcon className="w-4 h-4 text-purple-400 shrink-0" /> Instant EBITDA expansion</span>
+                </div>
+                <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+                  <Link
+                    to="/cfo"
+                    className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-purple-500 to-indigo-500 hover:brightness-110 text-white rounded-full font-black text-sm shadow-lg transition-all flex items-center justify-center gap-2"
+                  >
+                    View CFO Playbook &amp; Financial Model &rarr;
+                  </Link>
+                  <Link
+                    to="/audit"
+                    className="w-full sm:w-auto px-6 py-3.5 bg-white/5 hover:bg-white/10 border border-white/10 text-theme rounded-full font-bold text-sm transition-all flex items-center justify-center gap-2"
+                  >
+                    Run Executive Store Bleed Audit
+                  </Link>
+                </div>
+              </div>
+            )}
+
+            {activeRole === 'publisher' && (
+              <div className="space-y-4">
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-3">
+                  <div className="flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider">
+                    <span>📰</span>
+                    <span>High-Traffic Media Publishers &amp; Ad-Wrappers</span>
+                  </div>
+                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/30">
+                    $0 Upfront • 15% Performance
+                  </span>
+                </div>
+                <p className="text-base md:text-lg text-theme leading-relaxed">
+                  Recover 25% to 50%+ of programmatic desktop display and video revenue suppressed by uBlock Origin and Brave Shields. <strong className="text-amber-400">AdSentinel™</strong> executes Prebid auctions server-to-server natively on your root origin—making filter lists technically obsolete.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-theme-muted">
+                  <span className="flex items-center gap-1.5"><CheckBadgeIcon className="w-4 h-4 text-amber-400 shrink-0" /> 48-Hour staging / sandbox QA</span>
+                  <span className="flex items-center gap-1.5"><CheckBadgeIcon className="w-4 h-4 text-amber-400 shrink-0" /> 14-Day Canary (5% holdout)</span>
+                  <span className="flex items-center gap-1.5"><CheckBadgeIcon className="w-4 h-4 text-amber-400 shrink-0" /> Sentinel Enterprise free bundle</span>
+                </div>
+                <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+                  <a
+                    href="mailto:djohnson@404killer.com?subject=Inquiry:%20AdSentinel%20Sandbox%20QA%20Briefing%20(Mutual%20NDA)"
+                    className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:brightness-110 text-slate-950 rounded-full font-black text-sm shadow-lg transition-all flex items-center justify-center gap-2"
+                  >
+                    Request Sandbox QA Briefing (Mutual NDA) &rarr;
+                  </a>
+                  <a
+                    href="#pricing"
+                    className="w-full sm:w-auto px-6 py-3.5 bg-white/5 hover:bg-white/10 border border-white/10 text-theme rounded-full font-bold text-sm transition-all flex items-center justify-center gap-2"
+                  >
+                    View 15% Performance Terms
+                  </a>
+                </div>
+              </div>
+            )}
           </div>
 
-          <div className="pt-4 flex items-center justify-center gap-3 text-theme-muted text-xs font-bold uppercase tracking-wider">
+          <div className="pt-2 flex items-center justify-center gap-3 text-theme-muted text-xs font-bold uppercase tracking-wider">
             <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
             Universal Edge CDN (&lt;15ms) • 3-Min Universal GTM Tag • 7-Day Free Pilot
           </div>
@@ -393,43 +564,6 @@ function Home() {
 
       {/* Interactive ROI Calculator */}
       <RoiCalculator />
-
-      {/* The Trojan Horse: Coming Soon Co-Marketing Banner */}
-      <section className="py-16 px-6 relative z-10">
-        <div className="max-w-5xl mx-auto bg-gradient-to-r from-emerald-950/60 via-slate-900 to-cyan-950/60 border border-emerald-500/30 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 blur-[100px] rounded-full pointer-events-none"></div>
-
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 relative z-10">
-            <div className="space-y-4 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-black uppercase tracking-wider border border-emerald-500/30">
-                🚀 Coming Soon • Subscriber Exclusive
-              </div>
-              <h3 className="text-2xl md:text-3xl font-black text-theme tracking-tight">
-                The 404 Killer™ Cross-Store Network (Beta Waitlist)
-              </h3>
-              <p className="text-theme-muted text-sm md:text-base leading-relaxed">
-                What happens when a customer lands on an out-of-stock item? Instead of a dead end, 404 Killer™ subscribers will get priority access to our <strong>Zero-Ad-Spend Co-Marketing Network</strong>: monetize dead inventory by cross-recommending verified partner brand products for <strong>15–20% affiliate commissions</strong>.
-              </p>
-              <div className="flex items-center gap-4 text-xs font-bold text-slate-300">
-                <span>✓ Zero inventory risk</span>
-                <span>✓ Automated commission payouts</span>
-                <span>✓ Verified e-commerce brands only</span>
-              </div>
-            </div>
-
-            <div className="shrink-0 text-center lg:text-right">
-              <div className="text-xs uppercase tracking-widest text-emerald-400 font-bold mb-2">Priority Beta Access</div>
-              <div className="text-sm font-semibold text-theme-muted mb-4">Included free for all 404 Killer™ subscribers</div>
-              <a
-                href="#pricing"
-                className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl text-sm transition-all inline-flex items-center gap-2"
-              >
-                Lock In Founder Access <ArrowRightIcon className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Pricing Section (3 Tiers: Core, Enterprise Sentinel, and Performance Yield Recovery) */}
       <section id="pricing" className="py-20 px-6 relative z-10">
@@ -804,7 +938,7 @@ function App() {
             >
               Pricing
             </a>
-            <Link to="/agencies" className="hover:text-theme transition-colors font-medium whitespace-nowrap hidden xl:inline-block">Agencies (20% Cut)</Link>
+            <Link to="/agencies" className="hover:text-theme transition-colors font-medium whitespace-nowrap hidden xl:inline-block">Agency Resellers (20% Off)</Link>
             <Link to="/cfo" className="text-cyan-400 hover:text-cyan-300 transition-colors font-bold whitespace-nowrap hidden xl:inline-block">CFO Playbook</Link>
             <Link to="/resources" className="hover:text-theme transition-colors whitespace-nowrap hidden 2xl:inline-block">Guides & Docs</Link>
             <button
@@ -884,7 +1018,7 @@ function App() {
           </Link>
           <Link to="/setup" className="text-emerald-400 hover:text-emerald-300 transition-colors font-bold">🛠️ Tag Setup &amp; Verifier</Link>
           <Link to="/cfo" className="text-cyan-400 hover:text-cyan-300 transition-colors font-bold">🏛️ CFO Playbook &amp; P&amp;L Model</Link>
-          <Link to="/agencies" className="text-theme-muted hover:text-theme transition-colors font-semibold">Agency Partners (20%)</Link>
+          <Link to="/agencies" className="text-theme-muted hover:text-theme transition-colors font-semibold">Agency Resellers (20% Wholesale)</Link>
           <Link to="/support" className="text-theme-muted hover:text-theme transition-colors font-bold">Support</Link>
           <Link to="/privacy" className="text-theme-muted hover:text-theme transition-colors">Privacy Policy</Link>
           <Link to="/terms" className="text-theme-muted hover:text-theme transition-colors">Terms of Service</Link>

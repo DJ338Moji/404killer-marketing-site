@@ -13,26 +13,30 @@ import {
   BarChart3,
   Percent,
   Layers,
-  Send
+  Send,
+  Building,
+  Globe
 } from 'lucide-react';
-import { STRIPE_PAYMENT_LINKS } from '../App';
 
 export default function Agencies() {
-  const [storeCount, setStoreCount] = useState(25);
+  const [storeCount, setStoreCount] = useState(15);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // Form State
+  // Form State: Agency + End-Client Registration
   const [agencyName, setAgencyName] = useState('');
   const [contactName, setContactName] = useState('');
   const [email, setEmail] = useState('');
   const [website, setWebsite] = useState('');
-  const [platformFocus, setPlatformFocus] = useState('Multi-Platform');
+  const [clientName, setClientName] = useState('');
+  const [clientDomain, setClientDomain] = useState('');
+  const [platformFocus, setPlatformFocus] = useState('Shopify');
 
-  // Calculator (Growth Sentinel: $99.00/mo * 25% = $24.75/mo per store)
-  const monthlyEarnings = Math.round(storeCount * 99 * 0.25 * 100) / 100;
-  const annualEarnings = Math.round(monthlyEarnings * 12);
-  const protectedAdSpend = storeCount * 2500 * 12; // Approx $2,500/mo ad spend protected per store
+  // Calculator: Enterprise Sentinel MSRP $299/mo * 20% Wholesale Discount = $59.80/mo margin kept per store
+  const wholesaleDiscountPerStore = 59.80; // $299 MSRP - $239.20 wholesale price
+  const monthlySavings = Math.round(storeCount * wholesaleDiscountPerStore * 100) / 100;
+  const annualSavings = Math.round(monthlySavings * 12);
+  const protectedAdSpend = storeCount * 3000 * 12; // Approx $3,000/mo ad spend protected per client roster
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,6 +49,8 @@ export default function Agencies() {
         contactName,
         email,
         website,
+        clientName,
+        clientDomain,
         platformFocus,
         createdAt: new Date().toISOString()
       });
@@ -62,45 +68,50 @@ export default function Agencies() {
   return (
     <div className="py-12 md:py-20 px-4 sm:px-6 max-w-6xl mx-auto relative">
       {/* Background Decor */}
-      <div className="absolute top-10 right-10 w-96 h-96 bg-emerald-500/10 blur-[130px] rounded-full pointer-events-none -z-10"></div>
+      <div className="absolute top-10 right-10 w-96 h-96 bg-cyan-500/10 blur-[130px] rounded-full pointer-events-none -z-10"></div>
       <div className="absolute top-60 left-10 w-80 h-80 bg-blue-500/10 blur-[130px] rounded-full pointer-events-none -z-10"></div>
 
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-black uppercase tracking-widest text-emerald-400 mb-4">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-black uppercase tracking-widest text-cyan-400 mb-4">
           <Briefcase className="w-3.5 h-3.5" />
-          <span>Agency & Performance Partner Program</span>
+          <span>Authorized Wholesale Reseller Partner Program</span>
         </div>
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight">
-          Protect Your Clients' ROAS. <br />
-          <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-            Earn 25% Lifetime Recurring Rev-Share.
+          Package Enterprise Reliability. <br />
+          <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
+            20% Wholesale Discount Off MSRP.
           </span>
         </h1>
-        <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto">
-          Stop client churn caused by sold-out inventory and broken ad landing pages. Install 404 Killer App across your agency roster and build a compounding monthly revenue stream.
+        <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Stop client churn caused by sold-out inventory and broken ad landing pages. Buy 404 Killer™ enterprise seats at a <strong className="text-cyan-400">20% wholesale discount</strong>, fold them into your monthly agency retainers, and re-bill clients on your own terms.
         </p>
+
+        {/* Wholesale Boundary Callout */}
+        <div className="mt-6 max-w-xl mx-auto p-3.5 rounded-2xl bg-white/5 border border-white/10 text-xs text-slate-300">
+          <strong className="text-white">Wholesale Policy:</strong> The 20% discount applies strictly to fixed subscription licensing (<strong className="text-cyan-400">$239.20/mo</strong> vs $299/mo MSRP). Ad-block performance recovery (AdSentinel™) operates enterprise-direct.
+        </div>
       </div>
 
       {/* Value Pillars */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
         <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 backdrop-blur-xl">
-          <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
+          <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4">
             <Percent className="w-6 h-6" />
           </div>
-          <h3 className="text-lg font-black text-white mb-2">25% Recurring Every Month</h3>
+          <h3 className="text-lg font-black text-white mb-2">20% Wholesale Partner Margin</h3>
           <p className="text-xs text-slate-400 leading-relaxed">
-            Receive 25% of every dollar your client stores pay for the lifetime of their account. Paid automatically every 30 days via direct deposit or Stripe.
+            License Enterprise Sentinel for your clients at <strong className="text-white">$239.20/mo</strong> instead of $299/mo MSRP. Bundle it into a $2,500/mo CRO or media retainer and keep the entire margin.
           </p>
         </div>
 
         <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 backdrop-blur-xl">
-          <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4">
+          <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
             <ShieldCheck className="w-6 h-6" />
           </div>
           <h3 className="text-lg font-black text-white mb-2">Client Retainer Insurance</h3>
           <p className="text-xs text-slate-400 leading-relaxed">
-            When a viral SKU sells out on Friday night, our 50ms sentinel automatically reroutes ad traffic to active in-stock inventory. Zero burned spend, protected ROAS.
+            When a viral SKU sells out on Friday night, our &lt;50ms sentinel automatically reroutes ad traffic to active in-stock inventory. Zero burned ad spend, protected client ROAS.
           </p>
         </div>
 
@@ -110,96 +121,25 @@ export default function Agencies() {
           </div>
           <h3 className="text-lg font-black text-white mb-2">Co-Branded Pitch Audits</h3>
           <p className="text-xs text-slate-400 leading-relaxed">
-            Use our Free Storefront Scanner during prospective client pitches to reveal how much ad spend they are currently burning on 404s, helping you close more retainers.
+            Use our Free Storefront Scanner during prospective client pitches to reveal how much ad spend they are currently burning on 404s, helping your agency close more retainers.
           </p>
         </div>
       </div>
 
-      {/* New: Hosted Agency Portal & Immutable Reports Showcase */}
-      <div className="bg-gradient-to-r from-emerald-950/40 via-slate-900/90 to-cyan-950/40 border border-emerald-500/30 rounded-3xl p-6 sm:p-10 mb-16 shadow-2xl">
-        <div className="max-w-3xl mx-auto text-center mb-8">
-          <span className="text-xs font-bold uppercase tracking-wider text-cyan-400">The Agency Portal Advantage ($149/mo • Includes 5 Brands)</span>
-          <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight mt-1">
-            Audit-Grade Proof of Performance. Zero Added Cost.
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-300 mt-2">
-            Give your agency an unfair advantage. Includes up to 5 client brands (+$25/mo per add-on brand). Prove continuous ROI with tamper-proof client audit reports and 1-click CSV data exports.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-slate-950/60 border border-slate-800 rounded-2xl p-5">
-            <div className="text-emerald-400 font-black text-sm mb-1 flex items-center gap-1.5">
-              <span>🔒</span> Immutable Client Reports
-            </div>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Generate permanent, locked audit reports with unique shareable links. Reports cannot be deleted or backdated, giving your clients indisputable proof that your retainer is saving them money.
+      {/* Agency Wholesale Margin Simulator */}
+      <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-10 mb-16 backdrop-blur-xl">
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-black text-white tracking-tight">Agency Wholesale Margin Calculator</h3>
+            <p className="text-xs text-slate-400 mt-1">
+              Based on Enterprise Sentinel MSRP ($299/mo) with your 20% wholesale partner tier ($239.20/mo).
             </p>
           </div>
 
-          <div className="bg-slate-950/60 border border-slate-800 rounded-2xl p-5">
-            <div className="text-cyan-400 font-black text-sm mb-1 flex items-center gap-1.5">
-              <span>📊</span> 1-Click CSV Data Exporter
-            </div>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Export every 404 intercept, source URL, target redirect, and dollar-impact calculation into clean CSV spreadsheets in one click to attach directly to monthly invoices.
-            </p>
-          </div>
-
-          <div className="bg-slate-950/60 border border-slate-800 rounded-2xl p-5">
-            <div className="text-amber-400 font-black text-sm mb-1 flex items-center gap-1.5">
-              <span>⚡</span> Klaviyo & Ad Pre-Flight QA
-            </div>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Automatically QA email campaign preview blasts and continuously monitor Meta, Google, and TikTok ad destination URLs so your clients never burn budget on dead links.
-            </p>
-          </div>
-        </div>
-
-        {/* Instant Stripe Activation CTA */}
-        <div className="mt-8 pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href={STRIPE_PAYMENT_LINKS.enterprise.monthly}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-500 hover:brightness-110 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
-          >
-            <span>Activate Agency Sentinel Monthly ($299/mo)</span>
-            <ArrowRight className="w-4 h-4" />
-          </a>
-          <a
-            href={STRIPE_PAYMENT_LINKS.enterprise.annual}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto px-7 py-3.5 bg-slate-900/90 hover:bg-slate-800 border border-cyan-500/40 text-cyan-300 font-bold rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer"
-          >
-            <span>Activate Annual ($2,999/yr • 2 Months Free)</span>
-            <Sparkles className="w-4 h-4 text-cyan-400" />
-          </a>
-        </div>
-
-        <div className="text-center text-[11px] text-slate-400 mt-3 font-medium">
-          Instant provisioning for up to 5 client brands • 30-day risk-free guarantee • No waiting for approval
-        </div>
-      </div>
-
-      {/* Interactive Agency Calculator */}
-      <div className="bg-gradient-to-br from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-10 mb-16 shadow-2xl">
-        <div className="max-w-2xl mx-auto text-center mb-8">
-          <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">Partner Earnings Calculator</span>
-          <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight mt-1">
-            How Much Will Your Agency Earn?
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-400 mt-1">
-            Slide to select the number of active e-commerce client stores you manage.
-          </p>
-        </div>
-
-        <div className="max-w-xl mx-auto space-y-6">
-          <div>
+          <div className="mb-6">
             <div className="flex justify-between items-center text-sm font-bold text-slate-300 mb-2">
               <span>Client Stores Protected</span>
-              <span className="text-xl font-black text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-xl border border-emerald-500/20">
+              <span className="text-xl font-black text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-xl border border-cyan-500/20">
                 {storeCount} Stores
               </span>
             </div>
@@ -210,7 +150,7 @@ export default function Agencies() {
               step="5"
               value={storeCount}
               onChange={(e) => setStoreCount(parseInt(e.target.value, 10))}
-              className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-400"
+              className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
             />
             <div className="flex justify-between text-[11px] text-slate-500 font-mono mt-1">
               <span>5 Stores</span>
@@ -221,17 +161,17 @@ export default function Agencies() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
             <div className="bg-slate-950/70 border border-slate-800 rounded-2xl p-5 text-center">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Passive Agency Monthly Income</span>
-              <div className="text-3xl font-black text-emerald-400 mt-1">
-                ${monthlyEarnings.toLocaleString()}
+              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Monthly Agency Margin Kept</span>
+              <div className="text-3xl font-black text-cyan-400 mt-1">
+                ${monthlySavings.toLocaleString()}
                 <span className="text-xs font-semibold text-slate-400"> /mo</span>
               </div>
-              <p className="text-[11px] text-slate-500 mt-1">${annualEarnings.toLocaleString()} ARR passive recurring</p>
+              <p className="text-[11px] text-slate-500 mt-1">${annualSavings.toLocaleString()} ARR wholesale value</p>
             </div>
 
             <div className="bg-slate-950/70 border border-slate-800 rounded-2xl p-5 text-center">
               <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Client Ad Spend Protected</span>
-              <div className="text-3xl font-black text-cyan-400 mt-1">
+              <div className="text-3xl font-black text-emerald-400 mt-1">
                 ${(protectedAdSpend / 1000).toFixed(0)}k
                 <span className="text-xs font-semibold text-slate-400"> /yr</span>
               </div>
@@ -241,21 +181,29 @@ export default function Agencies() {
         </div>
       </div>
 
-      {/* Agency VIP Application Form */}
+      {/* Partner Portal: Agency & End-Client Registration Form */}
       <div className="max-w-2xl mx-auto bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-10 backdrop-blur-xl shadow-2xl">
         {!submitted ? (
           <div>
             <div className="text-center mb-8">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto mb-3 text-emerald-400">
+              <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center mx-auto mb-3 text-cyan-400">
                 <Sparkles className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-black text-white tracking-tight">Apply for Agency VIP Partner Status</h3>
+              <h3 className="text-2xl font-black text-white tracking-tight">Partner Portal: Register Agency &amp; Client</h3>
               <p className="text-xs text-slate-400 mt-1">
-                Fast-track approval within 24 hours. Get your dedicated agency dashboard & 25% recurring link.
+                Register your agency and initial client domain to activate your 20% wholesale discount tier.
               </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Agency Info */}
+              <div className="border-b border-slate-800 pb-3 mb-2">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-1.5">
+                  <Building className="w-3.5 h-3.5" />
+                  <span>1. Agency Information</span>
+                </span>
+              </div>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
@@ -267,12 +215,12 @@ export default function Agencies() {
                     value={agencyName}
                     onChange={(e) => setAgencyName(e.target.value)}
                     required
-                    className="w-full bg-slate-950/70 border border-slate-700/80 rounded-xl px-4 py-2.5 text-white text-xs focus:outline-none focus:border-emerald-400 transition-all placeholder:text-slate-500"
+                    className="w-full bg-slate-950/70 border border-slate-700/80 rounded-xl px-4 py-2.5 text-white text-xs focus:outline-none focus:border-cyan-400 transition-all placeholder:text-slate-500"
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                    Contact Name
+                    Agency Contact Name
                   </label>
                   <input
                     type="text"
@@ -280,7 +228,7 @@ export default function Agencies() {
                     value={contactName}
                     onChange={(e) => setContactName(e.target.value)}
                     required
-                    className="w-full bg-slate-950/70 border border-slate-700/80 rounded-xl px-4 py-2.5 text-white text-xs focus:outline-none focus:border-emerald-400 transition-all placeholder:text-slate-500"
+                    className="w-full bg-slate-950/70 border border-slate-700/80 rounded-xl px-4 py-2.5 text-white text-xs focus:outline-none focus:border-cyan-400 transition-all placeholder:text-slate-500"
                   />
                 </div>
               </div>
@@ -288,7 +236,7 @@ export default function Agencies() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                    Work Email
+                    Agency Work Email
                   </label>
                   <input
                     type="email"
@@ -296,7 +244,7 @@ export default function Agencies() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full bg-slate-950/70 border border-slate-700/80 rounded-xl px-4 py-2.5 text-white text-xs focus:outline-none focus:border-emerald-400 transition-all placeholder:text-slate-500"
+                    className="w-full bg-slate-950/70 border border-slate-700/80 rounded-xl px-4 py-2.5 text-white text-xs focus:outline-none focus:border-cyan-400 transition-all placeholder:text-slate-500"
                   />
                 </div>
                 <div>
@@ -309,73 +257,109 @@ export default function Agencies() {
                     value={website}
                     onChange={(e) => setWebsite(e.target.value)}
                     required
-                    className="w-full bg-slate-950/70 border border-slate-700/80 rounded-xl px-4 py-2.5 text-white text-xs focus:outline-none focus:border-emerald-400 transition-all placeholder:text-slate-500"
+                    className="w-full bg-slate-950/70 border border-slate-700/80 rounded-xl px-4 py-2.5 text-white text-xs focus:outline-none focus:border-cyan-400 transition-all placeholder:text-slate-500"
                   />
                 </div>
+              </div>
+
+              {/* End-Client Info */}
+              <div className="border-b border-slate-800 pb-3 pt-3 mb-2">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+                  <Globe className="w-3.5 h-3.5" />
+                  <span>2. End-Client Storefront Information</span>
+                </span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                    Active E-Commerce Clients
+                    End-Client Brand Name
                   </label>
-                  <select
-                    value={clientTier}
-                    onChange={(e) => setClientTier(e.target.value)}
-                    className="w-full bg-slate-950/70 border border-slate-700/80 rounded-xl px-4 py-2.5 text-white text-xs focus:outline-none focus:border-emerald-400 transition-all"
-                  >
-                    <option value="1-5">1 – 5 Brands</option>
-                    <option value="6-15">6 – 15 Brands</option>
-                    <option value="16-50">16 – 50 Brands</option>
-                    <option value="50+">50+ Brands (Enterprise Partner)</option>
-                  </select>
+                  <input
+                    type="text"
+                    placeholder="e.g. Nomad Goods"
+                    value={clientName}
+                    onChange={(e) => setClientName(e.target.value)}
+                    required
+                    className="w-full bg-slate-950/70 border border-slate-700/80 rounded-xl px-4 py-2.5 text-white text-xs focus:outline-none focus:border-emerald-400 transition-all placeholder:text-slate-500"
+                  />
                 </div>
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                    Primary Store Platform
+                    Client Storefront Domain
                   </label>
-                  <select
-                    value={platformFocus}
-                    onChange={(e) => setPlatformFocus(e.target.value)}
-                    className="w-full bg-slate-950/70 border border-slate-700/80 rounded-xl px-4 py-2.5 text-white text-xs focus:outline-none focus:border-emerald-400 transition-all"
-                  >
-                    <option value="Shopify">Shopify / Shopify Plus</option>
-                    <option value="WooCommerce">WooCommerce / WordPress</option>
-                    <option value="Multi-Platform">Multi-Platform (Shopify, BigComm, etc.)</option>
-                  </select>
+                  <input
+                    type="text"
+                    placeholder="e.g. nomadgoods.com"
+                    value={clientDomain}
+                    onChange={(e) => setClientDomain(e.target.value)}
+                    required
+                    className="w-full bg-slate-950/70 border border-slate-700/80 rounded-xl px-4 py-2.5 text-white text-xs focus:outline-none focus:border-emerald-400 transition-all placeholder:text-slate-500"
+                  />
                 </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
+                  Client Store Platform
+                </label>
+                <select
+                  value={platformFocus}
+                  onChange={(e) => setPlatformFocus(e.target.value)}
+                  className="w-full bg-slate-950/70 border border-slate-700/80 rounded-xl px-4 py-2.5 text-white text-xs focus:outline-none focus:border-cyan-400 transition-all"
+                >
+                  <option value="Shopify">Shopify / Shopify Plus</option>
+                  <option value="BigCommerce">BigCommerce</option>
+                  <option value="Magento">Magento / Adobe Commerce</option>
+                  <option value="WooCommerce">WooCommerce</option>
+                  <option value="Custom">Custom Headless / Other</option>
+                </select>
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-4 mt-2 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider hover:brightness-110 transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                className="w-full py-4 mt-2 bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider hover:brightness-110 transition-all shadow-lg shadow-cyan-500/25 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
               >
-                <span>{loading ? 'Submitting Application...' : 'Apply for Agency VIP Status &rarr;'}</span>
+                <span>{loading ? 'Registering Partner & Client...' : 'Register Client Under 20% Wholesale Tier &rarr;'}</span>
               </button>
 
               <div className="flex items-center justify-center gap-3 text-[11px] text-slate-500 pt-1">
-                <span>⚡ Instant Approval for 10+ Client Agencies</span>
+                <span>⚡ Wholesale Tier Activates Immediately</span>
                 <span>•</span>
-                <span>🔒 Zero Exclusivity Mandates</span>
+                <span>🔒 Agency Re-Bills Client Directly</span>
               </div>
             </form>
           </div>
         ) : (
           <div className="text-center py-6 space-y-4">
-            <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto text-emerald-400">
+            <div className="w-16 h-16 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center mx-auto text-cyan-400">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-black text-white">Application Received!</h3>
+            <h3 className="text-2xl font-black text-white">Partner &amp; Client Registered!</h3>
             <p className="text-xs text-slate-300 max-w-md mx-auto leading-relaxed">
-              Thank you, <strong>{contactName}</strong>. Our partner director will review <strong>{agencyName}</strong> and send your dedicated 25% recurring partner dashboard link to <strong>{email}</strong> within 24 hours.
+              Thank you, <strong>{contactName}</strong>. <strong>{agencyName}</strong> has been registered as an Authorized Wholesale Reseller Partner. <strong>{clientDomain}</strong> is now mapped under your <strong>20% wholesale pricing tier</strong> ($239.20/mo vs $299/mo MSRP).
             </p>
-            <div className="pt-4">
+            <div className="p-3 bg-white/5 border border-white/10 rounded-xl text-xs text-slate-300 max-w-sm mx-auto">
+              Our partner team has sent your wholesale activation details and deployment instructions to <strong className="text-cyan-400">{email}</strong>.
+            </div>
+            <div className="pt-4 flex justify-center gap-3">
+              <button
+                type="button"
+                onClick={() => {
+                  setClientName('');
+                  setClientDomain('');
+                  setSubmitted(false);
+                }}
+                className="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold transition-all"
+              >
+                + Register Another Client Domain
+              </button>
               <Link
                 to="/audit"
-                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold transition-all"
+                className="px-5 py-2.5 rounded-xl bg-cyan-500/20 border border-cyan-500/30 hover:bg-cyan-500/30 text-cyan-300 text-xs font-bold transition-all"
               >
-                <span>Try the Free Storefront Scanner &rarr;</span>
+                Scan Client Storefront &rarr;
               </Link>
             </div>
           </div>
