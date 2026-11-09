@@ -230,58 +230,92 @@
 
     <!-- SLIDE 4: Technology & Moat -->
     <section class="slide">
-      <div class="max-w-6xl mx-auto my-auto w-full space-y-6">
+      <div class="max-w-6xl mx-auto my-auto w-full space-y-5">
         <div>
-          <span class="text-xs font-bold uppercase tracking-widest text-cyan-400">Defensive Moat</span>
-          <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight mt-1">
-            Why uBlock Origin & Brave Cannot Block Us.
+          <span class="text-xs font-bold uppercase tracking-widest text-cyan-400">Enterprise Infrastructure &amp; IP Moat</span>
+          <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight mt-1">
+            The CTO &amp; CFO Matrix: Why Wrappers Win.
           </h2>
-          <p class="text-slate-400 text-sm md:text-base mt-2">
-            Ad blockers rely on static URL regex filters and DOM element-hiding rules. Our architecture makes filter lists obsolete:
+          <p class="text-slate-400 text-xs md:text-sm mt-1">
+            Client-side blockers destroy 30%–50% of programmatic yield. Here is how our patented architecture delivers verified incrementality with zero production risk:
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <div class="card-glass p-5 rounded-2xl">
-            <div class="text-emerald-400 font-black text-sm mb-1">1. Same-Origin Edge</div>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              No CNAME cloaking tricks. Requests execute on the root domain (<code class="text-emerald-400">store.com/_edge</code>). Blocking it breaks the site.
-            </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- The CTO Pillar -->
+          <div class="card-glass p-5 rounded-2xl border border-cyan-500/30 bg-slate-900/60 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-black uppercase tracking-wider text-cyan-400 flex items-center gap-1.5">
+                  <span>⚡</span> FOR THE CTO / CHIEF ARCHITECT
+                </span>
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono">Architectural Immunity</span>
+              </div>
+              <ul class="space-y-2.5 text-xs text-slate-300">
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                  <span><strong class="text-white">Same-Origin Edge &amp; S2S OpenRTB:</strong> Runs on root domain (<code class="text-emerald-400">site.com/_edge</code>). 100% server-to-server. Zero 3rd-party network calls for browser filters to block.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                  <span><strong class="text-white">&lt;15ms Latency &amp; CWV Neutral:</strong> Injects native semantic HTML (<code class="text-purple-400">&lt;article&gt;</code>) immune to cosmetic CSS rules. Zero CLS or INP degradation.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                  <span><strong class="text-white">48-Hour Staging Sandbox QA:</strong> Gated via <code class="text-cyan-400">?adsentinel_test=1</code> with zero public traffic risk. Your team inspects clean Prebid execution directly.</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 font-mono">
+              Result: Zero cat-and-mouse CNAME cloaking; permanent first-party immunity.
+            </div>
           </div>
-          <div class="card-glass p-5 rounded-2xl">
-            <div class="text-cyan-400 font-black text-sm mb-1">2. Zero 3rd-Party Calls</div>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Browser never connects to an ad server. 100% of OpenRTB bidding is executed server-to-server out-of-band.
-            </p>
-          </div>
-          <div class="card-glass p-5 rounded-2xl">
-            <div class="text-blue-400 font-black text-sm mb-1">3. Polymorphic Paths</div>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Zero ad-related keywords. Files are named <code class="text-blue-400">site-sentinel.js</code> bypassing EasyList pattern matching.
-            </p>
-          </div>
-          <div class="card-glass p-5 rounded-2xl">
-            <div class="text-purple-400 font-black text-sm mb-1">4. DOM Neutrality</div>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Renders native semantic HTML tags (<code class="text-purple-400">&lt;article&gt;</code>) immune to cosmetic CSS display:none injection.
-            </p>
+
+          <!-- The CFO Pillar -->
+          <div class="card-glass p-5 rounded-2xl border border-emerald-500/30 bg-slate-900/60 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-black uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+                  <span>📈</span> FOR THE CFO / CHIEF STRATEGY OFFICER
+                </span>
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono">Pure Incrementality</span>
+              </div>
+              <ul class="space-y-2.5 text-xs text-slate-300">
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                  <span><strong class="text-white">100% Found Margin:</strong> $0 setup fee, $0 monthly SaaS fee. Pure 15% performance fee on verified net recovered publisher yield.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                  <span><strong class="text-white">5% Synthetic Control Holdout:</strong> Un-monetized baseline held back to mathematically prove 100% incremental revenue directly in your Google Ad Manager ledger.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold shrink-0">✓</span>
+                  <span><strong class="text-white">404 Killer URL Recovery:</strong> Bundled complimentary to eliminate dead landing pages, protecting advertiser ROAS and publisher affiliate commissions.</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 font-mono">
+              Result: Millions in new network gross profit with zero balance-sheet risk.
+            </div>
           </div>
         </div>
 
-        <div class="p-5 rounded-2xl bg-gradient-to-r from-red-950/90 via-red-900/50 to-orange-950/80 border-2 border-red-500/70 shadow-[0_0_40px_-5px_rgba(239,68,68,0.45)] backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-4">
+        <!-- MOJIPASS IP & Legal Defense Banner -->
+        <div class="p-4 rounded-2xl bg-gradient-to-r from-red-950/90 via-red-900/50 to-orange-950/80 border-2 border-red-500/70 shadow-[0_0_40px_-5px_rgba(239,68,68,0.45)] backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
             <div class="text-xs font-black uppercase tracking-widest text-orange-400 flex items-center gap-1.5">
-              <span>⚠️</span> INTELLECTUAL PROPERTY &amp; LEGAL DEFENSE
+              <span>🛡️</span> MOJIPASS® IP HOLDINGS &amp; DTSA TRADE SECRETS
             </div>
-            <div class="text-base font-black text-white mt-1">
-              Provisional Patent Filings + DTSA Trade Secret Protection
+            <div class="text-sm md:text-base font-black text-white mt-0.5">
+              Patented Edge Session Orchestration + Tokenized Pass Verification
             </div>
             <div class="text-xs text-rose-200/90 mt-0.5 font-medium">
-              Patenting edge auction orchestration while keeping evasion heuristics strictly proprietary.
+              Defends against competitor replication. Full patent claim schedule &amp; edge architecture shared strictly under mutual NDA.
             </div>
           </div>
           <div class="px-4 py-2 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-orange-500 text-white text-xs font-black shrink-0 shadow-[0_0_25px_rgba(239,68,68,0.6)] border border-red-300 uppercase tracking-wider flex items-center gap-1.5">
-            <span>🛡️</span> Patent Pending Portfolio
+            <span>🛡️</span> Active US Patent 11,805,132 B2
           </div>
         </div>
       </div>

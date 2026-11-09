@@ -20,6 +20,7 @@ import Audit from './pages/Audit';
 import Agencies from './pages/Agencies';
 import Cfo from './pages/Cfo';
 import Setup from './pages/Setup';
+import AdSentinel from './pages/AdSentinel';
 import RoiCalculator from './components/RoiCalculator';
 
 const AiAssistant = lazy(() => import('./components/AiAssistant'));
@@ -938,6 +939,7 @@ function App() {
             >
               Pricing
             </a>
+            <Link to="/adsentinel" className="text-cyan-400 hover:text-cyan-300 transition-colors font-bold whitespace-nowrap flex items-center gap-1">AdSentinel™</Link>
             <Link to="/agencies" className="hover:text-theme transition-colors font-medium whitespace-nowrap hidden xl:inline-block">Agency Resellers (20% Off)</Link>
             <Link to="/cfo" className="text-cyan-400 hover:text-cyan-300 transition-colors font-bold whitespace-nowrap hidden xl:inline-block">CFO Playbook</Link>
             <Link to="/resources" className="hover:text-theme transition-colors whitespace-nowrap hidden 2xl:inline-block">Guides & Docs</Link>
@@ -980,6 +982,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/audit" element={<Audit key={location.key} />} />
+          <Route path="/adsentinel" element={<AdSentinel />} />
+          <Route path="/ad-sentinel" element={<AdSentinel />} />
           <Route path="/agencies" element={<Agencies />} />
           <Route path="/cfo" element={<Cfo />} />
           <Route path="/setup" element={<Setup />} />
@@ -1016,6 +1020,7 @@ function App() {
           >
             ⚡ Free Store Audit
           </Link>
+          <Link to="/adsentinel" className="text-cyan-400 hover:text-cyan-300 transition-colors font-bold">🛡️ AdSentinel™ Edge Wrapper</Link>
           <Link to="/setup" className="text-emerald-400 hover:text-emerald-300 transition-colors font-bold">🛠️ Tag Setup &amp; Verifier</Link>
           <Link to="/cfo" className="text-cyan-400 hover:text-cyan-300 transition-colors font-bold">🏛️ CFO Playbook &amp; P&amp;L Model</Link>
           <Link to="/agencies" className="text-theme-muted hover:text-theme transition-colors font-semibold">Agency Resellers (20% Wholesale)</Link>
