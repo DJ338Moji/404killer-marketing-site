@@ -18,7 +18,8 @@ import {
   Scale,
   Send,
   Eye,
-  AlertCircle
+  AlertCircle,
+  ExternalLink
 } from 'lucide-react';
 
 export default function AdSentinel() {
@@ -95,13 +96,30 @@ export default function AdSentinel() {
         </p>
 
         {/* Patent Verification Callout */}
-        <div className="mt-8 inline-flex items-center gap-3 px-5 py-2.5 rounded-xl bg-slate-900/90 border border-cyan-500/30 text-xs sm:text-sm text-slate-300 backdrop-blur-md">
+        <div className="mt-8 inline-flex flex-wrap items-center justify-center gap-3 px-5 py-2.5 rounded-xl bg-slate-900/90 border border-cyan-500/30 text-xs sm:text-sm text-slate-300 backdrop-blur-md">
           <Lock className="w-4 h-4 text-emerald-400 shrink-0" />
           <span>
-            Protected under active issued <strong className="text-white">U.S. Patent 11,805,132 B2</strong> (Granted Oct 31, 2023)
+            Protected under active issued{' '}
+            <a
+              href="https://patents.google.com/patent/US11805132B2/en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-400 hover:text-cyan-300 underline font-bold inline-flex items-center gap-1"
+            >
+              <span>U.S. Patent 11,805,132 B2</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>{' '}
+            (Granted Oct 31, 2023)
           </span>
           <span className="hidden sm:inline-block text-slate-600">|</span>
-          <span className="hidden sm:inline-block text-emerald-400 font-semibold">100% Origin-Based Execution</span>
+          <a
+            href="https://patents.google.com/patent/US11805132B2/en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-emerald-400 hover:text-emerald-300 font-semibold inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-colors"
+          >
+            <span>Verify Official USPTO Record &rarr;</span>
+          </a>
         </div>
       </div>
 
@@ -508,7 +526,15 @@ export default function AdSentinel() {
           <strong className="text-white">AdSentinel™</strong> & <strong className="text-white">404 Killer™</strong> are proprietary assets of <strong className="text-white">DevRevIQ, LLC</strong>.
         </p>
         <p className="text-slate-500">
-          U.S. Patent 11,805,132 B2 | Mojipass® Registered Trademark | Direct: djohnson@404killer.com | (435) 962-4444
+          <a
+            href="https://patents.google.com/patent/US11805132B2/en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-400 hover:text-white underline font-semibold"
+          >
+            U.S. Patent 11,805,132 B2
+          </a>{' '}
+          | Mojipass® Registered Trademark | Direct: djohnson@404killer.com | (435) 962-4444
         </p>
       </div>
     </div>
