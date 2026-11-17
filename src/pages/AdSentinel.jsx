@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Shield,
@@ -23,6 +23,32 @@ import {
 } from 'lucide-react';
 
 export default function AdSentinel() {
+  // 1. Set clean document title & trigger live executive alert beacon
+  useEffect(() => {
+    document.title = "AdSentinel™ — Enterprise Client-Edge Prebid Recovery & Yield Architecture";
+
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const ref = urlParams.get('ref') || 'direct';
+      const sessionKey = `adsentinel_alert_fired_${ref}`;
+
+      if (!sessionStorage.getItem(sessionKey)) {
+        sessionStorage.setItem(sessionKey, 'true');
+        fetch('/api/alert', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            ref,
+            page: window.location.pathname + window.location.search,
+            userAgent: navigator.userAgent
+          })
+        }).catch(() => {});
+      }
+    } catch (e) {
+      // Non-blocking fail-safe
+    }
+  }, []);
+
   // Calculator state: Network pageviews, ad-block rate, average CPM
   const [pageviewsMillions, setPageviewsMillions] = useState(250); // 250M pageviews/mo
   const [adblockRate, setAdblockRate] = useState(32); // 32% blocked
@@ -173,34 +199,34 @@ export default function AdSentinel() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
-            <div className="text-xs uppercase font-bold tracking-wider text-cyan-400 mb-1">Playwire Network</div>
-            <div className="text-2xl font-black text-white mb-2">PEI Lift: +20% to +35%</div>
+            <div className="text-xs uppercase font-bold tracking-wider text-cyan-400 mb-1">Managed Header Wrappers</div>
+            <div className="text-2xl font-black text-white mb-2">Efficiency Index Lift (+25%–35%)</div>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Lifts Publisher Efficiency Index from the stubborn ~0.55 floor up to 0.75+ by recovering unmonetized opportunities without adding ad clutter or latency.
+              Lifts publisher efficiency baseline indexes by recovering unmonetized inventory directly into the header auction without adding ad clutter, tags, or page latency.
             </p>
           </div>
 
           <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
-            <div className="text-xs uppercase font-bold tracking-wider text-emerald-400 mb-1">Ezoic Publishers</div>
-            <div className="text-2xl font-black text-white mb-2">EPMV Expansion</div>
+            <div className="text-xs uppercase font-bold tracking-wider text-emerald-400 mb-1">High-Traffic Media & Tech</div>
+            <div className="text-2xl font-black text-white mb-2">EPMV & Session Yield</div>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Converts zero-revenue visits into monetized sessions, lifting aggregate Earnings Per Thousand Visitors (EPMV) across desktop and tech traffic.
+              Converts zero-revenue ad-blocked visits into fully monetized sessions, lifting aggregate Earnings Per Thousand Visitors across desktop and technical audiences.
             </p>
           </div>
 
           <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
-            <div className="text-xs uppercase font-bold tracking-wider text-teal-400 mb-1">Mediavine & Raptive</div>
+            <div className="text-xs uppercase font-bold tracking-wider text-teal-400 mb-1">Lifestyle & Creator Portfolios</div>
             <div className="text-2xl font-black text-white mb-2">Session RPM Defense</div>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Eliminates zero-dollar desktop sessions on Safari and Chrome, restoring multi-page session monetization and Prebid bid density.
+              Eliminates zero-dollar desktop sessions across Safari and Chrome, restoring multi-page session monetization and high-density Prebid bidder competition.
             </p>
           </div>
 
           <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
-            <div className="text-xs uppercase font-bold tracking-wider text-amber-400 mb-1">Sovrn & Freestar</div>
-            <div className="text-2xl font-black text-white mb-2">Signal & Velocity</div>
+            <div className="text-xs uppercase font-bold tracking-wider text-amber-400 mb-1">Enterprise Ad Infrastructure</div>
+            <div className="text-2xl font-black text-white mb-2">Auction Velocity & Bid Signal</div>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Monetizes your most engaged, technical readers (who block ads) and eliminates script-timeout penalties that depress auction velocity.
+              Recovers high-value audience signal while eliminating client-side script-timeout penalties that artificially suppress auction velocity and bid request throughput.
             </p>
           </div>
         </div>
@@ -436,7 +462,7 @@ export default function AdSentinel() {
                 <input
                   type="text"
                   required
-                  placeholder="e.g. Playwire, Freestar, Raptive"
+                  placeholder="e.g. Enterprise Publisher Network, Media Group, SSP"
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-cyan-500 transition-colors"
